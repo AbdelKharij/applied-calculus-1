@@ -1,0 +1,71 @@
+\documentclass{ximera}
+\title{The mean value theorem}
+\begin{document}
+\begin{abstract}
+Rolle's theorem and its use in counting roots, the mean value theorem with a worked check on an interval, and the consequences that a function with zero derivative is constant and that functions with equal derivatives differ by a constant. Textbook §4.2.
+\end{abstract}
+\maketitle
+
+Our next goal is the mean value theorem. We start off with Rolle's theorem, which was named after Michel Rolle who published it in 1691 for polynomial functions. Although Rolle was the first to publish his ideas, Indian mathematician Bhāskara II (1114-1185) is credited to be the first person we know of to have knowledge of the theorem. In addition, the theorem itself was not proved in full until 1823 when Cauchy proved it in its entirety.
+
+\begin{theorem}[Rolle's theorem]\label{theorem:9-10}
+Let $f$ be a function that satisfies the following three hypotheses:
+\begin{enumerate}
+  \item $f$ is continuous on $[a, b]$.
+  \item $f$ is differentiable on $(a, b)$.
+  \item $f(a)=f(b)$.
+\end{enumerate}
+Then there is a number $c$ in $(a, b)$ such that $f^{\prime}(c)=0$.
+\end{theorem}
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-109_885_928_428_597}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+
+Rolle's theorem is used to find the number of roots a function might have.
+
+\begin{example}\label{example:9-11}
+Show that the equation $f(x)=x^{3}$ has exactly one real root.
+\begin{freeResponse}\end{freeResponse}
+\end{example}
+
+The mean value theorem was known first to Parameshvara (1370-1460), an Indian mathematician. In Europe, it was first stated by Joseph-Louis Lagrange in the following form.
+
+\begin{theorem}[Mean value theorem]\label{theorem:9-12}
+Let $f$ be a function such that:
+\begin{enumerate}
+  \item $f$ is continuous on $[a, b]$.
+  \item $f$ is differentiable on $(a, b)$.
+\end{enumerate}
+Then there exists a number $c$ in $(a, b)$ such that
+\[
+f^{\prime}(c)=\frac{f(b)-f(a)}{b-a}
+\]
+\end{theorem}
+
+Sometimes this theorem is known as Lagrange's mean value theorem. There is an extended version of this theorem which we won't go over called the extended mean value theorem or Cauchy's mean value theorem.
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-110_885_928_1233_597}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+
+\begin{example}\label{example:9-13}
+Let $f(x)=x^{2}-2$ and let's look at the interval $[0,2]$. Show the mean value thorem is true on this interval.
+% work: f(2)=2, f(0)=-2, so (f(2)-f(0))/(2-0)=4/2=2; f'(x)=2x, and 2c=2 gives c=1, which is in (0,2)
+\[
+\frac{f(2)-f(0)}{2-0}=\answer{2}, \qquad f^{\prime}(x)=\answer{2x}
+\]
+So $f^{\prime}(c)=\frac{f(2)-f(0)}{2-0}$ when $c=\answer{1}$, which is in $(0,2)$.
+\end{example}
+
+The mean value theorem allows us to state the following two theorems.
+
+\begin{theorem}\label{theorem:9-14}
+If $f^{\prime}(x)=0$ for all $x$ in an interval $(a, b)$ then $f$ is constant on $(a, b)$.
+\end{theorem}
+
+\begin{corollary}\label{corollary:9-15}
+If $f^{\prime}(x)=g^{\prime}(x)$ for all $x$ in an interval $(a, b)$, then $f-g$ is constant on $(a, b)$; i.e., $f(x)=g(x)+c$ for some constant $c$.
+\end{corollary}
+
+\end{document}

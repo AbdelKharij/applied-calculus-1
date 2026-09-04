@@ -1,0 +1,65 @@
+\documentclass{ximera}
+\title{Derivatives}
+\begin{document}
+\begin{abstract}
+The slope of a tangent line as a limit of secant slopes, in both the $x\to a$ and the $h\to 0$ forms, leading to the definition of the derivative of $f$ at a number $a$. Textbook §2.7.
+\end{abstract}
+\maketitle
+
+Remember how at the beginning of limits we looked at a tangent line to a curve. We can now use all the technology we've developed to answer this question for any arbitrary curve!
+
+Let's look at that very first exercise. Let $f(x)=x^{2}$, what is the slope of the tangent line at $x=1$?
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-048_806_1051_428_535}
+\end{image}
+
+Recall that the method we used was to find secants to the curve. So we used equations like:
+\[
+m_{\text{sec}}=\frac{f(x)-f(1)}{x-1}=\answer{\frac{x^{2}-1}{x-1}}
+\]
+
+If we keep moving $x$ closer and closer to $a$ then we will eventually find the tangent line. In other words, the tangent line at point $(a, f(a))$ has as slope:
+\[
+m=\lim_{x\rightarrow a}\answer{\frac{f(x)-f(a)}{x-a}}
+\]
+and from there you can figure out the tangent line for any given point!
+
+\begin{exercise}\label{exercise:4-9}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+Use this method to find the tangent line $y=m x+b$ when $a=2$ with a partner.
+% work: f(x)=x^2, m = lim_{x->2} (x^2-4)/(x-2) = lim (x+2) = 4; line through (2,4): 4 = 4*2 + b so b = -4
+\[
+m=\answer{4}, \qquad b=\answer{-4}
+\]
+\end{exercise}
+
+A lot of books (like ours) find the slope in another method. They fix a distance away from the point $a$ and they try and decrease this distance. What does this mean?
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-049_810_1048_1465_537}
+\end{image}
+
+Start with some point $a$ where you want to find the tangent line. You let $h$ be some distance away from the point $a$. Then you try and decrease the distance and solve the following limit:
+\[
+m=\lim_{h\rightarrow 0}\answer{\frac{f(a+h)-f(a)}{h}}
+\]
+
+Sometimes, this method is easier to solve than the previous version.
+
+\begin{example}\label{example:4-10}
+Let $f(x)=1 / x^{2}$ and find the slope of the tangent line at $\left(2, \frac{1}{4}\right)$.
+% work: (1/(2+h)^2 - 1/4)/h = (4-(2+h)^2)/(4h(2+h)^2) = (-4h-h^2)/(4h(2+h)^2) = -(4+h)/(4(2+h)^2) -> -4/16 = -1/4
+\[
+m=\lim_{h\rightarrow 0}\frac{f(2+h)-f(2)}{h}=\lim_{h\rightarrow 0}\frac{\frac{1}{(2+h)^{2}}-\frac{1}{4}}{h}=\answer{-\frac{1}{4}}
+\]
+\end{example}
+
+This slope line has a special name and it is (kinda) the whole point of this course.
+
+\begin{definition}\label{definition:4-11}
+The \dfn{derivative of a function $f$ at a number $a$} is
+\[
+f^{\prime}(a)=\lim_{h\rightarrow 0}\answer{\frac{f(a+h)-f(a)}{h}}
+\]
+\end{definition}
+
+\end{document}

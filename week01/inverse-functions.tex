@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\title{Inverse functions}
+\begin{document}
+\begin{abstract}
+Going backwards through a function: one-to-one functions, the horizontal line test, and the definition of the inverse function. Textbook §1.5.
+\end{abstract}
+\maketitle
+A function allows us to map some number $a$ to some number $b$ using a formula, but what if we want to go backwards? How do we find a function that allows us to go from $b$ to $a$, and is this even possible?
+
+\begin{example}\label{example:1-11}
+Let's try an easy example. Let $f$ be the function
+% AUTHOR CHOICE: example chosen during conversion, change freely
+$f(x)=2x+1$.
+
+% work: y = 2x+1  =>  x = (y-1)/2
+To go backwards we would need to use the formula $\answer{\frac{x-1}{2}}$.
+\end{example}
+
+But this doesn't always work!
+
+\begin{example}\label{example:1-12}
+Let $f$ be the function $f(x)=x^{2}$. If I know $f(x)=4$, what is $x$?
+
+% work: x^2 = 4 has the two solutions x = 2 and x = -2
+$x=\answer{2}$ or $x=\answer{-2}$.
+\end{example}
+
+To be able to define an inverse, it seems as though we need a rule on our functions. A function $f$ is one-to-one if
+\wordChoice{\choice[correct]{it never takes on the same value twice, i.e. $f(x_1)\neq f(x_2)$ whenever $x_1\neq x_2$}\choice{it takes on every value in its codomain}\choice{it is increasing on its whole domain}\choice{$f(x)=x$ for every $x$}}
+
+If we have a graph there is a nice way to test this:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-011_412_799_423_662}
+\end{image}
+
+\begin{proposition}\label{proposition:1-13}
+A function is one-to-one if and only if
+\wordChoice{\choice[correct]{no horizontal line intersects its graph more than once}\choice{no vertical line intersects its graph more than once}\choice{every horizontal line intersects its graph exactly once}\choice{its graph passes through the origin}}
+\end{proposition}
+
+\begin{definition}\label{definition:1-14}
+Let $f: A \rightarrow B$ be a one-to-one function with range $B$. Then its \dfn{inverse function} is the function $f^{-1}: B \rightarrow A$ with range $A$ and is defined by
+\wordChoice{\choice[correct]{$f^{-1}(y)=x \iff f(x)=y$}\choice{$f^{-1}(x)=\dfrac{1}{f(x)}$}\choice{$f^{-1}(x)=f(-x)$}\choice{$f^{-1}(x)=-f(x)$}}
+\end{definition}
+
+This means that a function being one-to-one is dependent on its domain.
+
+\begin{example}\label{example:1-15}
+For example, we saw $f: \mathbb{R} \rightarrow \mathbb{R}^{+}$ where $f(x)=x^{2}$ is not one-to-one.
+% cross-ref to original Example 1.12 (same file): the prose says "we saw" without a number, so no \ref added.
+But if we change our function's domain so that \wordChoice{\choice[correct]{$x \geq 0$}\choice{$x \neq 0$}\choice{$-1 \leq x \leq 1$}\choice{$x \in \mathbb{R}$}} then $f(x)=x^{2}$ is one-to-one. Its inverse function is $f^{-1}(x)=\answer{\sqrt{x}}$.
+\end{example}
+\end{document}

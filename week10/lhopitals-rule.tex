@@ -1,0 +1,180 @@
+\documentclass{ximera}
+\title{L'Hôpital's Rule}
+\begin{document}
+\begin{abstract}
+Indeterminate forms and L'Hôpital's rule for limits of type $\frac{0}{0}$ and $\frac{\infty}{\infty}$, and how to convert the forms $\infty-\infty$, $0\cdot\pm\infty$, $0^{0}$, $\infty^{0}$ and $1^{\pm\infty}$ into one of those two types.
+\end{abstract}
+\maketitle
+
+We're going to go back to limits for a minute and look at how we can find limits at places that aren't that well defined. For example, what's the following limit:
+\[
+\lim _{x \rightarrow 0} \frac{\sin (x)}{\ln (x)}
+\]
+% NOTE: the blank here (and in Example 10.8) asks for the form of the limit; the author treats this one as 0/0
+% (as x -> 0^+ the denominator actually goes to -infinity). Kept as the author intended, per spec §5.
+Plugging in, this has the form \wordChoice{\choice[correct]{$\frac{0}{0}$}\choice{$\frac{\infty}{\infty}$}\choice{$0\cdot\infty$}\choice{$\infty-\infty$}}.
+
+Or how about
+\[
+\lim _{x \rightarrow \infty} \frac{x^{2}}{e^{x}}
+\]
+Plugging in, this has the form \wordChoice{\choice[correct]{$\frac{\infty}{\infty}$}\choice{$\frac{0}{0}$}\choice{$0\cdot\infty$}\choice{$\infty-\infty$}}.
+
+Whenever we have a limit
+\[
+\lim _{x \rightarrow a} \frac{f(x)}{g(x)}
+\]
+which has the form \wordChoice{\choice[correct]{$\frac{0}{0}$ or $\frac{\infty}{\infty}$}\choice{$\frac{0}{\infty}$}\choice{$\frac{1}{0}$}\choice{$\frac{\infty}{1}$}}, then this limit is called an \wordChoice{\choice[correct]{indeterminate form}\choice{infinite limit}\choice{improper limit}\choice{undefined form}}.
+
+These limits aren't very easy to solve by the methods we have so far, but in 1694 the Swiss mathematician Johann Bernoulli introduced a theorem to the French mathematician Guillaume de l'Hôpital which we now call L'hôpital's rule:
+
+\begin{theorem}[L'Hôpital's rule]\label{theorem:10-7}
+Suppose $f$ and $g$ are differentiable and $g^{\prime}(x) \neq 0$ on an open interval $I$ that contains $a$ (except possibly at $a$). Suppose further that either
+\[
+\lim _{x \rightarrow a} f(x)=\lim _{x \rightarrow a} g(x)=0
+\]
+or
+\[
+\lim _{x \rightarrow a} f(x)= \pm \infty \text { and } \lim _{x \rightarrow a} g(x)= \pm \infty
+\]
+(in other words, the limit is an indeterminate form of either type). Then
+\[
+\lim _{x \rightarrow a} \frac{f(x)}{g(x)}=\lim _{x \rightarrow a}\answer{\frac{f^{\prime}(x)}{g^{\prime}(x)}}
+\]
+if the limit on the right side exists or is $\pm \infty$.
+\end{theorem}
+
+This is awesome! Let's try it with our examples from before.
+
+\begin{example}\label{example:10-8}
+Let $f(x)=\sin (x)$ and $g(x)=\ln (x)$ and, from above, recall
+\[
+\lim _{x \rightarrow 0} \frac{f(x)}{g(x)}
+\]
+has the form \wordChoice{\choice[correct]{$\frac{0}{0}$}\choice{$\frac{\infty}{\infty}$}\choice{$0\cdot\infty$}\choice{$\infty-\infty$}}, so we can use L'hôpitals rule!
+% work: f'(x)=cos(x), g'(x)=1/x; cos(x)/(1/x) = x cos(x) -> 0*1 = 0
+\[
+f^{\prime}(x)=\answer{\cos(x)}, \qquad g^{\prime}(x)=\answer{\frac{1}{x}}
+\]
+\[
+\lim _{x \rightarrow 0} \frac{\sin (x)}{\ln (x)}=\lim _{x \rightarrow 0} \frac{f^{\prime}(x)}{g^{\prime}(x)}=\answer{0}
+\]
+\end{example}
+
+\begin{example}\label{example:10-9}
+Let $f(x)=x^{2}$ and $g(x)=e^{x}$ and, from above, recall that
+\[
+\lim _{x \rightarrow \infty} \frac{f(x)}{g(x)}=\frac{\infty}{\infty}
+\]
+We can therefore use L'Hôpital's rule!
+% work: 2x/e^x is again inf/inf, apply the rule a second time: 2/e^x -> 0
+\[
+f^{\prime}(x)=\answer{2x}, \qquad g^{\prime}(x)=\answer{e^{x}}
+\]
+\[
+\lim _{x \rightarrow \infty} \frac{x^{2}}{e^{x}}=\lim _{x \rightarrow \infty} \frac{f^{\prime}(x)}{g^{\prime}(x)}=\answer{0}
+\]
+\end{example}
+
+Try another example with a partner.
+
+\begin{exercise}\label{exercise:10-10}
+Let $f(x)=x^{2}-x-2$ and $g(x)=\sqrt{2}-\sqrt{x}$. With a partner, find
+\[
+\lim _{x \rightarrow 2} \frac{f(x)}{g(x)}
+\]
+% work: form 0/0. f'(x)=2x-1, g'(x)=-1/(2 sqrt(x)); at x=2: 3 / (-1/(2 sqrt 2)) = -6 sqrt 2
+\[
+f^{\prime}(x)=\answer{2x-1}, \qquad g^{\prime}(x)=\answer{-\frac{1}{2\sqrt{x}}}
+\]
+\[
+\lim _{x \rightarrow 2} \frac{f(x)}{g(x)}=\lim _{x \rightarrow 2} \frac{f^{\prime}(x)}{g^{\prime}(x)}=\answer{-6\sqrt{2}}
+\]
+\end{exercise}
+
+\begin{example}\label{example:10-11}
+Which of the following can I use L'hôpital's rule on?
+% work: only the two inf/inf limits qualify; the others have forms 1/inf, 1/0, 0/(-1), 0/1, none indeterminate
+\begin{itemize}
+  \item $\displaystyle\lim _{x \rightarrow \infty} \frac{1}{x}$ \quad \wordChoice{\choice{yes}\choice[correct]{no}}
+  \item $\displaystyle\lim _{x \rightarrow \infty} \frac{x^{2}+7 x}{x^{2}+9 x+3}$ \quad \wordChoice{\choice[correct]{yes}\choice{no}}
+  \item $\displaystyle\lim _{x \rightarrow \infty} \frac{x^{2}+3 x+1}{\left(x^{4}+7 x\right) \cdot e^{x}}$ \quad \wordChoice{\choice[correct]{yes}\choice{no}}
+  \item $\displaystyle\lim _{x \rightarrow 0} \frac{e^{x}}{x}$ \quad \wordChoice{\choice{yes}\choice[correct]{no}}
+  \item $\displaystyle\lim _{x \rightarrow \pi} \frac{\pi-x}{\cos (x)}$ \quad \wordChoice{\choice{yes}\choice[correct]{no}}
+  \item $\displaystyle\lim _{x \rightarrow 0} \frac{0}{\cos (x)}$ \quad \wordChoice{\choice{yes}\choice[correct]{no}}
+\end{itemize}
+\end{example}
+
+We can also use L'Hôpital's rule in other cases! In most of these cases, what we want to do is convert our limit into a limit of one of our two indeterminate types. These are best done with examples.
+
+\section{The form $\infty-\infty$}
+
+\begin{example}\label{example:10-12}
+Find the limit
+\[
+\lim _{x \rightarrow 0} \frac{1}{x \sin (x)}-\frac{1}{x^{2}}
+\]
+% work: common denominator gives (x - sin x)/(x^2 sin x), form 0/0; three rounds of L'Hopital:
+% (1-cos x)/(2x sin x + x^2 cos x) -> sin x/(2 sin x + 4x cos x - x^2 sin x) -> cos x/(6 cos x - 6x sin x - x^2 cos x) -> 1/6
+\[
+\lim _{x \rightarrow 0} \frac{1}{x \sin (x)}-\frac{1}{x^{2}}=\lim _{x \rightarrow 0}\answer{\frac{x-\sin(x)}{x^{2}\sin(x)}}=\frac{1}{6}
+\]
+\end{example}
+
+Notice how we changed our formula from $\infty-\infty$ to $\frac{0}{0}$ in order to be able to use L'Hôpital's rule. We do the same for all the types.
+
+\section{The form $0 \cdot \pm \infty$}
+
+\begin{example}\label{example:10-13}
+Find the limit
+\[
+\lim _{x \rightarrow 0} 8 x^{4} \ln (3 x)
+\]
+% work: rewrite as ln(3x)/(1/(8x^4)), form inf/inf; L'Hopital: (1/x)/(-4/(8x^5)) = -2x^4 -> 0
+\[
+\lim _{x \rightarrow 0} 8 x^{4} \ln (3 x)=\lim _{x \rightarrow 0}\answer{\frac{\ln(3x)}{\frac{1}{8x^{4}}}}=0
+\]
+\end{example}
+
+We can do the same with powers!
+
+\section{The forms $0^{0}$, $\infty^{0}$, and $1^{ \pm \infty}$}
+
+In these cases, it's a little more complicated.
+
+\begin{example}\label{example:10-14}
+Find the limit
+\[
+\lim _{x \rightarrow 0}\left(x^{2}\right)^{x^{2}}
+\]
+% work: take ln: ln((x^2)^(x^2)) = x^2 ln(x^2) = ln(x^2)/x^{-2}, form inf/inf;
+% L'Hopital: (2/x)/(-2x^{-3}) = -x^2 -> 0. So the limit is e^0 = 1.
+\[
+\lim _{x \rightarrow 0}\left(x^{2}\right)^{x^{2}} \quad \rightarrow \quad \lim _{x \rightarrow 0}\ln\left(\left(x^{2}\right)^{x^{2}}\right)=\lim _{x \rightarrow 0}\answer{x^{2}\ln(x^{2})}=\answer{0}
+\]
+\[
+\lim _{x \rightarrow 0}\left(x^{2}\right)^{x^{2}} = e^{0} = 1
+\]
+\end{example}
+
+In essence, we followed the following steps:
+
+\begin{enumerate}
+  \item \wordChoice{\choice[correct]{Take the natural logarithm of the expression}\choice{Take the derivative of the expression}\choice{Multiply the expression by its conjugate}}
+  \item \wordChoice{\choice[correct]{Rewrite the logarithm as a quotient of type $\frac{0}{0}$ or $\frac{\infty}{\infty}$ and find its limit with L'Hôpital's rule}\choice{Set the logarithm equal to zero and solve for $x$}\choice{Find the critical numbers of the logarithm}}
+  \item \wordChoice{\choice[correct]{Exponentiate: the original limit is $e$ raised to the limit found in step (2)}\choice{The original limit is the limit found in step (2)}\choice{Take the logarithm of the result once more}}
+\end{enumerate}
+
+\begin{exercise}\label{exercise:10-15}
+With a partner, find the following limit.
+\[
+\lim _{x \rightarrow 0} \sin (x)^{x}
+\]
+% work: form 0^0. ln: x ln(sin x) = ln(sin x)/(1/x), form inf/inf;
+% L'Hopital: (cos x/sin x)/(-1/x^2) = -x^2 cos x/sin x = -(x/sin x) x cos x -> -(1)(0) = 0. Limit = e^0 = 1.
+\[
+\lim _{x \rightarrow 0}\ln\left(\sin (x)^{x}\right)=\lim _{x \rightarrow 0} x\ln(\sin(x))=\answer{0}, \qquad\text{so}\qquad \lim _{x \rightarrow 0} \sin (x)^{x}=\answer{1}
+\]
+\end{exercise}
+
+\end{document}

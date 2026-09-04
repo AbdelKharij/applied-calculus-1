@@ -1,0 +1,151 @@
+\documentclass{ximera}
+\title{Introduction}
+\begin{document}
+\begin{abstract}
+How to find the inverse of a function, the logarithm as the inverse of the exponential, and the inverse trigonometric functions.
+\end{abstract}
+\maketitle
+
+How do we find the inverse of a function?
+
+% AUTHOR CHOICE: the three steps were blank lines in the original (written live); standard textbook wording supplied, change freely
+\begin{enumerate}
+  \item Write $y=f(x)$.
+  \item Solve this equation for $x$ in terms of $y$.
+  \item Interchange $x$ and $y$; the resulting equation is $y=f^{-1}(x)$.
+\end{enumerate}
+
+\begin{example}\label{example:2-1}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+If $f(x)=2x+1$ then
+\begin{enumerate}
+  \item $y=\answer{2x+1}$.
+  \item $x=\answer{\frac{y-1}{2}}$.
+  \item $f^{-1}(x)=\answer{\frac{x-1}{2}}$.
+\end{enumerate}
+\end{example}
+
+Graphically, we can think of this as reflecting over the $y=x$ line.
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-012_591_796_1674_661}
+\end{image}
+
+\begin{warning}
+Inverse and reciprocal are not always the same!
+\end{warning}
+
+\[
+f^{-1}(x) \neq(f(x))^{-1}
+\]
+
+\begin{exercise}\label{exercise:2-2}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+With the person next to you: Let $f(x)=3x-2$. What is its inverse function?
+\[
+f^{-1}(x)=\answer{\frac{x+2}{3}}
+\]
+What is its reciprocal function?
+\[
+(f(x))^{-1}=\answer{\frac{1}{3x-2}}
+\]
+\end{exercise}
+
+Another way to view this is by the \emph{cancellation equations}:
+% open work area in the original; result is determinable
+\[
+f^{-1}(f(x))=\answer{x} \quad \text{for every } x \text{ in the domain of } f,
+\]
+\[
+f(f^{-1}(x))=\answer{x} \quad \text{for every } x \text{ in the domain of } f^{-1}.
+\]
+
+There are two functions where finding the inverse becomes difficult: exponential and trigonometric functions. What are their inverses? For exponential, we let its inverse be called the \emph{logarithm}. For $f(x)=b^{x}$ (where $b>0$ and $b \neq 1$ ), the exponential passes the horizontal line test. The \emph{logarithmic function with base $b$}, denoted $\answer{\log_{b}(x)}$, is the inverse of $f(x)$, i.e., $f(x)=b^{x}$ implies $f^{-1}(x)=\answer{\log_{b}(x)}$.
+
+\begin{example}\label{example:2-3}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+Let $f(x)=2^{x}$. Then its inverse is $f^{-1}(x)=\answer{\log_{2}(x)}$.
+\end{example}
+
+Some nice properties of logarithms:
+
+\begin{itemize}
+  \item $\log _{b}(x y)=\answer{\log_{b}(x)+\log_{b}(y)}$
+  \item $\log _{b}\left(\frac{x}{y}\right)=\answer{\log_{b}(x)-\log_{b}(y)}$
+  \item $\log _{b}\left(x^{y}\right)=\answer{y\log_{b}(x)}$
+\end{itemize}
+
+When $b=\answer{e}$, the logarithm is called the \emph{natural logarithm} and is denoted $\answer{\ln(x)}$.
+
+\begin{warning}
+Some books will write $\log (x)$ (no subscript) to mean either $\log _{10}(x)$ or $\log _{e}(x)=\ln (x)$. Always double check with the book to ensure you know which version it is.
+\end{warning}
+
+Trig functions are significantly more difficult. What is the inverse of the sine function?
+
+Recall that you can just reflect over the \wordChoice{\choice[correct]{$y=x$}\choice{$y=-x$}\choice{$x$-axis}\choice{$y$-axis}} line to find the inverse. So let's do that.
+
+\begin{exercise}\label{exercise:2-4}
+Reflect $f(x)=\sin (x)$ over the \wordChoice{\choice[correct]{$y=x$}\choice{$y=-x$}\choice{$x$-axis}\choice{$y$-axis}} line.
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-014_425_1008_855_556}
+\end{image}
+\end{exercise}
+
+Turn to your neighbor and compare your drawing. Does this reflection give us an inverse function? \wordChoice{\choice[correct]{No}\choice{Yes}}. How do we get an inverse function?
+% open work area in the original; result is determinable
+We restrict the domain of $\sin(x)$ to $\answer{\left[-\frac{\pi}{2},\frac{\pi}{2}\right]}$ so that it passes the horizontal line test.
+
+The inverse function for sine is known as the \emph{arcsine} function and is the function:
+% open work area in the original; the standard definition is the determinable result
+\[
+\arcsin(x)=y \quad\Longleftrightarrow\quad \sin(y)=x \text{ and } y\in\answer{\left[-\frac{\pi}{2},\frac{\pi}{2}\right]},
+\]
+with domain $\answer{[-1,1]}$.
+
+\begin{example}\label{example:2-5}
+What is $\arcsin \left(\frac{\sqrt{3}}{2}\right)$? $\answer{\frac{\pi}{3}}$
+\end{example}
+
+We can similarly do the same thing for cosine! The inverse function for cosine is known as the \emph{arccosine} function.
+% open work area in the original; the standard definition is the determinable result
+\[
+\arccos(x)=y \quad\Longleftrightarrow\quad \cos(y)=x \text{ and } y\in\answer{[0,\pi]},
+\]
+with domain $\answer{[-1,1]}$.
+
+\begin{example}\label{example:2-6}
+What is $\arccos \left(\frac{1}{2}\right)$? $\answer{\frac{\pi}{3}}$
+\end{example}
+
+\begin{exercise}\label{exercise:2-7}
+In groups of 3--5, solve the following:
+\begin{enumerate}
+  \item $\arcsin \left(\frac{1}{2}\right)=\answer{\frac{\pi}{6}}$
+  \item $\arccos \left(\frac{\sqrt{3}}{2}\right)=\answer{\frac{\pi}{6}}$
+  \item $\arcsin (1)=\answer{\frac{\pi}{2}}$
+  \item $\arccos (1)=\answer{0}$
+\end{enumerate}
+\end{exercise}
+
+The inverse function for tangent is known as the \emph{arctangent} function.
+% open work area in the original; the standard definition is the determinable result
+\[
+\arctan(x)=y \quad\Longleftrightarrow\quad \tan(y)=x \text{ and } y\in\answer{\left(-\frac{\pi}{2},\frac{\pi}{2}\right)},
+\]
+with domain $\answer{\mathbb{R}}$.
+
+There are 3 other trigonometric functions:
+
+\[
+\csc =\frac{1}{\sin } \quad \sec =\frac{1}{\cos } \quad \cotan=\frac{1}{\tan }
+\]
+
+\begin{exercise}\label{exercise:2-8}
+In the same group, solve the following:
+\begin{enumerate}
+  \item $\arctan (1)=\answer{\frac{\pi}{4}}$.
+  \item $\arctan (0)=\answer{0}$.
+  \item $\arccsc(\sqrt{2})=\answer{\frac{\pi}{4}}$.
+\end{enumerate}
+\end{exercise}
+\end{document}

@@ -1,0 +1,101 @@
+\documentclass{ximera}
+\title{Related Rates}
+\begin{document}
+\begin{abstract}
+Related rates word problems: a strategy for solving them, and worked examples with an inflating balloon, a sliding ladder, two cars approaching an intersection and a cone-shaped cake pan. Textbook §3.9.
+\end{abstract}
+\maketitle
+
+Related rates are notoriously complicated. They are word problems that are difficult to understand and don't relate to anything in the real world. Although they are not fun, they teach us how to problem solve in the real world. At a job, no one is ever going to give you a function and say ``find its derivative''. Instead they are going to explain a problem to you, give you a ton of data, and expect you to solve it. This is what this section aims to do:
+
+% TODO: original had a blank here; intended answer unclear (three blank lines listing what the section aims to do)
+\begin{enumerate}
+  \item \begin{freeResponse}\end{freeResponse}
+  \item \begin{freeResponse}\end{freeResponse}
+  \item \begin{freeResponse}\end{freeResponse}
+\end{enumerate}
+
+These are hard because they require a lot more thinking than just memorization. Even though they are difficult, there are some steps you can take to help you:
+
+% AUTHOR CHOICE: the seven blanks match the seven-step related-rates strategy in the textbook (§3.9); filled from there, change freely
+\begin{enumerate}
+  \item Read the problem carefully.
+  \item Draw a diagram if possible.
+  \item Introduce notation. Assign symbols to all quantities that are functions of time.
+  \item Express the given information and the required rate in terms of derivatives.
+  \item Write an equation that relates the various quantities of the problem. If necessary, use the geometry of the situation to eliminate one of the variables by substitution.
+  \item Use the Chain Rule to differentiate both sides of the equation with respect to $t$.
+  \item Substitute the given information into the resulting equation and solve for the unknown rate.
+\end{enumerate}
+
+\begin{example}\label{example:8-5}
+You're walking along the street one day when and you remember it's your friend's birthday tomorrow! You totally forgot to by them a birthday present!!! But then you come up with a brilliant idea, you're going to buy them a ton of balloons with their face on each one. You decide to go to Sky's: your local non-binary balloon seller! After a 30 minute walk, you get to Sky's and ask them about making you balloons with your friend's picture on it. Sky turns to you and says they would love to help, but their boss came up with a new rule. All employees need to be able to calculate the rate at which the radius of a balloon increases or else they can't sell any balloons. They turn to you and ask if you would help them figure it out. Armed with calculus, you tell Sky yes, and buckle down to help them.
+
+Sky tells you that when the put the balloon on the helium pump, the spherical balloon's volume increases at $100 cm^{3} / s$. Can you help them figure out the rate at which the radius of the baloon is increasing? What's the rate when the diameter is equal to $20 cm$?
+
+% work: V = (4/3) pi r^3, dV/dt = 4 pi r^2 dr/dt, so dr/dt = (dV/dt)/(4 pi r^2) = 100/(4 pi r^2) = 25/(pi r^2)
+Let $V$ be the volume and $r$ the radius of the balloon, so $V=\frac{4}{3}\pi r^{3}$ and $\frac{dV}{dt}=100$. Differentiating with respect to $t$,
+\[
+\frac{dV}{dt}=\answer{4\pi r^{2}}\,\frac{dr}{dt}
+\quad\Longrightarrow\quad
+\frac{dr}{dt}=\answer{\frac{25}{\pi r^{2}}}
+\]
+% work: diameter 20 => r = 10, dr/dt = 25/(100 pi) = 1/(4 pi) ≈ 0.0796 cm/s
+When the diameter is $20 cm$ the radius is $r=\answer{10}$, so
+\[
+\frac{dr}{dt}=\answer{\frac{1}{4\pi}}\ cm/s
+\]
+\end{example}
+
+\begin{example}\label{example:8-6}
+After grabbing your balloons you continue on your way home. As you're heading home you decide to walk by a construction site to see your favorite construction worker: Sandra. You walk over to the construction site and see Sandra standing next to a ladder on the ground getting ready to do something. Wanting to know what's on her mind, you grab a hard hat from the table and walk over to her to see what's up. Not looking away from the ladder, she tells you she was just about to move the ladder to start painting the wall. She then turns to you and notices all your balloons and a grin appears on her face! ``We should tie the balloons to the ladder and let the balloons lift the ladder up'', she says. Although you don't want to lose the balloons, this seems like fun so you go with it. She takes the balloons and puts them on the 10 metre long ladder. You both start noticing that the ladder starts moving away from you both at a rate of 1 metres per second. How fast will the top of the ladder be moving away from you when the ladder is 6 metres up?
+
+% work: x = distance of bottom of ladder from wall, y = height of top; x^2 + y^2 = 100;
+%       2x dx/dt + 2y dy/dt = 0  =>  dy/dt = -(x/y) dx/dt; when y = 6, x = sqrt(100-36) = 8, dx/dt = 1
+%       dy/dt = -(8/6)(1) = -4/3 m/s
+Let $x$ be the distance from the bottom of the ladder to the wall and $y$ the height of the top of the ladder, so $x^{2}+y^{2}=\answer{100}$ and $\frac{dx}{dt}=1$. Differentiating with respect to $t$,
+\[
+2x\frac{dx}{dt}+2y\frac{dy}{dt}=0
+\quad\Longrightarrow\quad
+\frac{dy}{dt}=\answer{-\frac{x}{y}\frac{dx}{dt}}
+\]
+When $y=6$ we have $x=\answer{8}$, so
+\[
+\frac{dy}{dt}=\answer{-\frac{4}{3}}\ m/s
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:8-7}
+After helping Sandra with her ladder, you realize you're gonna be late to your dinner date tonight! You run home, drop off the balloons and quickly freshen up. Looking at your watch you realize you're defs going to be late if you don't leave stat. You call an uber and decide to click on the ``sports car driver'' option. Within 30 seconds a sports car driver meets you in front of your house, introduces himself as Vito. Remembering that Vito was your city's four time reigning champion in sports car driving, you know you're gonna make it to your date on time. You hop in his car and you're on your way.
+
+As you're heading to the restaurant, you look at Vito's speedometer and notice he's going $100 km / h$! And in a school area! You're confident you'll make it in time, only to realize you're coming up to the ``intersection of doom''. You look around and notice another sports car uber driver on the other street approaching the intersection as well. The other driver is Morty! The infamous sports car driver from the city over who won nationals last year! Realizing that if your car doesn't hit the intersection first, you're going to be late to your date, you decide to quickly calculate who's going to arrive at the intersection first. Although you are $4 km$ from the intersection, you notice that the other car is going arond $80 km / h$ and that the distance between your cars is decreasing by $80 km / h$. Will you make it to your date in time?
+% note: with x = 4, dx/dt = -100, dy/dt = -80, dz/dt = -80 and z^2 = x^2 + y^2, the equation
+%       z dz/dt = x dx/dt + y dy/dt gives sqrt(16 + y^2) = 5 + y, i.e. y = -0.9 km (negative),
+%       so the data as given do not determine a sensible answer; left as a free response for the class.
+\begin{freeResponse}\end{freeResponse}
+\end{exercise}
+
+\begin{example}\label{example:8-8}
+Although you were late for your date, your date doesn't mind and you end up having an amazing time at the restaurant. So good in fact, that you invite them to your friend's birthday party tomorrow! When tomorrow comes, you decide you need to make a cake for your friend, but you want it to be a special cake, so you're going to make it a cone shaped cake! You look for your cone shaped pan and find the one with a $10 cm$ radius and is $20 cm$ tall. You make the cake mix and start pouring the batter into the pan (pointy side down) at around $2 cm^{3} / min$. While your pouring, your date from last night calls and asks what you're doing before the party. You tell them and they ask you how fast the batter is rising in the pan? You notice that your batter just hit the $5 cm$ mark, how fast is it rising?
+
+% work: batter forms a cone of height h and radius r with r/h = 10/20, so r = h/2;
+%       V = (1/3) pi r^2 h = (1/3) pi (h/2)^2 h = pi h^3 / 12;
+%       dV/dt = (pi h^2 / 4) dh/dt  =>  dh/dt = 4 (dV/dt) / (pi h^2) = 8/(pi h^2);
+%       at h = 5: dh/dt = 8/(25 pi) ≈ 0.102 cm/min
+Let $h$ be the height and $r$ the radius of the batter in the pan, so $\frac{dV}{dt}=2$. By similar triangles $\frac{r}{h}=\frac{10}{20}$, so $r=\answer{\frac{h}{2}}$ and
+\[
+V=\frac{1}{3}\pi r^{2}h=\answer{\frac{\pi h^{3}}{12}}
+\]
+Differentiating with respect to $t$,
+\[
+\frac{dV}{dt}=\answer{\frac{\pi h^{2}}{4}}\,\frac{dh}{dt}
+\quad\Longrightarrow\quad
+\frac{dh}{dt}=\answer{\frac{8}{\pi h^{2}}}
+\]
+When $h=5$,
+\[
+\frac{dh}{dt}=\answer{\frac{8}{25\pi}}\ cm/min
+\]
+\end{example}
+
+\end{document}

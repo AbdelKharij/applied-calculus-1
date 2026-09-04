@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\title{Properties of definite integrals}
+\begin{document}
+\begin{abstract}
+The basic properties of the definite integral: independence of the variable name, integrals over a point, constants, reversing the limits, linearity and additivity over intervals. Textbook §5.2.
+\end{abstract}
+\maketitle
+
+\begin{proposition}\label{proposition:12-12}
+Let $f(x)$ be a continuous function on $[a, b]$ and let $c$ be a constant.
+\begin{enumerate}
+  \item $\int_{a}^{b} f(x) d x=\int_{a}^{b} f(t) d t=\int_{a}^{b} f(u) d u$
+  \item $\int_{a}^{a} f(x) d x=\answer{0}$
+  \item $\int_{a}^{b} c d x=c(b-a)$
+  \item $\int_{a}^{b} f(x) d x=\answer{-\int_{b}^{a} f(x)\,dx}$
+  \item $\int_{a}^{b} c f(x) d x=c \int_{a}^{b} f(x) d x$
+  \item $\int_{a}^{b}(f(x)+g(x)) d x=\int_{a}^{b} f(x) d x+\int_{a}^{b} g(x) d x$
+  \item $\int_{a}^{b} f(x) d x+\int_{b}^{c} f(x) d x=\answer{\int_{a}^{c} f(x)\,dx}$
+\end{enumerate}
+\end{proposition}
+
+\end{document}

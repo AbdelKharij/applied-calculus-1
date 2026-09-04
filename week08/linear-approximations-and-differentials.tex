@@ -1,0 +1,92 @@
+\documentclass{ximera}
+\title{Linear approximations and differentials}
+\begin{document}
+\begin{abstract}
+The linearization $L(x,a)=f(a)+f'(a)(x-a)$ of a function at a point, and using it to approximate function values. Textbook §3.10.
+\end{abstract}
+\maketitle
+
+Recall that the derivative gives us the slope of the tangent line to a function. What if we want to get an approximation of the line itself and not just the slope?
+
+Let $a$ be some point on a graph.
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-096_885_928_730_597}
+\end{image}
+
+The approximation $f(x) \approx f(a)+f^{\prime}(a)(x-a)$ is called the linear approximation or tangent line approximation of $f$. The linear function whose graph is the tangent line is given by
+\[
+L(x, a)=f(a)+f^{\prime}(a)(x-a)
+\]
+is called the linearization of $f$ at $a$.
+
+\begin{warning}
+The book uses $L(x)$ instead of $L(x, a)$. This is confusing because the linearization depends on our choice of $a!$ We'll see this in the next example.
+\end{warning}
+
+\begin{example}\label{example:8-9}
+% AUTHOR CHOICE: example chosen during conversion, change freely (the original left f blank; note that
+% CHECKED-FIX: the original quoted f(3.112347)=1.34966285 for an unknown function; replaced with the value for e^{x/10} so the example is self-consistent.
+Let $f(x)=e^{x/10}$. Find the linearization of $f$ at 1 and at 3.
+
+First, let's find $f^{\prime}(x)$.
+\[
+f^{\prime}(x)=\answer{\frac{1}{10}e^{x/10}}
+\]
+
+\begin{enumerate}
+  % work: f(1) = e^{1/10}, f'(1) = e^{1/10}/10, L(x,1) = e^{1/10} + (e^{1/10}/10)(x-1)
+  \item Let $a=1$. Then $f(1)=\answer{e^{1/10}}$, $f^{\prime}(1)=\answer{\frac{1}{10}e^{1/10}}$ and
+  \[
+  L(x,1)=\answer{e^{1/10}+\frac{1}{10}e^{1/10}(x-1)}
+  \]
+  % work: f(3) = e^{3/10}, f'(3) = e^{3/10}/10, L(x,3) = e^{3/10} + (e^{3/10}/10)(x-3)
+  \item Let $a=3$. Then $f(3)=\answer{e^{3/10}}$, $f^{\prime}(3)=\answer{\frac{1}{10}e^{3/10}}$ and
+  \[
+  L(x,3)=\answer{e^{3/10}+\frac{1}{10}e^{3/10}(x-3)}
+  \]
+\end{enumerate}
+
+Notice that these two linearizations are different! It's important to remember that a linearization depends on your choice of $a$.
+\end{example}
+
+How close is this approximation though?
+
+\begin{example}\label{example:8-10}
+Suppose we want to calculate $f(3.112347)$ from the function above. In a calculator, we find:
+\[
+f(3.112347)=1.36510957
+\]
+but sometimes, life happens and we don't have access to a calculator and/or the calculator is wrong. So let's use our linear approximation to see what the approximation would give. We said that $f(x) \approx L(x, a)$ for some $a$ close to $x$. Let $a=3$ since 3 and 3.112347 are fairly ``close''. Then
+% work: L(3.112347,3) = e^{3/10} + (e^{3/10}/10)(0.112347) = e^{3/10}(1 + 0.0112347) ≈ 1.36502
+\[
+L(3.112347,3)=\answer{e^{3/10}+\frac{1}{10}e^{3/10}(0.112347)}
+\]
+This is not to bad of an approximation!
+\end{example}
+
+The whole point of approximation is to make the calculation significantly easier by using a linear function to approximate, rather than trying to solve some big nasty complicated formula.
+
+\begin{example}\label{example:8-11}
+Find a good approximation for $f(x)=x^{x}$ for $x=\frac{8}{9}$.
+
+% work: f(x) = x^x = e^{x ln x}, f'(x) = x^x (ln x + 1); take a = 1 (close to 8/9): f(1) = 1, f'(1) = 1,
+%       L(x,1) = 1 + 1(x-1) = x, so f(8/9) ≈ L(8/9,1) = 8/9
+We have $f^{\prime}(x)=\answer{x^{x}(\ln x+1)}$. Take $a=\answer{1}$, which is close to $\frac{8}{9}$. Then $f(1)=\answer{1}$, $f^{\prime}(1)=\answer{1}$ and
+\[
+L(x,1)=\answer{x}
+\]
+so
+\[
+f\left(\tfrac{8}{9}\right)\approx L\left(\tfrac{8}{9},1\right)=\answer{\frac{8}{9}}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:8-12}
+With a partner, find the linearization of $f(x)=\sin (x)$ for $x$ really close to 0.
+% work: a = 0, f(0) = 0, f'(x) = cos x, f'(0) = 1, L(x,0) = 0 + 1(x-0) = x
+\[
+L(x,0)=\answer{x}
+\]
+\end{exercise}
+
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\title{Even and odd functions}
+\begin{document}
+\begin{abstract}
+Products of even and odd functions, and their integrals over an interval symmetric about $0$. Textbook §5.5.
+\end{abstract}
+\maketitle
+
+Recall that a function is even if $f(-x)=f(x)$ and odd if $f(-x)=-f(x)$. Some examples:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-150_705_988_636_567}
+\end{image}
+
+\begin{theorem}[Properties of even and odd functions]\label{theorem:13-12}
+If $f_{1}(x)$ and $f_{2}(x)$ are even functions and if $g_{1}(x)$ and $g_{2}(x)$ are odd functinos, then, where the following operations are defined, we have:
+\begin{enumerate}
+  \item $f_{1}(x) f_{2}(x)$ and $g_{1}(x) g_{2}(x)$ are \wordChoice{\choice[correct]{even}\choice{odd}\choice{neither even nor odd}} functions.
+  \item $f_{1}(x) g_{1}(x)$ is an \wordChoice{\choice[correct]{odd}\choice{even}\choice{neither even nor odd}} function.
+  \item $\int_{-a}^{a} f_{1}(x) d x=\answer{2 \int_{0}^{a} f_{1}(x) d x}$
+  \item $\int_{-a}^{a} g_{1}(x) d x=\answer{0}$
+\end{enumerate}
+\end{theorem}
+
+\begin{example}\label{example:13-13}
+For example:
+% work: x^2 sin(x) is even*odd = odd, x^7 is odd, x cos(x) is odd*even = odd; the integrand is odd so the integral over [-a,a] is 0
+\[
+\int_{-a}^{a} x^{2} \sin (x)-x^{7}+x \cos (x) d x=\answer{0}
+\]
+\end{example}
+
+\end{document}

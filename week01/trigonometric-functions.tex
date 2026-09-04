@@ -1,0 +1,69 @@
+\documentclass{ximera}
+\title{Trigonometric functions}
+\begin{document}
+\begin{abstract}
+The trigonometric functions via the unit circle and right triangles, the values worth memorising, the basic identities and addition formulas, and the graphs of sine, cosine and tangent. Textbook Appendix D.
+\end{abstract}
+\maketitle
+\begin{warning}
+If any part of this section does not make sense, please raise your hand and force me to stop. Every country teaches trigonometry differently and at different times, so I literally have no idea what everyone knows/doesn't know.
+\end{warning}
+
+Aram's favorite way to view trig functions:
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-009_535_561_501_780}
+\end{image}
+
+This helps us calculate all the other trig functions as well:
+\[
+\tan (\theta)=\frac{\sin (\theta)}{\cos (\theta)}, \csc (\theta)=\frac{1}{\sin (\theta)}, \sec (\theta)=\frac{1}{\cos (\theta)}, \cot (\theta)=\frac{\cos (\theta)}{\sin (\theta)}
+\]
+
+Although we had the radius be equal to 1, we can alter the radius! Then we need a new method to solve for our trig functions. This is where an acronym comes in: \wordChoice{\choice[correct]{SOHCAHTOA}\choice{SOHTOACAH}\choice{CAHSOHTOA}\choice{TOASOHCAH}}. This then gives us the following ways to calculate all the trig functions.
+
+% The original leaves an open work area here (the lecturer draws a right triangle and writes the six ratios).
+For a right triangle with angle $\theta$, hypotenuse of length $H$, opposite side of length $O$ and adjacent side of length $A$:
+\[
+\sin(\theta)=\answer{\frac{O}{H}}, \qquad \cos(\theta)=\answer{\frac{A}{H}}, \qquad \tan(\theta)=\answer{\frac{O}{A}},
+\]
+\[
+\csc(\theta)=\answer{\frac{H}{O}}, \qquad \sec(\theta)=\answer{\frac{H}{A}}, \qquad \cot(\theta)=\answer{\frac{A}{O}}.
+\]
+
+There are a few trig functions that are worthwhile to know how to quickly calculate.
+
+% AUTHOR CHOICE: the original leaves an open work area here (the lecturer draws the 30-60-90 and 45-45-90 triangles
+% and tabulates the values); the angles/values shown were chosen during conversion, change freely
+% work: pi/6: sin=1/2, cos=sqrt3/2, tan=1/sqrt3=sqrt3/3; pi/4: sin=cos=sqrt2/2, tan=1; pi/3: sin=sqrt3/2, cos=1/2, tan=sqrt3
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rule{0pt}{3.2ex}$\theta$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ \\[2ex]
+\hline
+$\sin(\theta)$ & $\answer{\frac{1}{2}}$ & $\answer{\frac{\sqrt{2}}{2}}$ & $\answer{\frac{\sqrt{3}}{2}}$ \\[2ex]
+\hline
+$\cos(\theta)$ & $\answer{\frac{\sqrt{3}}{2}}$ & $\answer{\frac{\sqrt{2}}{2}}$ & $\answer{\frac{1}{2}}$ \\[2ex]
+\hline
+$\tan(\theta)$ & $\answer{\frac{\sqrt{3}}{3}}$ & $\answer{1}$ & $\answer{\sqrt{3}}$ \\[2ex]
+\hline
+\end{tabular}
+\end{center}
+
+Using the triangles, we can also come up with some trig identities.
+\begin{enumerate}
+  \item $\sin^{2}(\theta)+\cos^{2}(\theta)=\answer{1}$
+  \item $\tan^{2}(\theta)+1=\answer{\sec^{2}(\theta)}$
+  \item $1+\cot^{2}(\theta)=\answer{\csc^{2}(\theta)}$
+\end{enumerate}
+
+There are also addition formulas which I'll state, but won't go over to much.
+\begin{enumerate}
+  \item $\sin(x+y)=\answer{\sin(x)\cos(y)+\cos(x)\sin(y)}$
+  \item $\cos(x+y)=\answer{\cos(x)\cos(y)-\sin(x)\sin(y)}$
+\end{enumerate}
+
+We end this part by giving the graphs of all three functions:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-010_258_1045_968_538}
+\end{image}
+\end{document}

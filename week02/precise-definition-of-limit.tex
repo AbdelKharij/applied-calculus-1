@@ -1,0 +1,94 @@
+\documentclass{ximera}
+\title{Precise definition of limit}
+\begin{document}
+\begin{abstract}
+The epsilon-delta definition of a limit and the structure of an epsilon-delta proof. Textbook §2.4.
+\end{abstract}
+\maketitle
+
+Let's be a little more precise by what we mean by a limit.
+
+\begin{definition}[Precise definition of a limit]\label{definition:2-17}
+% AUTHOR CHOICE: the definition was blank space in the original (written live); standard textbook statement supplied, change freely
+Let $f$ be a function defined on some open interval that contains the number $a$, except possibly at $a$ itself. We say that the \dfn{limit of $f(x)$ as $x$ approaches $a$ is $L$}, and we write
+\[
+\lim_{x \rightarrow a} f(x)=L,
+\]
+if for every number $\varepsilon>0$ there is a number $\delta>0$ such that
+\[
+\text{if } 0<|x-a|<\delta \text{ then } |f(x)-L|<\varepsilon .
+\]
+\end{definition}
+
+What does this mean?
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-023_765_1048_1345_537}
+\end{image}
+
+We can use this definition as a way to show whether or not the intuitive solution to a limit problem is accurate or not. In order to prove that our intuition is correct, we use what's called an \emph{epsilon-delta proof}. The following is a general outline of how an epsilon-delta proof works:
+
+\section{Epsilon-delta proof}
+% AUTHOR CHOICE: the outline entries were blank lines in the original; wording supplied from the structure of Example 2.18, change freely
+\begin{enumerate}
+  \item \textbf{Analysis:}
+  \begin{enumerate}
+    \item Start with $|f(x)-L|<\varepsilon$ and simplify it.
+    \item End with something of the form $|x-a|<(\text{an expression in } \varepsilon)$; this tells us what $\delta$ should be.
+  \end{enumerate}
+  \item \textbf{Proof:}
+  \begin{enumerate}
+    \item Suppose $\varepsilon>0$.
+    \item Let $\delta$ be the expression found in the analysis.
+    \item If $0<|x-a|<\delta$, then show that $|f(x)-L|<\varepsilon$.
+  \end{enumerate}
+  \item Therefore, by the definition of a limit, $\lim_{x \rightarrow a} f(x)=L$.
+\end{enumerate}
+
+\begin{example}[Epsilon-delta proof]\label{example:2-18}
+% AUTHOR CHOICE: statement to prove chosen during conversion, change freely
+We want to prove that $\lim_{x \rightarrow 3}(4x-5)=7$.
+\begin{enumerate}
+  \item \textbf{Analysis:}
+  \begin{enumerate}
+    \item We start with $|f(x)-L|<\varepsilon$. In our case, $L=\answer{7}$ and $f(x)=\answer{4x-5}$. Therefore
+    \begin{freeResponse}\end{freeResponse}
+    % work: |4x-5-7| = |4x-12| = 4|x-3| < epsilon  <=>  |x-3| < epsilon/4
+    \item We want to end with something like $|x-3|<\answer{\frac{\varepsilon}{4}}$.
+  \end{enumerate}
+  \item \textbf{Proof:}
+  \begin{enumerate}
+    \item Suppose \wordChoice{\choice[correct]{$\varepsilon>0$}\choice{$\delta>0$}\choice{$x=3$}}.
+    \item Let $\delta=\answer{\frac{\varepsilon}{4}}$.
+    \item If \wordChoice{\choice[correct]{$0<|x-3|<\delta$}\choice{$|f(x)-7|<\varepsilon$}\choice{$0<|x-3|<\varepsilon$}}, then
+    \begin{freeResponse}\end{freeResponse}
+  \end{enumerate}
+  \item Therefore, by the definition of a limit
+  \begin{freeResponse}\end{freeResponse}
+\end{enumerate}
+\end{example}
+
+\begin{exercise}\label{exercise:2-19}
+% AUTHOR CHOICE: statement to prove chosen during conversion, change freely
+With a partner, prove that $\lim_{x \rightarrow 2}(3x+1)=7$.
+\begin{freeResponse}\end{freeResponse}
+\end{exercise}
+
+\begin{example}\label{example:2-20}
+% AUTHOR CHOICE: statement to prove chosen during conversion, change freely
+Let's do a significantly harder example. Prove that $\lim_{x \rightarrow 3} x^{2}=9$.
+\begin{enumerate}
+  \item \textbf{Analysis:}
+  \begin{enumerate}
+    \item \begin{freeResponse}\end{freeResponse}
+    \item \begin{freeResponse}\end{freeResponse}
+  \end{enumerate}
+  \item \textbf{Proof:}
+  \begin{enumerate}
+    \item \begin{freeResponse}\end{freeResponse}
+    \item \begin{freeResponse}\end{freeResponse}
+    \item \begin{freeResponse}\end{freeResponse}
+  \end{enumerate}
+  \item \begin{freeResponse}\end{freeResponse}
+\end{enumerate}
+\end{example}
+\end{document}

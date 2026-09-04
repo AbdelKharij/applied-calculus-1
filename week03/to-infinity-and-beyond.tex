@@ -1,0 +1,69 @@
+\documentclass{ximera}
+\title{To infinity and beyond}
+\begin{document}
+\begin{abstract}
+Limits as $x$ goes to infinity or negative infinity, and horizontal asymptotes. Textbook §2.6.
+\end{abstract}
+\maketitle
+
+Although infinity is not a number, we can look at limits as a function gets really really big, i.e., when the function goes toward infinity.
+
+\begin{example}
+\label{example:3-22}
+% work: function read off the graph below (f(1)=1, f(2)=1/4, always positive)
+Let $f(x)=\answer{\frac{1}{x^{2}}}$ and notice that this function is always positive. Here is a graph of the function:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-041_623_883_1431_619}
+\end{image}
+What this means is that the higher the value of $x$, the closer to $\answer{0}$ we are going to get. Intuitively we say that the limit of $f(x)$ as $x$ goes to infinity is 0.
+
+We write this as:
+\[
+\lim _{x \rightarrow \infty} f(x)=\answer{0}
+\]
+\end{example}
+
+We can play this game with any function. If $f$ is a function defined on $(a, \infty)$ then
+\[
+\lim _{x \rightarrow \infty} f(x)=L
+\]
+means that the value of $f(x)$ approaches $L$ as $x$ gets larger and larger.
+
+Similarly, you can do the same thing for negative infinity.
+\[
+\lim _{x \rightarrow-\infty} f(x)=L
+\]
+
+\begin{example}
+\label{example:3-23}
+% work: function read off the graph below (value 1 at x=0, zeros at multiples of pi, decaying oscillation)
+Let $f(x)=\answer{\frac{\sin(x)}{x}}$ with the graph:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-042_672_947_1152_587}
+\end{image}
+What is
+\[
+\lim _{x \rightarrow-\infty} f(x)=\answer{0}
+\]
+\end{example}
+
+The line $y=L$ is called a \dfn{horizontal asymptote} of the curve $f(x)$ if either
+\[
+\lim _{x \rightarrow \infty} f(x)=L \text { or } \lim _{x \rightarrow-\infty} f(x)=L
+\]
+
+\begin{warning}
+There is a battle in mathematics on the definition of a horizontal asymptote! The majority give the definition above, but some authors additionally require that the line $f(x)$ doesn't cross the asymptote!
+\end{warning}
+
+% AUTHOR CHOICE: example chosen during conversion, change freely
+\begin{exercise}
+\label{exercise:3-24}
+Let $f(x)=\dfrac{3x^{2}-1}{x^{2}+2}$. With a partner, find
+% work: divide top and bottom by x^2: (3 - 1/x^2)/(1 + 2/x^2) -> 3 as x -> +-infinity
+\[
+\lim _{x \rightarrow \infty} f(x)=\answer{3} \text { and } \lim _{x \rightarrow-\infty} f(x)=\answer{3}
+\]
+\end{exercise}
+
+\end{document}

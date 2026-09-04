@@ -1,0 +1,98 @@
+\documentclass{ximera}
+\title{Exponential functions}
+\begin{document}
+\begin{abstract}
+The derivative of $b^{x}$ from the limit definition, the origin of the number $e$, and an application to population growth. Textbook §3.1.
+\end{abstract}
+\maketitle
+
+Let's talk about exponential functions and what their limits look like. Recall that an exponential function is a function of the form $f(x)=b^{x}$ for $b$ a real number. Let's calculate its derivative.
+% work: definition of the derivative, b^{x+h} = b^x b^h, factor b^x, pull the constant b^x out of the limit,
+% and the remaining limit is f'(0) = lim_{h->0} (b^h - 1)/h.
+\[
+\begin{aligned}
+f^{\prime}(x)= & \answer{\lim _{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}} \\
+= & \answer{\lim _{h \rightarrow 0} \frac{b^{x+h}-b^{x}}{h}} \\
+= & \answer{\lim _{h \rightarrow 0} \frac{b^{x} b^{h}-b^{x}}{h}} \\
+= & \answer{\lim _{h \rightarrow 0} \frac{b^{x}\left(b^{h}-1\right)}{h}} \\
+= & \answer{b^{x} \lim _{h \rightarrow 0} \frac{b^{h}-1}{h}} \\
+= & b^{x} f^{\prime}(0)
+\end{aligned}
+\]
+
+But now we need to figure out what $f^{\prime}(0)$ is! There is no easy way to do this, so we need to go back to our old methods of looking at multiple values of $h$.
+
+\begin{center}
+\begin{tabular}[t]{|l|l|l|}
+\hline
+$h$ & $\frac{2^{h}-1}{h}$ & $\frac{3^{h}-1}{h}$ \\
+\hline
+0.1 & $0.7177346 \ldots$ & $1.1612317 \ldots$ \\
+\hline
+0.01 & $0.695555 \ldots$ & $1.104669 \ldots$ \\
+\hline
+0.001 & $0.693387 \ldots$ & $1.099216 \ldots$ \\
+\hline
+0.0001 & $0.693171 \ldots$ & $1.0098673 \ldots$ \\
+\hline
+\end{tabular}
+\end{center}
+
+It turns out that
+\[
+\begin{aligned}
+& b=2 \Rightarrow f^{\prime}(0)=\lim _{x \rightarrow 0} \frac{2^{x}-1}{x}=\answer{\ln(2)} \\
+& b=3 \Rightarrow f^{\prime}(0)=\lim _{x \rightarrow 0} \frac{3^{x}-1}{x}=\answer{\ln(3)}
+\end{aligned}
+\]
+
+So, we have
+\[
+\frac{d}{d x} 2^{x}=\answer{2^{x} \ln(2)} \qquad \frac{d}{d x} 3^{x}=\answer{3^{x} \ln(3)}
+\]
+
+and in general:
+\[
+\frac{d}{d x} b^{x}=\answer{b^{x} \ln(b)}
+\]
+
+What would be really cool is if we could find a number where $f^{\prime}(0)=1$. This would imply $f^{\prime}(x)=\answer{b^{x}}$ !! This is where the number $\answer{e}$ comes from. If $b=\answer{e}$ then $\frac{d}{dx} e^{x}=\answer{e^{x}}$ and we are happy.
+
+\begin{example}\label{example:5-6}
+Find the second derivative of $f(x)=e^{x}-x^{2}$.
+\[
+f^{\prime}(x)=\answer{e^{x}-2x}
+\]
+\[
+f^{\prime \prime}(x)=e^{x}-2
+\]
+
+The graph of these functions is the following:
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-063_804_645_1392_739}
+\end{image}
+\end{example}
+
+\begin{example}\label{example:5-7}
+Let's look at an example from biology. Suppose we're looking at the population growth of some animal over time. If we say that the number of animals at any given time is given by the function $n=f(t)$ then we can calculate the average rate of growth by the change in the number of animals over some given time:
+\[
+\text{average rate of growth}=\frac{\Delta n}{\Delta t}=\frac{f\left(t_{2}\right)-f\left(t_{1}\right)}{t_{2}-t_{1}}
+\]
+
+Notice how (again) this looks like the definition of the derivative!
+
+If we want to then know what the rate of growth at any given time (aka the instantaneous rate of growth), then we just need to take the limit as the change in time goes to 0:
+\[
+\text{instantaneous rate of growth}=\lim _{\Delta t \rightarrow 0} \frac{\Delta n}{\Delta t}=\frac{d n}{d t}
+\]
+
+Suppose our growth is given by $f(t)=2 e^{t}+3 t$. What is the instantaneous rate of growth?
+
+We know from this section that $f^{\prime}(t)=\answer{2 e^{t}+3}$. Therefore, if want to know how much the population is growing in exactly one year then:
+% work: f'(1) = 2e^1 + 3 = 2e + 3
+\[
+f^{\prime}(1)=\answer{2e+3}
+\]
+\end{example}
+
+\end{document}

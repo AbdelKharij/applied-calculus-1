@@ -1,0 +1,55 @@
+\documentclass{ximera}
+\title{Rates of change}
+\begin{document}
+\begin{abstract}
+Average and instantaneous rates of change, motivated by checking whether the acceleration of a rocket stays within safe limits. Textbook §2.7.
+\end{abstract}
+\maketitle
+
+We now are going to talk about some applications of the derivative. In particular, we're going to talk about rates of change.
+
+We'll start off today on a rocket ship. You are tasked with helping figure out whether or not, at any point, the acceleration of the rocket is to much for the human body to handle (we don't want to kill off the astronauts!) A g-force is calculated at $9.8 \frac{m}{s^{2}}$ and your scientists say that you don't want more than 3g for an astronaut. In other words, your acceleration can't go above $3 \cdot 9.8=29.4$.
+
+% AUTHOR CHOICE: example chosen during conversion, change freely
+You go and talk with the pilot and they say it will take roughly 120 minutes to reach escape velocity (the velocity needed for you to escape the earth's atmosphere) and that your velocity is given by the function $f(x)=x^{2}$.
+
+Will the astronauts survive?
+
+What we need to do is calculate the acceleration of the astronauts/space shuttle. Acceleration is just the rate at which something changes velocity. So what we need to do is calculate the rate of change!
+
+\begin{definition}\label{definition:4-12}
+Let $y=f(x)$ be a function. The change in $x$ from $x_{1}$ to $x_{2}$ is given by
+\[
+\Delta x=\answer{x_{2}-x_{1}}
+\]
+The change in $y$ from $x_{1}$ to $x_{2}$ is given by
+\[
+\Delta y=\answer{f(x_{2})-f(x_{1})}
+\]
+The \dfn{average rate of change} is the quotient of these two changes:
+\[
+\frac{\Delta y}{\Delta x}=\answer{\frac{f(x_{2})-f(x_{1})}{x_{2}-x_{1}}}
+\]
+\end{definition}
+
+This probably looks familiar! But we need to know whether acceleration at any given moment is going to exceed 29.8, not just the average rate of change! The limit will give us the acceleration.
+
+\begin{definition}\label{definition:4-13}
+The \dfn{instantaneous rate of change} of a function $y=f(x)$ is given by
+\[
+\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{x_{2}\rightarrow x_{1}}\answer{\frac{f(x_{2})-f(x_{1})}{x_{2}-x_{1}}}
+\]
+\end{definition}
+
+The instantaneous rate of change of velocity is acceleration.
+
+So let's see if our astronauts will survive.
+% work: f(x)=x^2: ((x+h)^2-x^2)/h = (2xh+h^2)/h = 2x+h -> 2x. Largest during the 120 minutes at x=120: 2*120=240 > 29.4
+\[
+f^{\prime}(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=\lim_{h\rightarrow 0}\frac{(x+h)^{2}-x^{2}}{h}=\answer{2x}
+\]
+The acceleration after 120 minutes is $f^{\prime}(120)=\answer{240}$, so the astronauts \wordChoice{\choice[correct]{will not survive}\choice{will survive}}.
+
+There are tons of examples of rate of change in real life. You can look at the book for more examples or you can do a google search. The instantaneous rate of change (aka the derivative) is the most crucial part of this and so we'll start exploring the derivative even further.
+
+\end{document}

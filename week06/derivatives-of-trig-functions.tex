@@ -1,0 +1,95 @@
+\documentclass{ximera}
+\title{Derivatives of Trig functions}
+\begin{document}
+\begin{abstract}
+We derive the derivative of $\sin(x)$ from the limit definition using the squeeze theorem, and record the derivatives of all six trig functions. Textbook §3.3.
+\end{abstract}
+\maketitle
+
+Let's try and find the derivative of $\sin (x)$. By definition we have:
+
+% conversion note: the intermediate steps of the limit computation were blank lines in the original.
+% The \lim is kept outside each \answer so that the boxes hold evaluable expressions in x and h.
+\[
+\begin{aligned}
+f(x) & =\sin (x) \\
+f^{\prime}(x) & =\lim _{h \rightarrow 0} \frac{f(x+h)-f(x)}{h} \\
+& = \lim _{h \rightarrow 0} \answer{\frac{\sin(x+h)-\sin(x)}{h}} \\
+& = \lim _{h \rightarrow 0} \answer{\frac{\sin(x)\cos(h)+\cos(x)\sin(h)-\sin(x)}{h}} \\
+& = \lim _{h \rightarrow 0} \answer{\sin(x)\frac{\cos(h)-1}{h}+\cos(x)\frac{\sin(h)}{h}} \\
+& =\sin (x) \lim _{h \rightarrow 0} \frac{\cos (h)-1}{h}+\cos (x) \lim _{h \rightarrow 0} \frac{\sin (h)}{h}
+\end{aligned}
+\]
+
+So we need to figure out what these last two limits are to find the derivative. We're going to use the squeeze theorem! First, we want to show that $\cos (\theta)<$ $\frac{\sin (\theta)}{\theta}<1$ where $\theta$ is an angle.
+
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-071_842_1136_425_493}
+\end{image}
+
+Therefore, intuitively, we know that $\cos (\theta)<\frac{\sin (\theta)}{\theta}<1$. Now, we take the limits of everything as $\theta$ goes to 0.
+
+\[
+\lim _{\theta \rightarrow 0} \cos (\theta)=\answer{1}.
+\]
+
+Therefore, by the squeeze theorem $\lim _{\theta \rightarrow 0} \frac{\sin (\theta)}{\theta}=$ $\answer{1}$.
+
+Now let's look at $\frac{\cos (\theta)-1}{\theta}$.
+
+% work: multiply by (cos+1)/(cos+1); cos^2-1 = -sin^2; split off sin/theta -> 1; then evaluate at theta=0.
+\[
+\begin{aligned}
+\lim _{\theta \rightarrow 0} \frac{\cos (\theta)-1}{\theta} & = \lim _{\theta \rightarrow 0} \answer{\frac{\cos(\theta)-1}{\theta}\cdot\frac{\cos(\theta)+1}{\cos(\theta)+1}} \\
+& = \lim _{\theta \rightarrow 0} \answer{\frac{\cos^2(\theta)-1}{\theta(\cos(\theta)+1)}} \\
+& = \lim _{\theta \rightarrow 0} \answer{\frac{-\sin^2(\theta)}{\theta(\cos(\theta)+1)}} \\
+& = \lim _{\theta \rightarrow 0} \answer{\frac{\sin(\theta)}{\theta}\cdot\frac{-\sin(\theta)}{\cos(\theta)+1}} \\
+& =-\lim _{\theta \rightarrow 0} \frac{\sin (\theta)}{\cos (\theta)+1} \\
+& = \answer{-\frac{\sin(0)}{\cos(0)+1}} \\
+& = \answer{0}
+\end{aligned}
+\]
+
+Therefore,
+
+\[
+f^{\prime}(x)=\sin (x) \lim _{h \rightarrow 0} \frac{\cos (h)-1}{h}+\cos (x) \lim _{h \rightarrow 0} \frac{\sin (h)}{h}=\answer{\cos(x)}
+\]
+
+Using very similar methods, we can prove derivatives for all of the trig functions:
+
+\begin{center}
+\begin{tabular}[t]{|l|l|l|l|}
+\hline
+$f(x)$ & $f^{\prime}(x)$ & $f(x)$ & $f^{\prime}(x)$ \\
+\hline
+$\sin (x)$ & $\answer{\cos(x)}$ & $\csc (x)$ & $\answer{-\csc(x)\cot(x)}$ \\
+\hline
+$\cos (x)$ & $\answer{-\sin(x)}$ & $\sec (x)$ & $\answer{\sec(x)\tan(x)}$ \\
+\hline
+$\tan (x)$ & $\answer{\sec^2(x)}$ & $\cot (x)$ & $\answer{-\csc^2(x)}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+\label{example:6-1}
+Let's use the quotient rule to show one of these. Suppose that $f(x)=\frac{\sin (x)}{\cos (x)}=\tan (x)$ and find $f^{\prime}(x)$.
+
+% work: (cos*cos - sin*(-sin))/cos^2 = (cos^2+sin^2)/cos^2 = 1/cos^2 = sec^2
+\[
+f^{\prime}(x)=\frac{\answer{\cos(x)}\cdot\cos(x)-\sin(x)\cdot\answer{-\sin(x)}}{\cos^{2}(x)}=\answer{\sec^2(x)}.
+\]
+\end{example}
+
+\begin{exercise}
+\label{exercise:6-2}
+With a partner, find the derivative of $f(x)=\sin (x) \cos (x)$.
+
+% work: product rule: cos*cos + sin*(-sin) = cos^2 - sin^2
+\[
+f^{\prime}(x)=\answer{\cos^2(x)-\sin^2(x)}.
+\]
+\end{exercise}
+
+\end{document}

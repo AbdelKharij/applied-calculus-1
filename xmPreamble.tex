@@ -1,0 +1,39 @@
+% Loaded automatically by ximera.cls / xourse.cls for every document in this repo
+% (\xmDefaultPreamble); activities must NOT \input it themselves.
+
+% T1/lmodern only for the 8-bit engines.  The Ximera HTML build runs dvilualatex,
+% where forcing T1 with a Type1 font breaks non-ASCII characters (\S, en-dashes)
+% in the generated HTML, so leave LuaTeX on its native Unicode encoding.
+\ifdefined\directlua\else
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+\usepackage{yfonts}        % only for the long s (\longs) used in the history remark on integrals
+
+% Operators used throughout the notes (Mathpix wrote these as \operatorname{...}).
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
+
+% Long s (U+017F), used once in the remark on the origin of the integral sign.
+\newcommand{\longs}{\textfrak{s}}   % Fraktur lowercase s is the long-s glyph
+% LuaTeX (the HTML build) has U+017F in its default Unicode font and passes it
+% straight through; only the 8-bit engines need the character mapped to \longs.
+\ifdefined\directlua\else
+  \usepackage{newunicodechar}
+  \newunicodechar{ſ}{\longs}
+\fi
+
+% Defined term inside a definition.
+\providecommand{\dfn}[1]{\textbf{#1}}
+

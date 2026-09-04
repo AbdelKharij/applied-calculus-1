@@ -1,0 +1,119 @@
+\documentclass{ximera}
+\title{Definite intgral}
+\begin{document}
+\begin{abstract}
+Partitions of an interval, Riemann sums (right-hand, left-hand and midpoint), the definition of the definite integral as a limit of Riemann sums, some history of the integral sign, and a first integral computed from the definition. Textbook §5.1–5.2.
+\end{abstract}
+\maketitle
+
+Now let's look at a different function, and we're going to be a little more precise in how we are defining these rectangles. We will work with $f(x)=x^{5}-6 x^{2}-$ $x+1$ :
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-135_563_769_447_670}
+\end{image}
+
+Given a closed interval $[a, b]$, a partition of an interval of numbers $x_{i}$ is such that:
+\[
+a=x_{0}<x_{1}<x_{2}<\ldots<x_{n-1}<x_{n}=b .
+\]
+
+This gives us little sub-intervals:
+\[
+\left[x_{0}, x_{1}\right],\left[x_{1}, x_{2}\right], \ldots,\left[x_{n-1}, x_{n}\right]
+\]
+
+If the intervals are all the same size $\left(\frac{b-a}{n}\right)$ we say that the partition is regular.
+
+\begin{example}\label{example:12-7}
+For some examples, let $a=2$ and $b=5$. The following are two different partitions:
+\[
+\begin{gathered}
+2<2.1<3<4.2<4.5<4.51<5 \\
+2<3<4<5
+\end{gathered}
+\]
+
+and they each define different intervals:
+\[
+\begin{gathered}
+{[2,2.1],[2.1,3],[3,4.2],[4.2,4.5],[4.5,4.51],[4.51,5]} \\
+{[2,3],[3,4],[4,5]}
+\end{gathered}
+\]
+
+Which partition is regular? \wordChoice{\choice[correct]{the second, $2<3<4<5$}\choice{the first, $2<2.1<3<4.2<4.5<4.51<5$}\choice{both}\choice{neither}}
+\end{example}
+
+\begin{exercise}\label{exercise:12-8}
+Given $a=0$ and $b=1$, with a partner, give a regular partition:
+\begin{freeResponse}\end{freeResponse}
+\end{exercise}
+
+Always assume regular The length of an interval is the difference between the start and end of the interval: $\Delta x_{i}=\answer{x_{i}-x_{i-1}}$ for the interval $\left[x_{i-1}, x_{i}\right]$.
+
+We are now ready to define our summations! The Riemann sum of a function on an interval $[a, b]$ is the sum:
+\[
+\answer{\sum_{i=1}^{n} f\left(x_{i}^{\star}\right) \Delta x_{i}}
+\]
+where $x_{i}^{\star} \in\left[x_{i-1}, x_{i}\right]$ is some arbitrary number.
+\begin{image}
+\includegraphics[width=0.45\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-136_839_570_1222_489}
+\end{image}
+\begin{image}
+\includegraphics[width=0.45\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-136_837_570_1222_1061}
+\end{image}
+% blank grids for sketching Riemann sums in the original; open work per spec 3(e)
+\begin{freeResponse}\end{freeResponse}
+
+We've already seen two of these! The right-hand sum is the Riemann sum where we let $x_{i}^{\star}=x_{i}$. The left-hand sum is the Riemann sum where we let $x_{i}^{\star}=x_{i-1}$. The midpoint sum is the Riemann sum where we let $x_{i}^{\star}=\frac{x_{i-1}+x_{i}}{2}$.
+
+But what we reeeeaaaallllly want is to find the exact area, not just approximations! What can we do to find the exact area?
+
+We're going to use our favorite tool so far in class: limits. Yes. . . limits.
+
+The limit we're going to use is actually the following limit:
+\[
+\answer{\lim_{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{\star}\right) \Delta x_{i}}
+\]
+If this limit exists we call say that the function is Riemann-integrable.
+
+BUT, this notation is horrible. There are a million and a half symbols. Who wants to write that each time? No one. So we're going to use another notation that (I think) everyone has already seen: the integral.
+
+\begin{remark}\label{remark:12-9}
+Some history! We use $\Sigma$ for summation because summation starts with s. So, we need a new symbol for the integral. Luckily, Gottfried Leibniz (German) had came up with the perfect notation back in 1675! He used ancient German's long s: ſ. (Nowadays, German's long s is written as "ß".) Why? Because the integral is a summation of realy small intervals. So ſ is perfect for that since it keeps it as an "s", but is a different s! (Even in English we used to have ſ! It wasn't until between 1800 and 1820 that this letter disappeared from English.)
+\end{remark}
+
+We changed the "s", but we also need to change the $\Delta$ since we're taking the limit. Since we're taking the limit, these intervals are getting smaller and smaller. In other words, it would be nice to represent that by using a "small" $\Delta$. So what's the lower-case of $\Delta$ ? It's $\delta$ of course! But, Leibniz, who was one of the founders of calculus, translated the greek to German and the $\delta$ became a $d$. This is where Leibniz notation: $\frac{d y}{d x}$ actually came from!
+
+So, if our function is Riemann-integrable, we will write:
+\[
+\answer{\int_{a}^{b} f(x)\,dx} = \lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{\star}\right) \Delta x_{i} .
+\]
+
+Some definitions:
+\begin{itemize}
+  \item The $a$ is the lower limit of integration,
+  \item The $b$ is the upper limit of integration,
+  \item The $f(x)$ is the integrand,
+  \item The $x$ is called the variable of integration or the independent variable.
+\end{itemize}
+
+\begin{theorem}\label{theorem:12-10}
+% CHECKED-FIX: was distractors {differentiable}{increasing}{bounded} -- "differentiable" and "increasing" also give true statements (both imply integrable), so they were not wrong
+If a function $f(x)$ is \wordChoice{\choice[correct]{continuous}\choice{bounded}\choice{defined}\choice{positive}} on the interval $[a, b]$ or if $f(x)$ has only a finite number of jump discontinuities, then the function $f(x)$ is \wordChoice{\choice[correct]{Riemann-integrable}\choice{differentiable}\choice{continuous}\choice{constant}} on $[a, b]$.
+\end{theorem}
+
+\begin{example}\label{example:12-11}
+Let's look at an (easy) example. Find $\int_{1}^{2} x^{2} d x$.
+% work: regular partition of [1,2] into n pieces, right-hand endpoints: Delta x = 1/n, x_i = 1 + i/n;
+% sum_{i=1}^{n} (1 + i/n)^2 (1/n) = 1 + (2/n^2) n(n+1)/2 + (1/n^3) n(n+1)(2n+1)/6 -> 1 + 1 + 1/3 = 7/3
+\[
+\Delta x=\answer{\frac{1}{n}}, \qquad x_{i}=\answer{1+\frac{i}{n}}
+\]
+\[
+\int_{1}^{2} x^{2} d x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}\right) \Delta x=\answer{\frac{7}{3}}
+\]
+\end{example}
+
+That was disgusting. The whole point of the next few days (and the next class) is to try and make this easier.
+
+\end{document}

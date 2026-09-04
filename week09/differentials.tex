@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\title{Differentials}
+\begin{document}
+\begin{abstract}
+Treating $\frac{dy}{dx}$ as a fraction to define the differentials $dx$ and $dy$, and using $dy$ as an approximation of $\Delta y$. Textbook §3.10.
+\end{abstract}
+\maketitle
+
+Remember how we had said that $\frac{d y}{d x}$ is not a fraction and we shouldn't think of it as one? We're about to change all of that!
+
+% CHECKED-FIX: was "We call $d x$ and $y$" (prose typo, not an \answer)
+We can think of $d y$ as a very small change, an approximation of a larger $\Delta y$. Let's just pretend that $f^{\prime}(x)=\frac{d y}{d x}$ is a fraction and put like terms on the same side. So we have $dy=\answer{f^{\prime}(x)\,dx}$. We call $d x$ and $d y$ \wordChoice{\choice[correct]{differentials}\choice{derivatives}\choice{increments}\choice{limits}}.
+
+It turns out we can use differentials as a good approximation of $\Delta y$. Let's see an example to see what in the world I'm talking about.
+
+\begin{example}\label{example:9-1}
+Let $f(x)=x^{2}-2 x+4$. Let us look at the change from 2 to 2.01.
+% work: f(2)=4-4+4=4, f(2.01)=4.0401-4.02+4=4.0201, so Delta y = 0.0201
+\[
+\Delta y=f(2.01)-f(2)=\answer{0.0201}
+\]
+% work: f'(x)=2x-2, dx = 2.01-2 = 0.01, dy = f'(2) dx = 2(0.01) = 0.02
+\[
+f^{\prime}(x)=\answer{2x-2}, \qquad dy=f^{\prime}(2)\,dx=\answer{0.02}
+\]
+\end{example}
+
+So this ``division'' turns out to be a good approximation! Also, finding $d y$ was a lot easier to compute than $\Delta y$.
+
+\end{document}

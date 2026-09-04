@@ -1,0 +1,126 @@
+\documentclass{ximera}
+\title{Antiderivatives}
+\begin{document}
+\begin{abstract}
+Antiderivatives and the most general antiderivative of a function, finding antiderivatives of sums and quotients, recovering $f$ from $f'$ or $f''$ and given data points, and a reference table of derivatives. Textbook §4.9.
+\end{abstract}
+\maketitle
+
+We've been looking at how to find the derivative of a function $f(x)$. But what happens if we want to go backwards? Say we have some function $f(x)$ and we want to know whose derviative it is. This is the idea of antiderivatives.
+
+\begin{definition}\label{definition:11-1}
+A function $F$ is called an \dfn{antideriative} of $f$ on an interval $I$ if $\answer{F^{\prime}(x)=f(x)}$ for all $x$ in $I$.
+\end{definition}
+
+\begin{example}\label{example:11-2}
+If $f(x)=3 x^{2}$, what is its antiderivative? $F(x)=\answer{x^{3}+C}$
+
+What do these look like?
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-126_640_877_1641_623}
+\end{image}
+\end{example}
+
+But how do we know that's all? What if there is some other anti-derivative? This turns out not to be the case because of the following theorem.
+
+\begin{theorem}\label{theorem:11-3}
+If $F$ is an antiderivative of $f$ on an interval $I$, then the most general antiderivative of $f$ on $I$ is
+\[
+\answer{F(x)+C}
+\]
+where $C$ is an arbitrary constant.
+\end{theorem}
+
+\begin{example}\label{example:11-4}
+What are the (most general) antiderivatives of the following functions:
+\begin{enumerate}
+  \item $f(x)=\cos (x)$ : $\answer{\sin(x)+C}$
+  % CHECKED-FIX: was n \neq 1 (the power rule for antiderivatives excludes n=-1)
+  \item $f(x)=x^{n}$ where $n \neq -1$ : $\answer{\frac{x^{n+1}}{n+1}+C}$
+  \item $f(x)=x^{-1}$ : $\answer{\ln|x|+C}$
+\end{enumerate}
+\end{example}
+
+We can use our derivative laws to help us find the antiderivatives of more complicated functions. For example, if we have $f(x)+g(x)$ and if $F(x)$ and $G(x)$ are the antiderivatives of $f$ and $g$ respectively, then $F(x)+G(x)$ is an antiderivative of $f(x)+g(x)$. Let's see an example.
+
+\begin{example}\label{example:11-5}
+Find all antiderivatives of $f(x)=\frac{1}{\sqrt{1-x^{2}}}-2 \cos (x)+\frac{2 x^{5}+\sqrt[3]{x}}{x^{2}}$
+% work: (2x^5 + x^{1/3})/x^2 = 2x^3 + x^{-5/3}; antiderivatives: arcsin(x), -2 sin(x), x^4/2, x^{-2/3}/(-2/3) = -(3/2) x^{-2/3}
+\[
+F(x)=\answer{\arcsin(x)-2\sin(x)+\frac{x^{4}}{2}-\frac{3}{2}x^{-2/3}+C}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:11-6}
+Try one with a partner. Let $f(x)=2 \sin (x)-\frac{1+x^{3}}{x}$ and find all antiderivatives of $f(x)$.
+% work: (1+x^3)/x = 1/x + x^2; antiderivatives: -2cos(x), -ln|x|, -x^3/3
+\[
+F(x)=\answer{-2\cos(x)-\ln|x|-\frac{x^{3}}{3}+C}
+\]
+\end{exercise}
+
+If we're looking for a particular answer, we also give a data point with our function.
+
+\begin{example}\label{example:11-7}
+Find $f$ if $f^{\prime}(x)=e^{x}-2 \cos (x)$ and $f(0)=2$.
+% work: f(x) = e^x - 2 sin(x) + C; f(0) = 1 - 0 + C = 2, so C = 1
+\[
+f(x)=\answer{e^{x}-2\sin(x)+C}, \qquad C=\answer{1}, \qquad f(x)=\answer{e^{x}-2\sin(x)+1}
+\]
+\end{example}
+
+Let's try something a little harder.
+
+\begin{example}\label{example:11-8}
+Find $f$ if $f^{\prime \prime}(x)=3 x+2$ where $f(0)=4$ and $f(2)=13$.
+% work: f'(x) = (3/2)x^2 + 2x + C; f(x) = x^3/2 + x^2 + Cx + D;
+% f(0) = D = 4; f(2) = 4 + 4 + 2C + 4 = 13, so C = 1/2
+\[
+f^{\prime}(x)=\answer{\frac{3}{2}x^{2}+2x+C}, \qquad f(x)=\answer{\frac{x^{3}}{2}+x^{2}+Cx+D}
+\]
+\[
+D=\answer{4}, \qquad C=\answer{\frac{1}{2}}, \qquad f(x)=\answer{\frac{x^{3}}{2}+x^{2}+\frac{x}{2}+4}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:11-9}
+With a partner, find $f$ if $f^{\prime \prime}(x)=4 x^{2}+1$ where $f(0)=\frac{1}{6}$ and $f(1)=2$.
+% work: f'(x) = (4/3)x^3 + x + C; f(x) = x^4/3 + x^2/2 + Cx + D;
+% f(0) = D = 1/6; f(1) = 1/3 + 1/2 + C + 1/6 = 1 + C = 2, so C = 1
+\[
+f(x)=\answer{\frac{x^{4}}{3}+\frac{x^{2}}{2}+x+\frac{1}{6}}
+\]
+\end{exercise}
+
+\begin{center}
+\begin{tabular}[t]{|l|l|l|l|}
+\hline
+Function & Derivative & Function & Derivative \\
+\hline
+$f(x)=x^{r}$ & $f^{\prime}(x)=r x^{r-1}$ & $f(x)=k g(x)$ & $f^{\prime}(x)=k g^{\prime}(x)$ \\
+\hline
+$f(x)=g(x) h(x)$ & $f^{\prime}(x)=\answer{g^{\prime}(x) h(x)+g(x) h^{\prime}(x)}$ & $f(x)=\frac{g(x)}{h(x)}$ & $f^{\prime}(x)=\frac{g^{\prime}(x) h(x)-g(x) h^{\prime}(x)}{h^{2}(x)}$ \\
+\hline
+$f(x)=g(h(x))$ & $f^{\prime}(x)=\answer{g^{\prime}(h(x)) h^{\prime}(x)}$ & $f(x)=g(x)^{r}$ & $f^{\prime}(x)=r(g(x))^{r-1} g^{\prime}(x)$ \\
+\hline
+$f(x)=e^{x}$ & $f^{\prime}(x)=e^{x}$ & $f(x)=\ln (x)$ & $f^{\prime}(x)=\frac{1}{x}$ \\
+\hline
+$f(x)=a^{x}$ & $f^{\prime}(x)=a^{x} \ln (a)$ & $f(x)=\log _{a}(x)$ & $f^{\prime}(x)=\frac{1}{x \ln (a)}$ \\
+\hline
+$f(x)=\sin (x)$ & $f^{\prime}(x)=\answer{\cos(x)}$ & $f(x)=\cos (x)$ & $f^{\prime}(x)=\answer{-\sin(x)}$ \\
+\hline
+$f(x)=\tan (x)$ & $f^{\prime}(x)=\sec ^{2}(x)$ & $f(x)=\cot (x)$ & $f^{\prime}(x)=-\csc ^{2}(x)$ \\
+\hline
+$f(x)=\sec (x)$ & $f^{\prime}(x)=\sec (x) \tan (x)$ & $f(x)=\csc (x)$ & $f^{\prime}(x)=-\csc (x) \cot (x)$ \\
+\hline
+$f(x)=\arcsin (x)$ & $f^{\prime}(x)=\frac{1}{\sqrt{1-x^{2}}}$ & $f(x)=\arccos (x)$ & $f^{\prime}(x)=\frac{-1}{\sqrt{1-x^{2}}}$ \\
+\hline
+% CHECKED-FIX: was \frac{-1}{\sqrt{1+x^{2}}} for the derivative of arccot
+$f(x)=\arctan (x)$ & $f^{\prime}(x)=\frac{1}{1+x^{2}}$ & $f(x)=\arccot(x)$ & $f^{\prime}(x)=\frac{-1}{1+x^{2}}$ \\
+\hline
+$f(x)=\arcsec(x)$ & $f^{\prime}(x)=\frac{1}{|x| \sqrt{x^{2}-1}}$ & $f(x)=\arccsc(x)$ & $f^{\prime}(x)=\frac{-1}{|x| \sqrt{x^{2}-1}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

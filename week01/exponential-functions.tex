@@ -1,0 +1,40 @@
+\documentclass{ximera}
+\title{Exponential functions}
+\begin{document}
+\begin{abstract}
+The exponential function $b^x$, how it is computed for integer, rational and irrational exponents, and composing it with other functions. Textbook §1.4.
+\end{abstract}
+\maketitle
+An exponential function is a function of the form
+\[
+f(x)= \answer{b^{x}}
+\]
+where $b$ is a positive constant (i.e., $b \in \mathbb{R}^{+}$).
+
+How do we calculate $b^{x}$ for every $x \in \mathbb{R}$?
+
+% AUTHOR CHOICE: the "Example" column was left empty in the original; examples chosen during conversion, change freely
+% work: 2^3 = 8; 8^{2/3} = (cube root of 8)^2 = 2^2 = 4
+\begin{center}
+\begin{tabular}[t]{|l|l|l|}
+\hline
+$x$ & $b^{x}$ & Example \\
+\hline
+Integer ( $\mathbb{Z}$ ) & $b^{x}$ & $2^{3}=\answer{8}$ \\
+\hline
+Rational $(\mathbb{Q})$ & $b^{p / q}=\sqrt[q]{b^{p}}$ & $8^{2/3}=\answer{4}$ \\
+\hline
+Irrational $(\mathbb{R} \backslash \mathbb{Q})$ & Estimate using graph & $2^{\sqrt{2}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}\label{example:1-10}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+Let $f(x)=2^{x}$ and let $g(x)=x+1$.
+\[
+(f \circ g)(x) = \answer{2^{x+1}} \qquad (g \circ f)(x) = \answer{2^{x}+1}
+\]
+Are these the same function? (i.e., is $f \circ g=g \circ f$) \wordChoice{\choice{Yes}\choice[correct]{No}}.
+\end{example}
+\end{document}

@@ -1,0 +1,134 @@
+\documentclass{ximera}
+\title{Product and quotient rules}
+\begin{document}
+\begin{abstract}
+Why $(fg)' \neq f'g'$, the product rule and the quotient rule, with an application to Ohm's law. Textbook §3.2.
+\end{abstract}
+\maketitle
+
+Recall that when we did addition and subtraction of derivatives, we saw that a very similar thing happened as with the limit laws; we could just separate them. For the limit laws we had:
+\[
+\lim _{x \rightarrow a}(f(x)+g(x))=\left(\lim _{x \rightarrow a} f(x)\right)+\left(\lim _{x \rightarrow a} g(x)\right)
+\]
+
+And for derivatives we had:
+\[
+\frac{d}{d x}(f(x)+g(x))=\frac{d}{d x} f(x)+\frac{d}{d x} g(x) .
+\]
+
+We now ask the same question for multiplication since we have the same limit law:
+\[
+\lim _{x \rightarrow a}(f(x) g(x))=\left(\lim _{x \rightarrow a} f(x)\right)\left(\lim _{x \rightarrow a} g(x)\right)
+\]
+
+It turns out the same property does \emph{not} hold for multiplication (and division)! In particular we have $(f g)^{\prime} \neq f^{\prime} g^{\prime}$ like we would want.
+
+\begin{example}\label{example:5-8}
+Let's look at a super simple example for proof. Let $f(x)=x$ and $g(x)=x$. Then,
+% work: (fg)(x) = x^2 so (fg)'(x) = 2x, while f'(x) g'(x) = 1 * 1 = 1
+\[
+(fg)(x)=x\cdot x=x^{2}, \qquad (fg)^{\prime}(x)=\answer{2x}, \qquad f^{\prime}(x) g^{\prime}(x)=\answer{1}
+\]
+\end{example}
+
+So we need to figure something else out to calculate $(f g)^{\prime}$. This is a bit complicated, but it turns out the best way is to use geometry.
+
+First, let's look at one of our functions.
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-065_711_741_1506_690}
+\end{image}
+\begin{image}
+\includegraphics[width=0.4\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-066_400_403_699_860}
+\end{image}
+% geometric derivation of the product rule done live in the original (white space); open work per spec 3(e)
+\begin{freeResponse}\end{freeResponse}
+
+This is called the \emph{product rule}: If $f$ and $g$ are both differentiable, then
+\[
+\frac{d}{dx}\left(f(x) g(x)\right)=\answer{f^{\prime}(x) g(x)+f(x) g^{\prime}(x)}
+\]
+
+\begin{example}\label{example:5-9}
+Let's do an example. Let $f(x)=x^{2} e^{x}$. What is $f^{\prime}(x)$?
+\[
+f^{\prime}(x)=\answer{2 x e^{x}+x^{2} e^{x}}
+\]
+\end{example}
+
+We can also do quotients based off a similar technique as the product.
+% derivation of the quotient rule done live in the original (white space); open work per spec 3(e)
+\begin{freeResponse}\end{freeResponse}
+
+This is called the \emph{quotient rule}: If $f$ and $g$ are both differentiable and $g(x) \neq 0$, then
+\[
+\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right)=\answer{\frac{f^{\prime}(x) g(x)-f(x) g^{\prime}(x)}{g(x)^{2}}}
+\]
+
+\begin{warning}
+Note that in the quotient rule, the \emph{order} matters since we are subtracting. Make sure to keep this in mind.
+\end{warning}
+
+\begin{example}\label{example:5-10}
+Let $f(x)=\frac{x^{3}+3 x}{x^{2}+1}$.
+% work: numerator' = 3x^2+3, denominator' = 2x;
+% f' = ((3x^2+3)(x^2+1) - (x^3+3x)(2x)) / (x^2+1)^2 = (x^4+3)/(x^2+1)^2
+\[
+f^{\prime}(x)=\frac{\answer{3 x^{2}+3}\cdot\left(x^{2}+1\right)-\left(x^{3}+3 x\right)\cdot\answer{2x}}{\answer{\left(x^{2}+1\right)^{2}}}
+\]
+
+Therefore,
+\[
+f^{\prime}(x)=\frac{x^{4}+3}{x^{4}+2 x^{2}+1}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:5-11}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+With a partner find $f^{\prime}(x)$ where $f(x)=\dfrac{e^{x}}{x^{2}+1}$.
+% work: f' = (e^x (x^2+1) - e^x (2x)) / (x^2+1)^2 = e^x (x^2 - 2x + 1)/(x^2+1)^2 = e^x (x-1)^2/(x^2+1)^2
+\[
+f^{\prime}(x)=\answer{\frac{e^{x}(x-1)^{2}}{\left(x^{2}+1\right)^{2}}}
+\]
+\end{exercise}
+
+\begin{example}\label{example:5-12}
+Our next real world example comes from electrical engineering. There's a law in EE called ``Ohm's Law'' which states that the voltage is equal to the current times the resistance at any given point in a circuit,i.e., $V=I R$. We're going to try and calculate the instantaneous voltage at a given time if both the current and the resistance is changing over time.
+
+If $I=i(t)$ is the function for the amount of current at any given time, then the average current over time is given by:
+\[
+\text{average current}=\frac{\Delta I}{\Delta t}
+\]
+
+and the instantaneous current at any given time is given by:
+\[
+\text{current}=\lim _{\Delta t \rightarrow 0} \frac{\Delta I}{\Delta t}=\frac{d I}{d t}=i^{\prime}(t)
+\]
+
+Similarly, if $R=r(t)$ is the function for the resistance at any given time, then the average resistance over time is given by:
+\[
+\text{average resistance}=\frac{\Delta R}{\Delta t}
+\]
+
+and the instantaneous resistance at any given time is given by:
+\[
+\text{resistance}=\lim _{\Delta t \rightarrow 0} \frac{\Delta R}{\Delta t}=\frac{d R}{d t}=r^{\prime}(t)
+\]
+
+We know that the average rate of voltage over time is given by:
+\[
+\text{average voltage}=\frac{\Delta V}{\Delta t}
+\]
+
+and, by what we saw earlier, the instantaneous voltage is given by:
+\[
+\text{voltage}=\lim _{\Delta t \rightarrow 0} \frac{\Delta V}{\Delta t}=\frac{d V}{d t}=\answer{i^{\prime}(t) r(t)+i(t) r^{\prime}(t)}
+\]
+
+Let's take as an example $I=i(t)=t^{2}$ and $R=r(t)=e^{t}$. Then what is the instantaneous voltage when $t=2$?
+% work: V = t^2 e^t, dV/dt = 2t e^t + t^2 e^t; at t = 2: 4e^2 + 4e^2 = 8e^2
+\[
+\frac{d V}{d t}=\answer{2 t e^{t}+t^{2} e^{t}}, \qquad \left.\frac{d V}{d t}\right|_{t=2}=\answer{8 e^{2}}
+\]
+\end{example}
+
+\end{document}

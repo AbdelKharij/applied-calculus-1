@@ -1,0 +1,81 @@
+\documentclass{ximera}
+\title{The fundamental theorem of calculus}
+\begin{document}
+\begin{abstract}
+The fundamental theorem of calculus, a table of antiderivatives, and some first definite integrals evaluated with it. Textbook §5.3.
+\end{abstract}
+\maketitle
+
+Remember that in summations we had one summation which we called the telescoping sum:
+% work: the sum telescopes: (a_1-a_0)+(a_2-a_1)+...+(a_n-a_{n-1}) = a_n - a_0
+\[
+\sum_{i=1}^{n} a_{i}-a_{i-1}=\answer{a_{n}-a_{0}}
+\]
+
+In fact, our integral is written in almost the same way:
+\[
+\int_{a}^{b} f(x) d x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{\star}\right) \Delta x_{i}=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{\star}\right)\left(x_{i}-x_{i-1}\right) .
+\]
+
+So we now want to know if there exists an easier way to solve these integrals and we will see (very soon) that a way exists! In fact, this is done through antiderivatives!
+
+Recall that an antiderivative of a function $f(x)$ is a function $F(x)$ such that $F^{\prime}(x)=f(x)$.
+
+\begin{theorem}[The fundamental theorem of calculus]\label{theorem:13-1}
+If $f(x)$ is a continuous function on an interval $[a, b]$ and if $F(x)$ is an antiderivative of $f(x)$ then
+\[
+\int_{a}^{b} f(x) d x=\answer{F(b)-F(a)}
+\]
+\end{theorem}
+
+To make life easier, here are some functions with some antiderivatives
+
+\begin{center}
+\begin{tabular}[t]{|l|l|}
+\hline
+Function & (an) antiderivative \\
+\hline
+$x^{n}$ where $n \neq-1$ & $\frac{x^{n+1}}{n+1}$ \\
+\hline
+$x^{-1}$ & $\answer{\ln(|x|)}$ \\
+\hline
+$\sin (k x)$ where $k \neq 0$ & $-\frac{\cos (k x)}{k}$ \\
+\hline
+$\cos (k x)$ where $k \neq 0$ & $\frac{\sin (k x)}{k}$ \\
+\hline
+$\sec ^{2}(k x)$ where $k \neq 0$ & $\answer{\frac{\tan(kx)}{k}}$ \\
+\hline
+$\cosec^{2}(k x)$ where $k \neq 0$ & $-\frac{\cotan(k x)}{k}$ \\
+\hline
+$\sec (k x) \tan (k x)$ where $k \neq 0$ & $\frac{\sec (k x)}{k}$ \\
+\hline
+$\cosec(k x) \cotan(k x)$ where $k \neq 0$ & $-\frac{\cosec(k x)}{k}$ \\
+\hline
+$e^{k x}$ where $k \neq 0$ & $\answer{\frac{e^{kx}}{k}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}\label{example:13-2}
+Let's look at some examples:
+% work: x^2 |_2^4 = 16 - 4 = 12;  -cos(x) |_0^pi = -(-1) - (-1) = 2;  integral from 5 to 5 of anything is 0
+\[
+\begin{aligned}
+& \int_{1}^{2} x^{2} d x=\left.\frac{x^{3}}{3}\right|_{1} ^{2}=\frac{2^{3}}{3}-\frac{1^{3}}{3}=\frac{8-1}{3}=\frac{7}{3} \\
+& \int_{2}^{4} 2 x d x=\answer{12} \\
+& \int_{0}^{\pi} \sin (x) d x=\answer{2} \\
+& \int_{5}^{5} e^{x^{2}} \cdot \sin ^{2}\left(x^{2}\right) d x=\answer{0}
+\end{aligned}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:13-3}
+Try an example with a partner. Solve:
+% work: antiderivative x^4 - e^x + ln|x|; (81 - e^3 + ln 3) - (1 - e + 0) = 80 - e^3 + e + ln(3)
+\[
+\int_{1}^{3} 4 x^{3}-e^{x}+\frac{1}{x} d x=\answer{80-e^{3}+e+\ln(3)}
+\]
+\textbf{Hint:} Recall the properties of integrals from before.
+\end{exercise}
+
+\end{document}

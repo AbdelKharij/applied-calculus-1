@@ -1,0 +1,148 @@
+\documentclass{ximera}
+\title{Continuity}
+\begin{document}
+\begin{abstract}
+Continuity at a point, from the left and right, and on an interval; the rules for combining continuous functions, the families of functions that are continuous, composition, and the intermediate value theorem. Textbook §2.5.
+\end{abstract}
+\maketitle
+
+Limits are super easy when we can just plug in a number to get the answer. When we can just plug in a number $a$ into a function $f(x)$ in order to get the limit we say that the function is continuous at $a$.
+
+\begin{definition}
+\label{definition:3-12}
+A function $f$ is \dfn{continuous at $a$} if
+\[
+\lim _{x \rightarrow a} f(x)=\answer{f(a)}
+\]
+\end{definition}
+
+For this equation to hold there are three things that normally need to be proved:
+
+\begin{enumerate}
+  \item $\answer{f(a)}$ is defined.
+  \item $\answer{\lim _{x \rightarrow a} f(x)}$ exists.
+  \item $\lim _{x \rightarrow a} f(x)=\answer{f(a)}$.
+\end{enumerate}
+
+If $f$ is not continuous at $a$ we say that it is \dfn{discontinuous at $a$}.
+
+\begin{example}
+\label{example:3-13}
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-036_703_999_1371_561}
+\end{image}
+% TODO: original had only the graph with no prompt; the discussion of where this function is (dis)continuous was done live
+\begin{freeResponse}
+\end{freeResponse}
+\end{example}
+
+We can similarly define left-hand and right-hand continuity.
+
+\begin{definition}
+\label{definition:3-14}
+A function $f$ is \dfn{continuous from the left at $a$} if
+\[
+\lim _{x \rightarrow a^{-}} f(x)=\answer{f(a)}
+\]
+A function $f$ is \dfn{continuous from the right at $a$} if
+\[
+\lim _{x \rightarrow a^{+}} f(x)=\answer{f(a)}
+\]
+\end{definition}
+
+Similarly, we can do it on an interval!
+
+\begin{definition}
+\label{definition:3-15}
+A function $f$ is \dfn{continuous on an interval $I$} if it is continuous at every number in the interval.
+\end{definition}
+
+\begin{example}
+\label{example:3-16}
+Suppose
+% blank filled from the graph below (lower half of the circle of radius 2, with f(-2)=f(2)=2); not an author choice
+\[
+f(x)=\begin{cases} -\sqrt{4-x^{2}} & \text{if } -2<x<2 \\ 2 & \text{if } x=-2 \text{ or } x=2 \end{cases}
+\]
+Show that $f$ is continuous on the interval $(-2,2)$, but discontinuous everywhere else. Here is a graph of the function:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-038_844_1201_763_460}
+\end{image}
+\begin{freeResponse}
+\end{freeResponse}
+\end{example}
+
+Just like the limit laws, we have rules for continuity.
+
+\begin{theorem}
+\label{theorem:3-17}
+If $f$ and $g$ are continuous functions at a and $c$ is some constant, then the following functions are also continuous at $a$ :
+\begin{enumerate}
+  \item $\answer{f+g}$
+  \item $\answer{f-g}$
+  \item $\answer{cf}$
+  \item $\answer{fg}$
+  \item $\answer{\frac{f}{g}}$
+\end{enumerate}
+\end{theorem}
+
+There are a lot of functions which are continuous!
+
+\begin{enumerate}
+  \item All \wordChoice{\choice[correct]{polynomial}\choice{rational}\choice{root}\choice{logarithmic}} functions are continuous everywhere.
+% CHECKED-FIX: was \choice{Polynomial} (a true statement, so two correct options)
+  \item \wordChoice{\choice[correct]{Rational}\choice{Greatest integer}\choice{Odd}\choice{Even}} functions are continuous on their domain.
+% CHECKED-FIX: was \choice{Polynomial} (a true statement, so two correct options)
+  \item \wordChoice{\choice[correct]{Root}\choice{Greatest integer}\choice{Piecewise}\choice{Step}} functions are continuous on their domain.
+% CHECKED-FIX: was \choice{Polynomial} (a true statement, so two correct options)
+  \item \wordChoice{\choice[correct]{Trigonometric}\choice{Greatest integer}\choice{Piecewise}\choice{Step}} functions are continous on their domain.
+% CHECKED-FIX: was \choice{Polynomial} (a true statement, so two correct options)
+  \item \wordChoice{\choice[correct]{Exponential}\choice{Greatest integer}\choice{Piecewise}\choice{Step}} functions are continuous on their domain.
+% CHECKED-FIX: was \choice{Polynomial} (a true statement, so two correct options)
+  \item \wordChoice{\choice[correct]{Logarithmic}\choice{Greatest integer}\choice{Piecewise}\choice{Step}} functions are continuous on their domain.
+\end{enumerate}
+
+% AUTHOR CHOICE: example chosen during conversion, change freely
+\begin{example}
+\label{example:3-18}
+Where is the function $f(x)=\dfrac{\ln x}{x^{2}+1}$ continuous?
+
+% work: ln x is continuous on (0,inf); x^2+1 is a polynomial, never 0; quotient continuous on (0,inf)
+$f$ is continuous on $\answer{(0,\infty)}$.
+\end{example}
+
+% AUTHOR CHOICE: example chosen during conversion, change freely
+\begin{exercise}
+\label{exercise:3-19}
+With a partner, state where $f(x)=\sqrt{4-x^{2}}$ is continuous?
+
+% work: root function, continuous on its domain 4-x^2 >= 0, i.e. [-2,2]
+$f$ is continuous on $\answer{[-2,2]}$.
+\end{exercise}
+
+What about composition $f \circ g$ ?
+
+\begin{theorem}
+\label{theorem:3-20}
+If $f$ is continuous at $b$ and $\lim _{x \rightarrow a} g(x)=b$, then
+\[
+\lim _{x \rightarrow a} f(g(x))=\answer{f(b)}
+\]
+If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$ then $f \circ g$ is continuous at $a$.
+\end{theorem}
+
+Continuous functions have a nice property in that they go through every number.
+
+\begin{theorem}[Intermediate value theorem]
+\label{theorem:3-21}
+If $f$ is continuous on the interval $[a, b]$ and $N$ is any number between $f(a)$ and $f(b)$, then there exists a number $c$ in $[a, b]$ such that $f(c)=N$.
+\end{theorem}
+
+This is best visualized through a picture.
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-041_587_795_430_664}
+\end{image}
+
+This theorem is super helpful for finding roots to polynomials!
+
+\end{document}

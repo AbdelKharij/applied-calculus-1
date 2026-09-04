@@ -1,0 +1,80 @@
+\documentclass{ximera}
+\title{Rates of Change}
+\begin{document}
+\begin{abstract}
+Derivatives as rates of change in the real world: isothermal compressibility in thermodynamics and marginal cost in economics. Textbook §3.7.
+\end{abstract}
+\maketitle
+
+In the last couple weeks we've been looking at different ways to apply derivatives into the real world. Most of these came through rates of change.
+
+What is ``rate of change''? It means ``how much something is changing''. This can be interpreted in many different ways! In the astronaut example, we talked about how velocity is the rate of change of position. We talked about acceleration being the rate of change of velocity. In a lot of our other examplese we looked at how much something changes over time and figuring out the instantaneous rate of change at some fixed time. We looked at the following:
+
+\begin{itemize}
+  \item Acceleration/Velocity (Astronauts!)
+  \item Density of objects
+  \item Electricity flow (current and Ohm's law)
+  \item Rates of chemical reactions
+  \item Population growth
+\end{itemize}
+
+We're now going to continue looking at how derivatives help in the real world.
+
+\begin{warning}
+The examples here are the same examples in the book. There are a bunch of even more exciting examples that can be found through a quick google search of applications of derivatives.
+\end{warning}
+
+\begin{example}\label{example:8-1}
+We first look at thermodynamics. In thermodynamics we're looking at how mcuh something can be compressed. So given some amount of pressure, the volume of a substance is going to change. The rate of change is then just the change of volume over pressure: $d V / d P$. The isothermal compressibility is then defined to be:
+\[
+\text { isothermal compressibility }=\beta=-\frac{1}{V} \frac{d V}{d P}
+\]
+In other words, $\beta$ measures how fast, per unit volume, the volume of a substance decreases as the pressure on it increases (at constant temperature).
+
+Let $V=\frac{3.5}{P^{2}}$ and let's figure out the isothermal compressibility when the pressure is 10 kPa (kilopascals). First we must calculate $d V / d P$.
+% work: V = 3.5 P^{-2}, so dV/dP = -7 P^{-3}
+\[
+\frac{d V}{d P}=\answer{-\frac{7}{P^{3}}}
+\]
+Then we calculate $\beta$.
+% work: beta = -(1/V)(dV/dP) = -(P^2/3.5)(-7/P^3) = 7/(3.5 P) = 2/P
+\[
+\beta=-\frac{1}{V} \frac{d V}{d P}=\answer{\frac{2}{P}}
+\]
+% work: beta(10) = 2/10 = 1/5
+So then $\beta(10)=\answer{\frac{1}{5}}$.
+\end{example}
+
+\begin{example}\label{example:8-2}
+Our next example looks at economics. If we let $C(x)$ denote the total cost that a company incurs in producing $x$ number of products then $C$ is called the cost function of $x$. What happens if we change the number of products produced? This gives us a rate of change! We get the following:
+\[
+\frac{\Delta C}{\Delta x}=\frac{C\left(x_{2}\right)-C\left(x_{1}\right)}{x_{2}-x_{1}}
+\]
+which tells us how much everything is changing. The marginal cost is just the instantaneous rate of change of the cost. In other words
+\[
+\text { marginal cost }=\lim _{\Delta x \rightarrow 0} \frac{\Delta C}{\Delta x}=\frac{d C}{d x}
+\]
+
+\begin{warning}
+Wait!!! Hold up. You can't have half a product. Like if I'm selling a doll, I can't just sell half a doll! So what does $\Delta x \rightarrow 0$ even mean?! Basically what we are saying here is that if the number of products is big enough then we can appoximate the addition of one additional product, by taking the derivative. In other words we are saying:
+\end{warning}
+\[
+C^{\prime}(n) \approx C(n+1)-C(n)
+\]
+This makes life easier since maybe calculating $C$ twice is much more difficult for a computer (or a human) than calculating the derivative once and calculating it once.
+
+Let's pretend we are working for Willy Wonka and he wants to figure out the marginal cost of the ever-lasting gobstopper. He's super secretive so he only wants to produce 10 of them for now. What is Wonka's marginal cost if $C(x)=\arcsec(x)+x^{2}$.
+
+First we must find the derivative!
+% work: d/dx arcsec(x) = 1/(x sqrt(x^2-1)) (textbook form), d/dx x^2 = 2x
+\[
+C^{\prime}(x)=\answer{\frac{1}{x\sqrt{x^{2}-1}}+2x}
+\]
+Then calculating at $x=10$ we get:
+% work: C'(10) = 1/(10 sqrt(99)) + 20 = 1/(30 sqrt(11)) + 20 ≈ 20.01005
+\[
+C^{\prime}(10)=\answer{\frac{1}{10\sqrt{99}}+20}
+\]
+\end{example}
+
+\end{document}

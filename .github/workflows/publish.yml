@@ -1,0 +1,69 @@
+name: Build and publish the course
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+# Publishing pushes to a shared Ximera server, so never run two of these at once.
+concurrency:
+  group: ximera-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Build and publish to Ximera
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 'frost' needs the full history
+
+      - name: Restore build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/*.html
+            **/*.pdf
+            **/*.svg
+            **/*.aux
+            **/*.xref
+            **/*.toc
+            !xmPictures/**
+            !.git/**
+            !.github/**
+          key: ximera-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            ximera-${{ github.ref_name }}-
+            ximera-
+
+      - name: Build and publish Ximera courses
+        env:
+          GPG_KEY: ${{ secrets.GPG_KEY }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          XIMERA_URL: "https://xerxes.ximera.org/"
+          XIMERA_NAME: ${{ github.repository_owner }}-${{ github.event.repository.name }}
+          XM_COMPILE_SEQUENCE: "html"
+        run: |
+          chmod +x xmScripts/xmlatex
+          rm -rf ximera-downloads/with-answers
+          ./xmScripts/xmlatex bake -j 5
+          ./xmScripts/xmlatex frost
+          ./xmScripts/xmlatex name
+          ./xmScripts/xmlatex serve -f
+          echo "✅ Published to ${XIMERA_URL}${XIMERA_NAME}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Save serve cache (.git only)
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            xmScripts/**
+            .git/**
+          key: ximeraSERVE-${{ github.ref_name }}-${{ github.sha }}

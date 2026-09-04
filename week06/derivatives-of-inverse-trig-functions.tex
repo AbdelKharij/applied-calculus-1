@@ -1,0 +1,41 @@
+\documentclass{ximera}
+\title{Derivatives of inverse trig functions}
+\begin{document}
+\begin{abstract}
+We use implicit differentiation to find the derivative of $\arcsin(x)$ and record the derivatives of all six inverse trig functions. Textbook §3.5.
+\end{abstract}
+\maketitle
+
+We can use implicit differentiation in order to find the derivatives of inverse trig functions. Recall that $\arcsin (x)=\sin ^{-1}(x)=y$ means that $\sin (y)=x$ when $\frac{-\pi}{2} \leq y \leq \frac{\pi}{2}$. So let's test it out.
+
+\[
+\begin{aligned}
+\frac{d}{d x} \sin (y) & =\frac{d}{d x} x \\
+\frac{d}{d y} \sin (y) \frac{d y}{d x} & =1 \\
+\cos (y) \frac{d y}{d x} & =1 \\
+\frac{d y}{d x} & =\frac{1}{\cos (y)}
+\end{aligned}
+\]
+
+Since $\frac{-\pi}{2} \leq y \leq \frac{\pi}{2}$ then $\cos (y) \geq 0$. And since $\sin ^{2}(y)+\cos ^{2}(y)=1$ we have
+
+\[
+\cos (y)=\sqrt{1-\sin ^{2}(y)}=\answer{\sqrt{1-x^{2}}}.
+\]
+
+In other words
+\[
+\frac{d}{dx}\arcsin(x)=\answer{\frac{1}{\sqrt{1-x^{2}}}}.
+\]
+
+Using similar approaches, we can find the derivatives for every inverse trig function:
+
+\[
+\begin{array}{l|l||l|l}
+\arcsin (x) & \answer{\frac{1}{\sqrt{1-x^{2}}}} & \arccsc(x) & \answer{-\frac{1}{x \sqrt{x^{2}-1}}} \\
+\arccos (x) & \answer{-\frac{1}{\sqrt{1-x^{2}}}} & \arcsec(x) & \answer{\frac{1}{x \sqrt{x^{2}-1}}} \\
+\arctan (x) & \answer{\frac{1}{1+x^{2}}} & \arccot(x) & \answer{-\frac{1}{1+x^{2}}}
+\end{array}
+\]
+
+\end{document}

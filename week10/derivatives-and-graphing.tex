@@ -1,0 +1,101 @@
+\documentclass{ximera}
+\title{Derivatives and graphing}
+\begin{document}
+\begin{abstract}
+What the first and second derivatives tell us about the graph of a function: increasing/decreasing, the first derivative test, concavity, inflection points and the second derivative test, with graphs to sketch. Textbook §4.3.
+\end{abstract}
+\maketitle
+
+Our next goal is to look at what the derivative can inform us about the original function. Since the derivative is the slope of the tangent line, when the slope is positive we know the original function is increasing. Likewise, if the slope is negative it's decreasing.
+
+\begin{itemize}
+  \item If $f^{\prime}(x)>0$ for all $x$ in an interval, then $f$ is increasing on that interval.
+  \item If $f^{\prime}(x)<0$ for all $x$ in an interval, then $f$ is decreasing on that interval.
+\end{itemize}
+
+\begin{example}\label{example:10-1}
+Let $f(x)=x^{4}+4 x^{3}+4 x^{2}+4$. Find which intervals the function is increasing and decreasing.
+% work: f'(x)=4x^3+12x^2+8x=4x(x+1)(x+2); critical numbers -2,-1,0.
+% sign of f': x<-2: (-)(-)(-)<0; -2<x<-1: (-)(-)(+)>0; -1<x<0: (-)(+)(+)<0; x>0: >0
+\[
+f^{\prime}(x)=\answer{4x^{3}+12x^{2}+8x}
+\]
+So $f$ is increasing on $\answer{(-2,-1)\cup(0,\infty)}$ and decreasing on $\answer{(-\infty,-2)\cup(-1,0)}$.
+\end{example}
+
+Ok, but how can we use this information to actually draw the graph?
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-113_885_928_507_597}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+
+Notice that this tells us a lot about the function! We can summarize this in the following test.
+
+\begin{theorem}[The first derivative test]\label{theorem:10-2}
+Let $c$ be a critical number of a continuous function $f$.
+\begin{itemize}
+  \item If $f^{\prime}$ changes from positive to negative at $c$, then $f$ has a local maximum at $c$.
+  \item If $f^{\prime}$ changes from negative to positive at $c$, then $f$ has a local minimum at $c$.
+  \item If $f^{\prime}$ is positive to the left and right of $c$, or negative to the left and right of $c$, then $f$ has no local maximum or minimum at $c$.
+\end{itemize}
+\end{theorem}
+
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-114_839_1145_428_489}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+
+Can we say even more if we look at $f^{\prime \prime}$? Yes! It turns out the second derivative helps us distinguish ``how'' a function is increasing/decreasing. In fact, it tells us about its \wordChoice{\choice[correct]{concavity}\choice{slope}\choice{continuity}\choice{domain}}.
+
+\begin{definition}\label{definition:10-3}
+If the graph of $f$ lies above all of its tangents on an interval $I$, then it is called \dfn{concave upward} on $I$. If the graph of $f$ lies below all of its tangents on an interval $I$, then it is called \dfn{concave downward} on $I$.
+\end{definition}
+
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-114_425_570_1674_489}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-114_423_566_1676_1063}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+
+All this boils down to the \emph{concavity test}:
+
+\begin{itemize}
+  \item If $f^{\prime \prime}(x)>0$ for all $x$ in an interval $I$, then the graph of $f$ is concave upward on $I$.
+  \item If $f^{\prime \prime}(x)<0$ for all $x$ in an interval $I$, then the graph of $f$ is concave downward on $I$.
+\end{itemize}
+
+Sometimes our functions will switch from concave upward to downward or the other way around. The points where this switch occurs is called an \emph{inflection point}.
+
+Let's look at an example.
+
+\begin{example}\label{example:10-4}
+Try and sketch the graph of $f(x)=x^{6}-6 x^{4}-4 x^{3}+9 x^{2}+12 x+6$.
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-115_672_907_1052_606}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+\end{example}
+
+Looking at the second derivative, we can state our derivative tests in a much more concise way.
+
+\begin{theorem}[Second derivative test]\label{theorem:10-5}
+Suppose $f^{\prime \prime}$ is continuous near $c$.
+\begin{itemize}
+  \item If $f^{\prime}(c)=0$ and $f^{\prime \prime}(c)>0$, then $f$ has a local minimum at $c$.
+  \item If $f^{\prime}(c)=0$ and $f^{\prime \prime}(c)<0$, then $f$ has a local maximum at $c$.
+\end{itemize}
+\end{theorem}
+
+\begin{exercise}\label{exercise:10-6}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+With a partner, sketch the graph of $f(x)=x^{3}-3x$.
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-116_842_1129_882_495}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+\end{exercise}
+
+\end{document}

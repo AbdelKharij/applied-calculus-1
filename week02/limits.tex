@@ -1,0 +1,180 @@
+\documentclass{ximera}
+\title{Limits}
+\begin{document}
+\begin{abstract}
+Limits of functions from tables of values and from graphs, one-sided limits, and infinite limits. Textbook §2.2.
+\end{abstract}
+\maketitle
+
+What we just did can be formalized into what's called limits. We want to find the value of a function at a certain point without knowing the value at that point exactly.
+
+\begin{example}\label{example:2-10}
+% AUTHOR CHOICE: the function was a blank in the original; read off the graph below (local max at (-1,3), local min at (1,-1), y-intercept 1 give x^3-3x+1 uniquely), change freely
+Let's first start with an example to help clarify. Let $f(x)=x^{3}-3x+1$.
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-017_539_739_428_692}
+\end{image}
+
+% the point 1.5 is determined by the table below (x-values approach 1.5 from both sides)
+Try and calculate $f(1.5)$ without plugging in the number.
+
+% table values computed from f(x)=x^3-3x+1 (exact decimals)
+\begin{center}
+\begin{tabular}[t]{|l|l|l|l|}
+\hline
+x & f(x) & x & f(x) \\
+\hline
+1 & $\answer{-1}$ & 2 & $\answer{3}$ \\
+\hline
+1.4 & $\answer{-0.456}$ & 1.6 & $\answer{0.296}$ \\
+\hline
+1.49 & $\answer{-0.162051}$ & 1.51 & $\answer{-0.087049}$ \\
+\hline
+1.499 & $\answer{-0.128745501}$ & 1.501 & $\answer{-0.121245499}$ \\
+\hline
+1.4999 & $\answer{-0.125374955001}$ & 1.5001 & $\answer{-0.124624954999}$ \\
+\hline
+1.49999 & $\answer{-0.125037499550001}$ & 1.50001 & $\answer{-0.124962499549999}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+% work: f(1.5) = 3.375 - 4.5 + 1 = -0.125
+It looks like the value is approaching $\answer{-0.125}$. We write this as:
+% open work area in the original; result is determinable
+\[
+\lim_{x \rightarrow 1.5} f(x)=\answer{-0.125}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:2-11}
+% AUTHOR CHOICE: the function was a blank in the original; read off the graph below (odd, slope 1/2 at the origin, f(1)=0.414, f(1.5)=0.535 match (sqrt(x^2+1)-1)/x), change freely
+% the point 0 is determined by the table below (x-values approach 0 from both sides)
+With a partner find the limit of the function $f(x)=\frac{\sqrt{x^{2}+1}-1}{x}$ as $x$ approaches $0$. (Use a calculator!) Here's the graph:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-018_516_984_550_569}
+\end{image}
+
+% table values computed from f(x)=(sqrt(x^2+1)-1)/x, rounded to 6 significant figures
+\begin{center}
+\begin{tabular}[t]{|l|l|l|l|}
+\hline
+x & f(x) & x & f(x) \\
+\hline
+-1 & $\answer{-0.414214}$ & 1 & $\answer{0.414214}$ \\
+\hline
+-0.5 & $\answer{-0.236068}$ & 0.5 & $\answer{0.236068}$ \\
+\hline
+-0.1 & $\answer{-0.0498756}$ & 0.1 & $\answer{0.0498756}$ \\
+\hline
+-0.01 & $\answer{-0.00499988}$ & 0.01 & $\answer{0.00499988}$ \\
+\hline
+-0.001 & $\answer{-0.0005}$ & 0.001 & $\answer{0.0005}$ \\
+\hline
+-0.0001 & $\answer{-0.00005}$ & 0.0001 & $\answer{0.00005}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+What do you both think is the limit?
+% open work area in the original; result is determinable
+\[
+\lim_{x \rightarrow 0} f(x)=\answer{0}
+\]
+\end{exercise}
+
+\begin{exercise}\label{exercise:2-12}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+Again with your partner, try and find the limit of $f(x)=\frac{x^{2}-1}{x-1}$ at $x=1$.
+% open work area in the original; result is determinable
+\[
+\lim_{x \rightarrow 1} f(x)=\answer{2}
+\]
+\end{exercise}
+
+\begin{example}\label{example:2-13}
+Suppose we have the following piecewise function
+% the function was a blank in the original; read off the graph below (cosine with the point (0,1) removed and (0,0) added)
+\[
+f(x)=\begin{cases} \cos(x) & \text{if } x \neq 0 \\ 0 & \text{if } x=0 \end{cases}
+\]
+and we want to know the limit at $x=0$. Using the graph of the function, what do you think the limit is?
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-019_537_1364_791_458}
+\end{image}
+
+\[
+\lim _{x \rightarrow 0} f(x)=\answer{1}
+\]
+\end{example}
+
+\begin{example}\label{example:2-14}
+% the function was a blank in the original; read off the graph below (even, zeros at x = +-1, +-1/3, ..., minima at +-1/2, maxima at +-1/4, f(1.46)=0.48 match cos(pi/(2x)))
+Let's look at something a little more complex. Say we have the function $f(x)=\cos\left(\frac{\pi}{2x}\right)$ whose graph is the following:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-019_610_1070_1555_526}
+\end{image}
+What is the limit at $x=0$?
+
+$\displaystyle\lim _{x \rightarrow 0} f(x)$ \wordChoice{\choice[correct]{does not exist}\choice{$=1$}\choice{$=0$}\choice{$=-1$}}
+\end{example}
+
+What happens if our function is split in two? Let
+% the function was a blank in the original; read off the graph below (constant 1 for x<1, open dot at (1,1), line through (1,0) and (2,1))
+\[
+f(x)=\begin{cases} 1 & \text{if } x<1 \\ x-1 & \text{if } x \geq 1 \end{cases}
+\]
+whose graph is given by:
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-020_492_647_720_737}
+\end{image}
+How can we calculate the limit at $x=1$ ? What we can do is look at the limit from only one side instead of both sides like we had been doing. There are two sides of $x=1$, a positive side and a negative side. Looking at the limit from the positive side, it looks like the limit is equal to $\answer{0}$. Looking at the limit from the negative side, it looks like the limit is equal to $\answer{1}$. We denote these by
+% open work area in the original; results are determinable
+\[
+\lim_{x \rightarrow 1^{+}} f(x)=\answer{0} \qquad \lim_{x \rightarrow 1^{-}} f(x)=\answer{1}
+\]
+
+Comparing these limits with our original definition of limit, we see $\lim _{x \rightarrow a} f(x)=L$ if and only if \wordChoice{\choice[correct]{$\lim_{x \rightarrow a^{-}} f(x)=L$ and $\lim_{x \rightarrow a^{+}} f(x)=L$}\choice{$\lim_{x \rightarrow a^{-}} f(x)=L$ or $\lim_{x \rightarrow a^{+}} f(x)=L$}\choice{$f(a)=L$}}.
+
+% the function was a blank in the original; it is named in the text below the graph
+Let's look at another example. Suppose $f(x)=\frac{1}{\sin^{2}(x)}$ with the following graph:
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-021_571_784_425_668}
+\end{image}
+What is the limit as $x$ approaches 0 ? The closer $x$ gets to 0 (from either side) $\sin (x)$ gets closer to 0 and therefore $\frac{1}{\sin ^{2}(x)}$ gets larger and larger. In fact, the limit does not approach any particular number, but keeps growing! To represent this, we say that the limit goes to infinity:
+% open work area in the original; result is determinable
+\[
+\lim_{x \rightarrow 0} \frac{1}{\sin^{2}(x)}=\answer{\infty}
+\]
+
+\begin{warning}
+This does NOT mean that $\infty$ is a number! Nor are we saying that the limit exists. We are merely saying that as we approach $x=0$, our function gets larger and larger and larger, without end.
+\end{warning}
+
+Similarly, if the function $f(x)$ gets smaller and smaller as we approach a point $a$, then we can say that the limit is negative infinity:
+% open work area in the original (the notation was written live)
+\[
+\lim_{x \rightarrow a} f(x)=-\infty
+\]
+
+\begin{example}\label{example:2-15}
+% the function was a blank in the original; read off the graph below (zeros at 0 and 4, f(2)=-4, f(-1)=5/4, horizontal asymptote y=1 match x(x-4)/(x-1)^2)
+Let $f(x)=\frac{x^{2}-4x}{(x-1)^{2}}$ then as $x \rightarrow 1$ the limit goes to negative infinity.
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-022_634_872_428_623}
+\end{image}
+\end{example}
+
+\begin{exercise}\label{exercise:2-16}
+% the function was a blank in the original; read off the graph below (f(0)=4, f(-6.5)=-5.96, f(1.71)=-3.93, vertical asymptote x=1 match x+4/(1-x) = (x^2-x-4)/(x-1))
+With a partner, let $f(x)=\frac{x^{2}-x-4}{x-1}$ whose graph is given by:
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-022_672_1066_1205_529}
+\end{image}
+What are the following limits:
+\[
+\lim _{x \rightarrow 1^{-}} f(x)=\answer{\infty} \qquad \lim _{x \rightarrow 1^{+}} f(x)=\answer{-\infty}
+\]
+$\displaystyle\lim _{x \rightarrow 1}=$ \wordChoice{\choice[correct]{does not exist}\choice{$\infty$}\choice{$-\infty$}\choice{$0$}}
+\end{exercise}
+\end{document}

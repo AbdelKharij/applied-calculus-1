@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\title{Higher derivatives}
+\begin{document}
+\begin{abstract}
+The second, third and $n$th derivatives, the notation used for them, and an exercise computing a third derivative.
+\end{abstract}
+\maketitle
+
+Recall that when we were in outerspace that acceleration was calculated as the instantaneous rate of change (aka derivative) of the velocity. Velocity itself is also a rate of change! It is the instantaneous rate of change of position. So if velocity is the derivative of position, and acceleration is derivative of velocity then acceleration is the derivative of the derivative of position! There are two derivatives!
+
+This happens because we're able to view the derivative as a function itself. And since it's a function, we can ask what is the derivative of the derivative. This is normally called the second derivative. In a similar fashion we can define the third derivative, fourth derivative, nth derivative, etc. Notation-wise, this is what they look like:
+\[
+\begin{array}{ll}
+2^{n d}: & f^{\prime \prime}(x)=\ddot{y}=\frac{d^{2} y}{d x^{2}}=\frac{d^{2} f}{d x^{2}}=D^{2} f \\
+3^{r d}: & f^{\prime \prime \prime}(x)=\dddot{y}=\frac{d^{3} y}{d x^{3}}=\frac{d^{3} f}{d x^{3}}=D^{3} f \\
+4^{\text {th }}: & f^{\prime \prime \prime \prime}(x)=f^{i v}(x)=f^{(4)}(x)=\ddddot{y}=\stackrel{4}{\dot{f}}=\frac{d^{4} y}{d x^{4}}=\frac{d^{4} f}{d x^{4}}=D^{4} f \\
+n^{\text {th }}: & f^{(n)}(x)=\stackrel{n}{\dot{f}}=\frac{d^{n} y}{d x^{n}}=\frac{d^{n} f}{d x^{n}}=D^{n} f
+\end{array}
+\]
+
+\begin{exercise}\label{exercise:4-19}
+With a partner, find the third derivative of $f(x)=x^{2}$.
+% work: f'(x)=2x, f''(x)=2, f'''(x)=0
+\[
+f^{\prime}(x)=\answer{2x}, \qquad f^{\prime\prime}(x)=\answer{2}, \qquad f^{\prime\prime\prime}(x)=\answer{0}
+\]
+\end{exercise}
+
+\end{document}

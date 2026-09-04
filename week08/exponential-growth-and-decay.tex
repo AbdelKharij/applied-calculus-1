@@ -1,0 +1,95 @@
+\documentclass{ximera}
+\title{Exponential Growth and Decay}
+\begin{document}
+\begin{abstract}
+Quantities that grow or decay in proportion to themselves, the exponential solutions $y(t)=y(0)e^{kt}$, radioactive decay and Newton's law of cooling. Textbook §3.8.
+\end{abstract}
+\maketitle
+
+We've also done some exponential growth and decay problems already. We saw this in the population growth case.
+
+A lot of times, things grow and decay proportional to themselves. So in essence, in a population, you grow based on how many people are present, and that growth in measured by some proportion of the current number. As an example: If we take a census in 2015 and then take a census in 2020 then we might find that the population grew by 20\%. What this means is that if $P$ is the population in 2015, then $1.2 P$ is the population in 2020. So the population is measured in proportions.
+
+This rate of change can be made instantaneous by taking the derivative, giving us:
+\[
+\frac{d y}{d t}=k y
+\]
+where $k$ is the proportion.
+
+We've only seen one function where $y$ stays itself after taking the derivative! The exponential!!! That means, usually with growth and decay, we are dealing with the exponential function.
+
+In fact, it is known that the only solutions to the equation $\frac{d y}{d t} k y$ are the exponential functions:
+\[
+y(t)=y(0) e^{k t}
+\]
+
+Let's look at some examples where we use these exponential functions.
+
+\begin{example}\label{example:8-3}
+Let's first look at the nucleur armageddon. In other words: radioactive decay. This example is different from the population growth one because we are actually decreasing the volume of a radioactive substance rather than increasing. In essence, if we have some particle then it's mass decays exponentially by the following formula:
+\[
+m(t)=m_{0} e^{k t}
+\]
+where $m_{0}$ is the initial value, $k$ is some constant for the particle, and $t$ is the variable. In order to calculate this, physicists use something called the half-life of a particle. The half-life of a particle is the time needed for half of the particle to decay. We use all these facts in the following example.
+
+So let's suppose we have $1 kg$ of uranium-235. It takes 704 million years for 1 gram of uranium-235 to decay to 1/2 a gram. In other words, the half-life of uranium-235 is 704 million years $=704000000$. We already know that we are starting off with 1000 grams of uranium-235 so that means $m_{0}=1000$. But how do we find $k$?
+
+Using the half-life! We already know that $m(704000000)$ should be half the initial mass since 704000000 is the half-life. So So
+% work: 500 = 1000 e^{704000000 k}  =>  e^{704000000 k} = 1/2  =>  k = ln(1/2)/704000000 = -ln(2)/704000000
+\[
+m(704000000)=1000e^{704000000k}=500
+\quad\Longrightarrow\quad
+k=\answer{-\frac{\ln 2}{704000000}}
+\]
+\[
+m(t)=\answer{1000e^{-\frac{\ln 2}{704000000}t}}
+\]
+
+How much of our uranium will be left over in 5 billion years when the sun dies out?
+% work: m(5000000000) = 1000 e^{-ln(2) 5000000000/704000000} = 1000 * 2^{-5000/704} ≈ 7.28 grams
+\[
+m(5000000000)=\answer{1000\cdot 2^{-5000000000/704000000}}\text{ grams}
+\]
+\end{example}
+
+\begin{example}\label{example:8-4}
+Our next example uses Newton's law of cooling. We're going to be looking at the temperature of an object over some time, so we denote this function by $T(t)$. Newton's law of cooling says that
+\[
+\frac{d T}{d t}=k\left(T-T_{s}\right)
+\]
+where $T_{s}$ is the temperature of the surroundings. To calculate things, we need to fix things up. So we let $y(t)=T(t)-T_{s}$. Then $y^{\prime}(t)=T^{\prime}(t)$ and so our equation above becomes:
+\[
+y^{\prime}(t)=k y
+\]
+which matches our exponential formula from above.
+
+So suppose that we just made some hot boiling tea (or coffee) and it's just chilaxing at room temperature ($20^{\circ}$). We know that in 30 minutes, the tea will be $55^{\circ}$. Considering that the perfect drinking temperature for tea is $65^{\circ}$, when should you drink your tea?
+
+This is a ton of information! So let's break it down slow. First, let's figure out our formula:
+% work: T_s = 20 (room temperature)
+\[
+\frac{d T}{d t}=k\left(T-T_{s}\right)=\answer{k(T-20)}
+\]
+% work: boiling tea: T(0) = 100, y(0) = 100 - 20 = 80; T(30) = 55, y(30) = 55 - 20 = 35
+We also know that $T(0)=\answer{100}$ and so $y(0)=T(0)-T_{s}=\answer{80}$.
+Also, we know that $T(30)=\answer{55}$ and so $y(30)=T(30)-T_{s}=\answer{35}$.
+
+Then $y(t)=y(0) e^{k t}$ (from our equation earlier!). We can now calculate $k$:
+% work: y(30) = y(0) e^{30k}  =>  35 = 80 e^{30k}  =>  k = (1/30) ln(35/80) ≈ -0.02756
+\[
+y(30)=y(0)e^{30k}
+\quad\Longrightarrow\quad
+k=\answer{\frac{1}{30}\ln\left(\frac{35}{80}\right)}
+\]
+
+So now we want to figure out when $T(t)=\answer{65}$ in other words when $y(t)=\answer{45}$. Therefore:
+% work: 45 = 80 e^{kt}  =>  t = ln(45/80)/k = 30 ln(45/80)/ln(35/80) ≈ 20.88 minutes
+\[
+y(t)=y(0)e^{kt}
+\quad\Longrightarrow\quad
+t=\answer{\frac{30\ln\left(\frac{45}{80}\right)}{\ln\left(\frac{35}{80}\right)}}
+\]
+In other words, we must wait about 20 minutes after pouring tea before it is at perfect temperature.
+\end{example}
+
+\end{document}

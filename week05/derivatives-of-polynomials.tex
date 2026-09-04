@@ -1,0 +1,89 @@
+\documentclass{ximera}
+\title{Derivatives of polynomials}
+\begin{document}
+\begin{abstract}
+The power rule and the constant multiple, sum and difference rules for derivatives, with an application to the density of a metal rod. Textbook §3.1.
+\end{abstract}
+\maketitle
+
+All of the above is fun, but this can get really complicated, really quickly. So instead, let's try and generalize our results so that we don't have to work as hard.
+
+From our previous examples we see that:
+\[
+\frac{d}{d x}\left(x^{2}\right)=\answer{2x} \qquad \frac{d}{d x}(x)=\answer{1}
+\]
+
+We're tempted to state the following (which turns out to be true!)
+
+\begin{theorem}\label{theorem:5-1}
+If $n$ is a real number, then
+\[
+\frac{d}{dx}\left(x^{n}\right)=\answer{n x^{n-1}}
+\]
+\end{theorem}
+
+\begin{proof}
+We're actually gonna prove this one for positive integers, because it's nice and (relatively) easy. Two parts:
+\begin{enumerate}
+  % proof step left open in the original (a blank line); open work per spec 3(e)
+  \item \begin{freeResponse}\end{freeResponse}
+  % proof step left open in the original (white space); open work per spec 3(e)
+  \item \begin{freeResponse}\end{freeResponse}
+\end{enumerate}
+\end{proof}
+
+\begin{example}\label{example:5-2}
+\begin{itemize}
+  \item What is the derivative of $f(x)=x^{93}$? $\answer{93 x^{92}}$.
+  % work: x^{3/5}, so f'(x) = (3/5) x^{-2/5}
+  \item What is the derivative of $f(x)=\sqrt[5]{x^{3}}$? $\answer{\frac{3}{5} x^{-2/5}}$.
+  \item What is the derivative of $f(x)=x^{\pi}$? $\answer{\pi x^{\pi-1}}$.
+\end{itemize}
+\end{example}
+
+Using our limit laws we have the following theorem:
+
+\begin{theorem}\label{theorem:5-3}
+Let $f$ and $g$ be differentiable functions and $c$ a constant.
+\begin{itemize}
+  \item $\frac{d}{dx}\left(c f(x)\right)=\answer{c \frac{d}{dx} f(x)}$
+  \item $\frac{d}{dx}\left(f(x)+g(x)\right)=\answer{\frac{d}{dx} f(x)+\frac{d}{dx} g(x)}$
+  \item $\frac{d}{dx}\left(f(x)-g(x)\right)=\answer{\frac{d}{dx} f(x)-\frac{d}{dx} g(x)}$
+\end{itemize}
+\end{theorem}
+
+This means we can differentiate more complicated polynomials!
+
+\begin{example}\label{example:5-4}
+What is the derivative of $f(x)=x^{9}+3 x^{4}-x^{2}+1$?
+\[
+f'(x)=\answer{9 x^{8}+12 x^{3}-2 x}
+\]
+\end{example}
+
+\begin{example}\label{example:5-5}
+Let's apply this to something real world. Suppose we have a rod (or a piece of wire) of metal. The rod is ``homogeneous'' if the density of the rod is linear throughout. In other words it is defined to be the mass (kg) per unit length (m). We can write this as $\rho$ (density) is equal to the mass $m$ divided by length $\ell$:
+\[
+\rho=\frac{m}{\ell}
+\]
+
+But, now suppose our rod is not homogeneous. Instead, suppose that the mass is given in some function $m=f(x)$. Then, the average density is:
+\[
+\rho=\frac{\Delta m}{\Delta \ell}=\frac{f\left(x_{2}\right)-f\left(x_{1}\right)}{x_{2}-x_{1}}
+\]
+
+This looks exactly like the derivative! So then the density at any given point is given by:
+\[
+\rho=\lim _{\Delta x \rightarrow 0} \frac{\Delta m}{\Delta \ell}=\frac{d m}{d x}
+\]
+
+For example, let $f(x)=x^{3 / 2}$. Using the limit rules we just saw, we know $f^{\prime}(x)=\answer{\frac{3}{2} x^{1/2}}$. In other words at any point $x$ on our rod, $\rho=\answer{\frac{3}{2}\sqrt{x}}$.
+
+So if we look 1 metre up our rod, then we know the density is:
+% work: rho = f'(1) = (3/2) * 1^{1/2} = 3/2
+\[
+\rho = f'(1) = \answer{\frac{3}{2}}
+\]
+\end{example}
+
+\end{document}

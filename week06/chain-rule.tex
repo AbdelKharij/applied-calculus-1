@@ -1,0 +1,73 @@
+\documentclass{ximera}
+\title{The chain rule}
+\begin{document}
+\begin{abstract}
+We state the chain rule for differentiating compositions, use it to differentiate $b^x$, and apply it to a reaction-rate example from chemistry. Textbook §3.4.
+\end{abstract}
+\maketitle
+
+We did addition, subtraction, multiplication and division, but there's one operation we haven't touched yet: composition. What is the derivative of $(f \circ g)$ ?
+
+% AUTHOR CHOICE: the original left open space here; the Leibniz-notation setup line was added during conversion, change freely
+Writing $y=f(u)$ where $u=g(x)$, we have
+\[
+\frac{dy}{dx}=\answer{\frac{dy}{du}\cdot\frac{du}{dx}}.
+\]
+
+In prime notation, we have
+\[
+(f \circ g)^{\prime}(x)=\answer{f^{\prime}(g(x))\,g^{\prime}(x)}.
+\]
+
+This is called the chain rule. We won't prove it in class, but it's available in the book if you want to see how it works.
+
+\begin{example}
+\label{example:6-3}
+Let $f(x)=\sqrt{\sin (x)}$. What is $f^{\prime}(x)$ ?
+
+% work: (1/2)(sin x)^(-1/2) * cos x
+\[
+f^{\prime}(x)=\answer{\frac{\cos(x)}{2\sqrt{\sin(x)}}}.
+\]
+\end{example}
+
+\begin{exercise}
+\label{exercise:6-4}
+Let $f(x)=\frac{1}{\sqrt[3]{x^{2}+3 x}}$. With a partner, find $f^{\prime}(x)$.
+
+% work: f = (x^2+3x)^(-1/3); f' = -(1/3)(x^2+3x)^(-4/3)(2x+3)
+\[
+f^{\prime}(x)=\answer{-\frac{2x+3}{3\left(x^{2}+3x\right)^{4/3}}}.
+\]
+\end{exercise}
+
+Let's use the chain rule to find the derivative of an exponential function. Let
+$f(x)=b^{x}$, and we want to find $f^{\prime}(x)$. We're going to use the fact that $b=e^{\ln (b)}$. So we have
+
+% work: b^x = (e^{ln b})^x = e^{x ln b}; derivative e^{x ln b} * ln b = b^x ln b
+\[
+\begin{aligned}
+f(x) & = b^{x} = \left(e^{\ln (b)}\right)^{x} = \answer{e^{x\ln(b)}} \\
+f^{\prime}(x) & = \answer{\ln(b)\, b^{x}}
+\end{aligned}
+\]
+
+\begin{example}
+\label{example:6-5}
+Next, we look at an example from chemistry! Suppose we have two substances: substance $A$ and substance $B$; and when we mix them together we get a substance $C$. Substances $A$ and $B$ are known as the reactants and substance $C$ is known as the product. The concentration of a reactant or product is normally denoted by the number of moles per liter where a mole is roughly $6.022 \times 10^{2} 3$ molecules (this number is called Avogadro's number). So the concentrations of each substance is given by a function over time. The average concentration of substance $C$ is given by $\frac{\Delta C}{\Delta t}$. As one might expect, the instantaneous concentration at a given time is given by $\frac{d C}{d t}$.
+
+Suppose the concentration of $C$ over a given time is given by the function $c(t)=\cos \left(2 t^{2}\right)$. What is the concentration of $c$ at $t=1$ ?
+
+So first we need to calculate $c^{\prime}(t)$.
+
+% work: c'(t) = -sin(2t^2) * 4t; c'(1) = -4 sin(2)
+\[
+c^{\prime}(t)=\answer{-4t\sin\left(2t^{2}\right)}
+\]
+Then at $t=1$,
+\[
+c^{\prime}(1)=\answer{-4\sin(2)}.
+\]
+\end{example}
+
+\end{document}

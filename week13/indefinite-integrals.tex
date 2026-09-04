@@ -1,0 +1,87 @@
+\documentclass{ximera}
+\title{Indefinite integrals}
+\begin{document}
+\begin{abstract}
+Indefinite integrals as the family of antiderivatives of a function, a list of basic indefinite integrals, and their use to evaluate definite integrals. Textbook §5.4.
+\end{abstract}
+\maketitle
+
+Because of the fundamental theorem of calculus, we can find the integral $\int_{a}^{b} f(x) d x$. But in order to find this, we must first find an antiderivative of $f(x)$ !
+
+This is not always easy!
+
+\begin{example}\label{example:13-4}
+Find a function $F(x)$ such that $F^{\prime}(x)=f(x)=e^{x^{2}}$.
+% discussion left open in the original (white space): e^{x^2} has no elementary antiderivative; open work per spec 3(e)
+\begin{freeResponse}\end{freeResponse}
+\end{example}
+
+For this, we need to find a way to generate antiderivatives. This is normally done by using indefinite integrals.
+
+A indefinite integral is the set of \wordChoice{\choice[correct]{all}\choice{some}\choice{continuous}\choice{positive}} antiderivatives of a given function. In other words, it's the general formula $F(x)+c$ that we saw a few days ago. We will normally denote this by:
+% work: the notation for the indefinite integral was written live in the original (white space)
+\[
+\int f(x) d x=\answer{F(x)+c}
+\]
+
+All this is saying is that $F(x)+c$ is the general formula for an antiderivative of $f(x)$.
+
+\begin{warning}
+Note: Definite and indefinite integrals are different!!! Definite integrals have lower/upper limits and give you a value. Indefinite integrals have no lower/upper limits and give you a function.
+\end{warning}
+
+We already have a ton of indefinite integrals that we can create using the derivative rules we saw earlier this semester:
+
+\begin{enumerate}
+  \item $\int k d x=k x+c$
+  \item $\int\left[k_{1} f(x)+k_{2} g(x)\right] d x=k_{1} \int f(x) d x+k_{2} \int g(x) d x$
+  \item $\int x^{n} d x=\answer{\frac{x^{n+1}}{n+1}+c}$
+  \item $\int \frac{1}{x} d x=\ln (|x|)+c$
+  \item $\int e^{x} d x=\answer{e^{x}+c}$
+  \item $\int a^{x} d x=\frac{a^{x}}{\ln a}+c($ where $1 \neq a>0)$
+  \item $\int \sin (x) d x=\answer{-\cos(x)+c}$
+  \item $\int \cos (x) d x=\answer{\sin(x)+c}$
+  \item $\int \sec (x) d x=\ln (|\sec (x)+\tan (x)|)+c$
+  \item $\int \cosec(x) d x=\ln (|\cosec(x)-\cotan(x)|)+c$
+  \item $\int \tan (x) d x=\ln (|\sec (x)|)+c$
+  \item $\int \cotan(x) d x=\ln (|\sin (x)|)+c$
+  \item $\int \sec ^{2}(x) d x=\tan (x)+c$
+  \item $\int \cosec^{2}(x) d x=-\cotan(x)+c$
+  \item $\int \sec (x) \tan (x) d x=\sec (x)+c$
+  \item $\int \cosec(x) \cotan(x) d x=-\cosec(x)+c$
+  \item $\int \frac{1}{\sqrt{1-x^{2}}} d x=\arcsin (x)+c$
+  \item $\int \frac{1}{x \sqrt{x^{2}-1}} d x=\arcsec(|x|)+c$
+  \item $\int \frac{1}{1+x^{2}} d x=\arctan (x)+c$
+\end{enumerate}
+
+But who cares? We care because it gives us an easier way to find the definite integral when we want to find it.
+
+\begin{example}\label{example:13-5}
+Evaluate the following expression.
+% work: 12/x^3 = 12 x^{-3}, antiderivative 12 x^{-2}/(-2) = -6/x^2;  -6/16 + 6/4 = -3/8 + 12/8 = 9/8
+\[
+\int_{2}^{4} \frac{12}{x^{3}} d x=\answer{-\frac{6}{x^{2}}}\bigg|_{2}^{4}=\answer{-\frac{6}{16}+\frac{6}{4}}=\frac{9}{8} .
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:13-6}
+Try and find the following limit with a partner.
+% work: x^{-3/2} has antiderivative -2 x^{-1/2};  (-2/2) - (-2/1) = -1 + 2 = 1
+\[
+\int_{1}^{4} \frac{1}{\sqrt{x^{3}}} d x=\answer{1}
+\]
+\end{exercise}
+
+\begin{example}\label{example:13-7}
+Let's try a more complicated example. Let's find $\int_{0}^{\pi} 3 x^{2}-e^{x}+\cos (x) d x$.
+\[
+\int 3 x^{2}-e^{x}+\cos (x) d x=\answer{x^{3}-e^{x}+\sin(x)+c}
+\]
+Therefore
+% work: (pi^3 - e^pi + sin(pi)) - (0 - e^0 + sin(0)) = pi^3 - e^pi + 1
+\[
+\int_{0}^{\pi} 3 x^{2}-e^{x}+\cos (x) d x=\answer{x^{3}-e^{x}+\sin(x)}\bigg|_{0}^{\pi}=\pi^{3}-e^{\pi}+1
+\]
+\end{example}
+
+\end{document}

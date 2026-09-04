@@ -1,0 +1,63 @@
+\documentclass{ximera}
+\title{Optimization problems}
+\begin{document}
+\begin{abstract}
+The six steps for solving an optimization word problem, a fenced farm with the largest area, and a cylindrical can with the smallest surface area. Textbook §4.7.
+\end{abstract}
+\maketitle
+
+Optimization problems are difficult. Not only because they use derivatives, but because they are generally word problems that are difficult to interpret. They are best done \emph{slowly} and with a lot of thought to make sure that you are doing things correctly.
+
+There are 6 basic steps to handling an optimization problem.
+
+\begin{enumerate}
+  \item \wordChoice{\choice[correct]{Understand the problem: what is unknown, what is given, what are you looking for?}\choice{Take the derivative of everything in the problem}\choice{Guess a reasonable answer and check it}}
+  \item \wordChoice{\choice[correct]{Draw a diagram}\choice{Find the domain}\choice{Take the second derivative}}
+  \item \wordChoice{\choice[correct]{Introduce notation: name the quantity to be optimized and the other unknowns}\choice{Find the critical numbers}\choice{Plug in the given numbers}}
+  \item \wordChoice{\choice[correct]{Express the quantity to be optimized as a formula in terms of the other symbols}\choice{Set every unknown equal to zero and solve}\choice{Check the endpoints of the interval}}
+  \item \wordChoice{\choice[correct]{Use the given information to find relationships between the unknowns, and eliminate all but one variable so the quantity is a function of a single variable; find its domain}\choice{Differentiate each unknown separately and add the results}\choice{Sketch the graph of every unknown}}
+  \item \wordChoice{\choice[correct]{Find the absolute maximum or minimum of that function (for example with the closed interval method or the derivative tests)}\choice{Find the inflection points of that function}\choice{Take the limit of that function as the variable goes to infinity}}
+\end{enumerate}
+
+This is definitely best done with an example.
+
+\begin{example}\label{example:10-16}
+Suppose we time travelled to the 8th century and got stuck in the countryside of some kingdom. Looking at our time machine we realize it's going to take up a few years until we can fix it, so we gotta make due and set-up a little farm to sustain ourselves for a little bit. After constructing a cabin that's not too shabby you realize you should probably turn the extra material into a fence to protect your crops from animals. You have material to make a 400 meter fence (you're known for super speed when it comes to chopping wood and making fences) and you can't get more material because\ldots life. To help make your plot bigger you decide that one side of the rectangular plot of land will be shielded by a river that looks larger than lake ontario. What are the dimensions of your farm which give you the largest area to farm in?
+% work: let x = length of each of the two sides perpendicular to the river, y = side parallel to the river.
+% Fence: 2x+y=400, so y=400-2x and A(x)=x(400-2x)=400x-2x^2 on [0,200].
+% A'(x)=400-4x=0 gives x=100; A''=-4<0 so it is a maximum. y=400-200=200. Area 20000 m^2.
+
+Let $x$ be the length of each of the two sides perpendicular to the river and $y$ the length of the side parallel to the river. Then $2x+y=400$, so the area is
+\[
+A(x)=xy=\answer{400x-2x^{2}}
+\]
+\[
+A^{\prime}(x)=\answer{400-4x}
+\]
+which is $0$ when $x=\answer{100}$. So the farm should be $\answer{100}$ meters by $\answer{200}$ meters, with the $200$ meter side along the river.
+\end{example}
+
+\begin{exercise}\label{exercise:10-17}
+You and a partner are in charge of Coca Cola Canada $\left(C^{3}\right)$ and your bosses have said they are spending to much money on metal and want to come up with a smaller size. Keeping the can a cylindrical shape, what are the dimensions of the can that minimize surface area if you have 250ml of coke in each bottle.
+
+Some help:
+\begin{itemize}
+  \item Surface area can be calculated by calculating the area of the two circles (on top and on the bottom) and then adding the surface area of the cylinder part.
+  \item The volume of the can is the same as the area of the top times the height.
+  \item The volume of the can is 250.
+\end{itemize}
+% work: radius r, height h. V = pi r^2 h = 250, so h = 250/(pi r^2).
+% S = 2 pi r^2 + 2 pi r h = 2 pi r^2 + 500/r.  S' = 4 pi r - 500/r^2 = 0  =>  r^3 = 125/pi  =>  r = 5/pi^{1/3}.
+% S'' = 4 pi + 1000/r^3 > 0 so minimum. h = 250/(pi r^2) = 250/(pi * 25/pi^{2/3}) = 10/pi^{1/3} = 2r.
+
+Let $r$ be the radius of the can and $h$ its height. Then $\pi r^{2}h=250$, so $h=\answer{\frac{250}{\pi r^{2}}}$ and the surface area is
+\[
+S(r)=2\pi r^{2}+2\pi r h=\answer{2\pi r^{2}+\frac{500}{r}}
+\]
+\[
+S^{\prime}(r)=\answer{4\pi r-\frac{500}{r^{2}}}
+\]
+which is $0$ when $r=\answer{\frac{5}{\pi^{1/3}}}$, and then $h=\answer{\frac{10}{\pi^{1/3}}}$.
+\end{exercise}
+
+\end{document}

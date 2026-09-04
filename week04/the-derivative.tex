@@ -1,0 +1,85 @@
+\documentclass{ximera}
+\title{The derivative}
+\begin{document}
+\begin{abstract}
+The derivative as a function, notation for the derivative, differentiability, and the fact that differentiable functions are continuous. Textbook §2.8.
+\end{abstract}
+\maketitle
+
+Recall that we've so far been looking at the derivative of a function $f$ at a fixed number $a$
+\[
+f^{\prime}(a)=\lim _{h \rightarrow 0} \frac{f(a+h)-f(a)}{h} .
+\]
+
+What if we want to look at the derivative at an arbitrary point, not just at $a$? For this we replace the number $a$ by a variable.
+\[
+f^{\prime}(x)=\lim _{h \rightarrow 0}\answer{\frac{f(x+h)-f(x)}{h}}
+\]
+
+We already did this when we were looking at acceleration. Notice that this allows us to look at $f^{\prime}$ as a function! This function, $f^{\prime}$, is called the derivative of $f$.
+
+\begin{example}\label{example:4-14}
+Let's do a test run with a super easy example. Find the derivative of $f(x)=x$.
+% work: ((x+h)-x)/h = h/h = 1
+\[
+f^{\prime}(x)=\lim _{h \rightarrow 0}\frac{f(x+h)-f(x)}{h}=\lim _{h \rightarrow 0}\frac{(x+h)-x}{h}=\lim _{h \rightarrow 0}\answer{1}
+\]
+Therefore $f^{\prime}(x)=1$.
+\end{example}
+
+\begin{exercise}\label{exercise:4-15}
+Try a more complicated example with a partner. Find the derivative of $f(x)=x^{2}-x$.
+% work: ((x+h)^2-(x+h)-(x^2-x))/h = (2xh+h^2-h)/h = 2x+h-1 -> 2x-1
+\[
+f^{\prime}(x)=\lim _{h \rightarrow 0}\frac{\left((x+h)^{2}-(x+h)\right)-\left(x^{2}-x\right)}{h}=\answer{2x-1}
+\]
+\end{exercise}
+
+There are a lot of different ways that people write the derivative $f^{\prime}(x)$. This comes from the history of derivation!
+\[
+f^{\prime}(x)=\dot{y}=\frac{d y}{d x}=\frac{d f}{d x}=D f
+\]
+
+\begin{definition}\label{definition:4-16}
+We say that a function $f$ is \dfn{differentiable at $a$} if $f^{\prime}(a)$ exists.
+\end{definition}
+
+\begin{example}\label{example:4-17}
+Where is the following function differentiable?
+\[
+f(x)= \begin{cases}1 & \text { if } x \geq 0 \\ -1 & \text { if } x<0\end{cases}
+\]
+% work: for x != 0 the function is constant near x, so f'(x)=0; at x=0, (f(0+h)-f(0))/h = -2/h for h<0, which has no limit
+The function $f$ is differentiable \wordChoice{\choice[correct]{everywhere except at $x=0$}\choice{everywhere}\choice{only at $x=0$}\choice{nowhere}}.
+\end{example}
+
+Being differntiable, actually tells us whether our function is continuous or not!
+
+\begin{theorem}\label{theorem:4-18}
+If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+\end{theorem}
+\begin{freeResponse}\end{freeResponse}
+
+We see this already in our example!
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-057_883_928_501_597}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+
+\begin{warning}
+The opposite direction is not true! There are functions that are continuous at a point but not differentiable! There is an example of such a function in the book.
+\end{warning}
+
+Intuitively, there are three main cases when a function is not differentiable:
+\begin{image}
+\includegraphics[width=0.4\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-057_339_460_1633_520}
+\end{image}
+\begin{image}
+\includegraphics[width=0.4\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-057_337_460_1633_1061}
+\end{image}
+\begin{image}
+\includegraphics[width=0.4\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-057_335_455_1972_834}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+
+\end{document}

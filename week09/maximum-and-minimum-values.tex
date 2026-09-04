@@ -1,0 +1,110 @@
+\documentclass{ximera}
+\title{Maximum and minimum values}
+\begin{document}
+\begin{abstract}
+Absolute and local maximum and minimum values, the extreme value theorem, Fermat's theorem and its pitfalls, critical numbers, and the closed interval method for finding absolute extrema. Textbook §4.1.
+\end{abstract}
+\maketitle
+
+A lot of problems in life are optimization problems: when do functions reach maximum/minimum values. We kinda saw this with our astronaut problem where we wanted to find maximum acceleration. We also see this for example when trying to decide:
+\begin{itemize}
+  \item What was the peak value of $C O_{2}$ in the atmosphere before 0 BCE?
+  \item What time do restaurants have the most amount of clientele?
+  \item What shape of packaging for our product do we need to minimize costs?
+\end{itemize}
+
+There are an endless supply of max/min problems.
+
+\begin{exercise}\label{exercise:9-3}
+Try and come up with a max/min problem and share it with your neighbor:
+
+Max/Min problem:
+\begin{freeResponse}\end{freeResponse}
+\end{exercise}
+
+Mathematically, what is maximum and minimum though? A function $f$ has an absolute maximum value at $c$ on a domain $D$ if $f(c) \geq f(x)$ for every $x \in D$. Similarly, a function $f$ has an absolute minimum value at $c$ on a domain $d$ if $f(c) \leq f(x)$ for every $x \in D$. Absolute values are sometimes known as global values. An extreme value of $f$ is an \wordChoice{\choice[correct]{absolute maximum or absolute minimum value}\choice{local maximum or local minimum value}\choice{critical number}\choice{zero}} of $f$.
+
+We can also look at points which are maximal/minimal in a smaller area. If $f(c) \geq f(x)$ for every $x$ near $c$ then we say $f(c)$ is a local maximum. Similarly, $f(c)$ is a local minimum if $f(c) \leq f(x)$ for every $x$ near $c$.
+
+\begin{example}\label{example:9-4}
+\leavevmode
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-105_672_926_496_597}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+\end{example}
+
+\begin{exercise}\label{exercise:9-5}
+With a partner, fill in the absolute max/min and the local max/mins in the domain $[-3, 4]$ on the following graph:
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-105_653_898_1328_612}
+\end{image}
+\begin{freeResponse}\end{freeResponse}
+\end{exercise}
+
+How do we know that extreme values even exist? Maybe we have some graph where there are no extreme values! This turns out not to be the case as was shown by Bernard Bolzano in the 1830s when he proved the following result.
+
+\begin{theorem}[Extreme value theorem]\label{theorem:9-6}
+If $f$ is continuous on a closed interval $[a, b]$, then $f$ attains an absolute maximum value $f(c)$ and an absolute minimum value $f(d)$ at some numbers $c$ and $d$ in $[a, b]$.
+\end{theorem}
+
+What about local maxima and minima? It turns out that Pierre Fermat gave a nice property on local maxima and minima.
+
+\begin{theorem}[Fermat's Theorem]\label{theorem:9-7}
+If $f$ has a local maximum or minimum at $c$ and if $f^{\prime}(c)$ exists then $f^{\prime}(c)=0$.
+\end{theorem}
+
+\begin{warning}
+The book (rightfully so) puts up a million warnings about this theorem. It's very easy to want to say that the theorem says more than it actually does. There are 3 common errors that students make with this theorem, two of which are mentioned in the book.
+\end{warning}
+\begin{enumerate}
+% TODO: original had a blank here; intended answer unclear (the three errors are filled in live; two of them are presumably the book's two warnings: the converse is false, e.g. $f(x)=x^3$ at $0$, and an extreme value can occur where $f'(c)$ does not exist, e.g. $f(x)=|x|$; the third and the order are not determinable)
+\item \begin{freeResponse}\end{freeResponse}
+% TODO: original had a blank here; intended answer unclear
+\item \begin{freeResponse}\end{freeResponse}
+% TODO: original had a blank here; intended answer unclear
+\item \begin{freeResponse}\end{freeResponse}
+\end{enumerate}
+
+Although there are a lot of easy pitfalls with Fermat's theorem, it does suggest that maybe, we can determine how a function looks based on its derivative.
+
+A \wordChoice{\choice[correct]{critical}\choice{extreme}\choice{stationary}\choice{singular}} number of a function $f$ is a number $c$ (in the domain) such that $f^{\prime}(c)=0$ or $f^{\prime}(c)$ does not exist. In other words, Fermat's theorem becomes:
+
+If $f$ has a local maximum or minimum at $c$ then $c$ is a critical number of $f$.
+
+It turns out we can use cricital numbers to tell us when we have an absolute max or min in some interval $[a, b]$. For this we:
+\begin{enumerate}
+  \item Find the critical values of $f$ in the interval $(a, b)$.
+  \item Find the values of $f$ at the critical values and at the end points of the interval (at $a$ and $b$ ).
+  \item The largest value of the previous step is the absolute maximum and the smallest value is the absolute minimum.
+\end{enumerate}
+
+\begin{example}\label{example:9-8}
+Let $f(x)=x^{3}-x^{2}-x$, find its absolute maximum and minimum on the interval $\left[\frac{-1}{2}, 2\right]$.
+% work: f'(x)=3x^2-2x-1=(3x+1)(x-1), so the critical numbers are x=-1/3 and x=1, both in (-1/2,2)
+\[
+f^{\prime}(x)=\answer{3x^{2}-2x-1}
+\]
+The smaller critical number is $x=\answer{-\frac{1}{3}}$ and the larger critical number is $x=\answer{1}$.
+% work: f(-1/2)=-1/8-1/4+1/2=1/8; f(-1/3)=-1/27-1/9+1/3=(-1-3+9)/27=5/27; f(1)=1-1-1=-1; f(2)=8-4-2=2
+\[
+f\left(\tfrac{-1}{2}\right)=\answer{\frac{1}{8}}, \qquad f\left(-\tfrac{1}{3}\right)=\answer{\frac{5}{27}}, \qquad f(1)=\answer{-1}, \qquad f(2)=\answer{2}
+\]
+So the absolute maximum is $\answer{2}$ and the absolute minimum is $\answer{-1}$.
+\end{example}
+
+\begin{exercise}\label{exercise:9-9}
+Let $f(x)=x^{3}+x^{2}-1$, find its extreme values on the interval $[-1, 1]$.
+% work: f'(x)=3x^2+2x=x(3x+2), critical numbers x=-2/3 and x=0, both in (-1,1)
+\[
+f^{\prime}(x)=\answer{3x^{2}+2x}
+\]
+The smaller critical number is $x=\answer{-\frac{2}{3}}$ and the larger critical number is $x=\answer{0}$.
+% work: f(-1)=-1+1-1=-1; f(-2/3)=-8/27+4/9-1=(-8+12-27)/27=-23/27; f(0)=-1; f(1)=1+1-1=1
+\[
+f(-1)=\answer{-1}, \qquad f\left(-\tfrac{2}{3}\right)=\answer{-\frac{23}{27}}, \qquad f(0)=\answer{-1}, \qquad f(1)=\answer{1}
+\]
+So the absolute maximum is $\answer{1}$ and the absolute minimum is $\answer{-1}$.
+\end{exercise}
+
+\end{document}

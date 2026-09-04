@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\title{Areas and distances}
+\begin{document}
+\begin{abstract}
+Estimating the area under a curve with rectangles, using left-hand and right-hand endpoints. Textbook §5.1.
+\end{abstract}
+\maketitle
+
+Suppose we have the following function: $f(x)=x^{3}-2 x^{2}+2$ :
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-133_563_765_595_672}
+\end{image}
+
+Since we already kinda know how to look at tangents to a curve, let's look at area under a curve. Say we want to calculate the area under the curve between 0 and 2. How can we do this?
+\begin{freeResponse}\end{freeResponse}
+
+% AUTHOR CHOICE: the estimate uses 10 rectangles of width 1/5 with left-hand endpoints (matching the right-hand computation below); change freely
+% work: left-hand sum, Delta x = 1/5, x_i = i/5: (2 + 241/125 + 218/125 + 187/125 + 154/125 + 1 + 106/125 + 103/125 + 122/125 + 169/125) * 1/5 = (13.4)/5 = 67/25
+% CHECKED-FIX: was "Using our techniques, we can estimate that the area should be:" -- n=10 and left endpoints were stated only in a comment, so the answer was unreachable as posed
+Using our techniques with 10 rectangles of width $\frac{1}{5}$ and left-hand endpoints, we can estimate that the area should be: $\answer{\frac{67}{25}}$.
+
+In essence, we are generally using the following formula for trying to calculate the area:
+\[
+\sum_{i=0}^{n} f\left(x_{i}\right) \Delta x
+\]
+
+But we can look at this function differently. We can get an estimation by looking at the right-hand sides of our rectangles:
+\[
+\sum_{i=0}^{n} f\left(x_{i+1}\right) \Delta x
+\]
+\begin{image}
+\includegraphics[width=0.6\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-134_565_767_943_672}
+\end{image}
+
+Doing this with our example, we'd get:
+\[
+\begin{aligned}
+& \sum_{i=0}^{9} f\left(\frac{i+1}{5}\right) \Delta x \\
+& \quad=\left(\frac{241}{125}+\frac{218}{125}+\frac{187}{125}+\frac{154}{125}+1+\frac{106}{125}+\frac{103}{125}+\frac{122}{125}+\frac{169}{125}+2\right) \frac{1}{5} \\
+& \quad=\frac{67}{25} \approx 2.68000000000000
+\end{aligned}
+\]
+
+Notice how these two values are similar to one another!
+
+\end{document}

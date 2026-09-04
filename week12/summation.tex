@@ -1,0 +1,106 @@
+\documentclass{ximera}
+\title{Summation}
+\begin{document}
+\begin{abstract}
+Sigma notation for sums, its basic properties (including the telescoping sum and the formulas for $\sum i$, $\sum i^2$, $\sum i^3$), and some computations with it. Textbook Appendix E.
+\end{abstract}
+\maketitle
+
+We're going to kind of change topics. Remember that when we're looking at a graph, we used derivatives to find the slope at any point. We're now going to change our question. How can we calculate the \wordChoice{\choice[correct]{area}\choice{slope}\choice{tangent line}\choice{rate of change}}?
+
+Most of the time, it's easy. For a square we have the length times the height. For a triangle we have one half the base times the height. For a circle we have $\pi r^{2}$. But what if we want to calculate the area under a curve?
+
+Before looking fully into this topic, we're going to take a quick detour into summations.
+
+\begin{example}\label{example:12-1}
+Say that we want to add 1 to itself ten times. We can do it like: $1+1+1+1+1+1+1+1+1+1=10$. But this becomes more complicated if we want to do more than ten. Say we want to do it 25 times:
+\[
+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1=25 .
+\]
+
+This is way to long and almost imposible to read. So we want to rewrite this in a more visible manner. For adding 1 to itself, it's pretty easy: we do $1 \cdot n$ where $n$ ist he number of times we want to add 1 to itself.
+
+How about if we want to add every integer from 1 to 10 : $1+2+3+4+5+$ $6+7+8+9+10=55$. What if we want to do from 1 to 25 ?
+% work: 25*26/2 = 325
+\[
+1+2+3+4+5+6+7+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25=\answer{325}
+\]
+\end{example}
+
+This is way to complicated and we want to condense this summation by introducing a new notation \wordChoice{\choice[correct]{$\Sigma$ (sigma notation)}\choice{$\Pi$ (product notation)}\choice{$\int$ (integral notation)}\choice{$\Delta$ (difference notation)}}.
+
+\begin{example}\label{example:12-2}
+Here are the two examples from before.
+\[
+\sum_{i=1}^{10} 1=10 \quad \sum_{i=1}^{10} i=55
+\]
+
+In general, we have something like the following
+\[
+\sum_{i=m}^{n} a_{i}=\answer{a_{m}+a_{m+1}+\cdots+a_{n}}
+\]
+\end{example}
+
+The $i$ are called the indices of summation and they can be thought of as functions.
+
+We can also do this sum without end! If we want to take the summation forever then we let $n=\infty: \sum_{i=m}^{\infty} a_{i}$.
+
+\begin{example}\label{example:12-3}
+Let's do some examples.
+% work: sum_{i=3}^{5} (i^2+1) = 10 + 17 + 26 = 53;  sum_{j=-4}^{-1} 3 = 3*4 = 12
+\[
+\begin{aligned}
+\sum_{i=m}^{n} a_{i} & =\sum_{i=1}^{4} 2 i-1=2(1)-1+2(2)-1+2(3)-1+2(4)-1=2+4+6+8-4=16 \\
+\sum_{i=m}^{n} b_{i} & =\sum_{i=3}^{5} i^{2}+1= \answer{53} \\
+\sum_{j=x}^{y} i_{j}=\sum_{j=-4}^{-1} 3 & = \answer{12}
+\end{aligned}
+\]
+
+And in the other direction, we have
+% work: 5,8,11,14 = 3i+2 for i=1..4;  1,0,-1,-2,-3 = 2-i for i=1..5
+\[
+\begin{gathered}
+2+2+2+2+2=\sum_{i=1}^{5} 2 \\
+5+8+11+14=\answer{\sum_{i=1}^{4} (3i+2)} \\
+1+0-1-2-3=\answer{\sum_{i=1}^{5} (2-i)}
+\end{gathered}
+\]
+\end{example}
+
+Here rae some properties of summations using sigma notation:
+
+\begin{proposition}\label{proposition:12-4}
+\begin{enumerate}
+  \item $\sum_{i=m}^{n} a_{i}=\sum_{j=m}^{n} a_{j}$.
+  \item $\sum_{i=m}^{n} a_{i}=\sum_{i=1}^{n-m+1} a_{i+m-1}$.
+  \item $\sum_{i=m}^{n} a_{i}=\sum_{i=1}^{n} a_{i}-\sum_{i=1}^{m-1} a_{i}$.
+  \item Pour $c \in \mathbb{R}, \sum_{i=m}^{n} c=(n-m+1) c$.
+  \item Pour $c \in \mathbb{R}, \sum_{i=m}^{n} c a_{i}=c \sum_{i=m}^{n} a_{i}$.
+  \item $\sum_{i=1}^{n}\left(a_{i}+b_{i}\right)=\left(\sum_{i=1}^{n} a_{i}\right)+\left(\sum_{i=1}^{n} b_{i}\right)$
+  \item $\sum_{i=1}^{n}\left(a_{i}-a_{i-1}\right)=\answer{a_{n}-a_{0}}$. telescoping sum
+  \item $\sum_{i=1}^{n} i=\answer{\frac{n(n+1)}{2}}$.
+  \item $\sum_{i=1}^{n} i^{2}=\frac{n(n+1)(2 n+1)}{6}$.
+  \item $\sum_{i=1}^{n} i^{3}=\frac{n^{2}(n+1)^{2}}{4}$.
+  \item $\sum_{i=1}^{n} r^{i}=\frac{r^{n+1}-r}{r-1}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{example}\label{example:12-5}
+% work: sum_{k=5}^{12} k^2 = sum_{k=1}^{12} k^2 - sum_{k=1}^{4} k^2 = 12*13*25/6 - 4*5*9/6 = 650 - 30 = 620
+\[
+\begin{aligned}
+\sum_{i=1}^{100} i & =\frac{100 *(100+1)}{2}=\frac{10100}{2}=5050 \\
+\sum_{k=5}^{12} k^{2} & = \answer{620}
+\end{aligned}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:12-6}
+Try one with a partner.
+% work: sum (i^2 - i - 10) for i=1..20 = 20*21*41/6 - 20*21/2 - 10*20 = 2870 - 210 - 200 = 2460
+\[
+\sum_{i=1}^{20} i^{2}-i-10 = \answer{2460}
+\]
+\end{exercise}
+
+\end{document}

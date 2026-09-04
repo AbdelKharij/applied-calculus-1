@@ -1,0 +1,113 @@
+\documentclass{ximera}
+\title{Hyperbolic functions}
+\begin{document}
+\begin{abstract}
+The hyperbolic functions, their definitions in terms of exponentials, their basic identities and derivatives, and the inverse hyperbolic functions with their domains and derivatives. Textbook §3.11.
+\end{abstract}
+\maketitle
+
+Let's talk about hyperpbolic functions next. Recall that we can get the sin and cos functions from a circle. If instead we looked at a hyperbola, we would get the hyperbolic functions.
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-101_481_608_1766_758}
+\end{image}
+\begin{image}
+\includegraphics[width=0.5\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-102_503_685_425_718}
+\end{image}
+
+They're hard to remember, so here are their definitions:
+\[
+\begin{array}{c|c||c|c}
+\sinh (x) & \frac{e^{x}-e^{-x}}{2} & \csch(x) & \frac{1}{\sinh (x)} \\
+\cosh (x) & \frac{e^{x}+e^{-x}}{2} & \sech(x) & \frac{1}{\cosh (x)} \\
+\tanh (x) & \frac{\sinh (x)}{\cosh (x)} & \coth(x) & \frac{1}{\tanh (x)}
+\end{array}
+\]
+
+Here is what $\sinh (x)$ and $\cosh (x)$ look like
+\begin{image}
+\includegraphics[width=0.45\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-102_387_524_1330_535}
+\end{image}
+\begin{image}
+\includegraphics[width=0.45\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-102_385_524_1330_1061}
+\end{image}
+
+If we're lucky, we'll see some applications of these functions later in the term, but for now let's look at some of the properties of these functions.
+\[
+% CHECKED-FIX: was \sinh (x+y)=\sinh (x) \cosh (x)+\cosh (x) \sinh (y)  (identity typo, not an \answer)
+\begin{array}{ll}
+\sinh (-x)=-\sinh (x) & \cosh (-x)=\cosh (x) \\
+\sinh (x+y)=\sinh (x) \cosh (y)+\cosh (x) \sinh (y) & \cosh ^{2}(x)-\sinh ^{2}(x)=1 \\
+\cosh (x+y)=\cosh (x) \cosh (y)+\sinh (x) \sinh (y) & 1-\tanh ^{2}(x)=\sech^{2}(x)
+\end{array}
+\]
+
+We can also compute the derivatives of the hyperbolic functions fairly easily using their original definitions using exponential functions.
+
+\begin{example}\label{example:9-2}
+Let $f(x)=\cosh (x)$, what is its derivative?
+% work: cosh(x)=(e^x+e^{-x})/2, so f'(x)=(e^x-e^{-x})/2=sinh(x)
+\[
+f^{\prime}(x)=\frac{d}{dx}\left(\frac{e^{x}+e^{-x}}{2}\right)=\answer{\sinh(x)}
+\]
+\end{example}
+
+Here are all the derivatives for the hyperbolic functions.
+
+% work: tanh' = (cosh^2-sinh^2)/cosh^2 = sech^2; csch' = -cosh/sinh^2 = -csch coth; sech' = -sinh/cosh^2 = -sech tanh; coth' = (sinh^2-cosh^2)/sinh^2 = -csch^2
+\begin{center}
+\begin{tabular}[t]{|l|l|l|l|}
+\hline
+$f(x)$ & $f^{\prime}(x)$ & $f(x)$ & $f^{\prime}(x)$ \\
+\hline
+$\sinh (x)$ & $\answer{\cosh(x)}$ & $\csch(x)$ & $\answer{-\csch(x)\coth(x)}$ \\
+\hline
+$\cosh (x)$ & $\answer{\sinh(x)}$ & $\sech(x)$ & $\answer{-\sech(x)\tanh(x)}$ \\
+\hline
+$\tanh (x)$ & $\answer{\sech^{2}(x)}$ & $\coth(x)$ & $\answer{-\csch^{2}(x)}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Just like the trig functions, hyperbolic functions have inverses too.
+
+\begin{center}
+\begin{tabular}[t]{|l|l|l|}
+\hline
+$f(x)$ & $f^{-1}(x)$ & Domain \\
+\hline
+$\sinh (x)$ & $\arsinh(x)=\sinh ^{-1}(x)=\ln \left(x+\sqrt{x^{2}+1}\right)$ & $\mathbb{R}$ \\
+\hline
+$\cosh (x)$ & $\arcosh(x)=\cosh ^{-1}(x)=\ln \left(x+\sqrt{x^{2}-1}\right)$ & $[1, \infty)$ \\
+\hline
+$\tanh (x)$ & $\artanh(x)=\tanh ^{-1}(x)=\frac{1}{2} \ln \left(\frac{1+x}{1-x}\right)$ & $(-1, 1)$ \\
+\hline
+$\csch(x)$ & $\arcsch(x)=\csch^{-1}(x)=\ln \left(\frac{1}{x}+\sqrt{\frac{1}{x^{2}}+1}\right)$ & $\mathbb{R} \backslash\{0\}$ \\
+\hline
+$\sech(x)$ & $\arsech(x)=\sech^{-1}(x)=\ln \left(\frac{1+\sqrt{1-x^{2}}}{x}\right)$ & $(0,1]$ \\
+\hline
+$\coth(x)$ & $\arcoth(x)=\coth^{-1}(x)=\frac{1}{2} \ln \left(\frac{x+1}{x-1}\right)$ & $(-\infty,-1) \cup(1, \infty)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Similarly to the inverse trig functions, the inverse hyperbolic functions have derivatives.
+
+\begin{center}
+\begin{tabular}[t]{|l|l|l|l|}
+\hline
+$f(x)$ & $f^{\prime}(x)$ & $f(x)$ & $f^{\prime}(x)$ \\
+\hline
+$\arsinh(x)$ & $\frac{1}{\sqrt{1+x^{2}}}$ & $\arcsch(x)$ & $-\frac{1}{|x| \sqrt{x^{2}+1}}$ \\
+\hline
+$\arcosh(x)$ & $\frac{1}{\sqrt{x^{2}-1}}$ & $\arsech(x)$ & $-\frac{1}{x \sqrt{1-x^{2}}}$ \\
+\hline
+$\artanh(x)$ & $\frac{1}{1-x^{2}}$ & $\arcoth(x)$ & $\frac{1}{1-x^{2}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{warning}
+$\artanh(x)$ and $\arcoth(x)$ appear to have the same function as a derivative, but recall that $\artanh(x)$ and $\arcoth(x)$ have different domains, so the derivatives are defined on different parts of the graph.
+\end{warning}
+
+\end{document}

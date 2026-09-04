@@ -1,0 +1,97 @@
+\documentclass{ximera}
+\title{One-sided and infinite limits}
+\begin{document}
+\begin{abstract}
+The precise definitions of left-hand, right-hand and infinite limits, with an epsilon-delta style proof of each kind.
+\end{abstract}
+\maketitle
+
+\begin{definition}[Left-hand and Right-hand limits]
+\label{definition:3-1}
+We say $\lim_{x \rightarrow a^{-}} f(x)=L$ (the \dfn{left-hand limit}) if for every $\varepsilon>0$ there exists a $\delta>0$ such that if
+$x\in\answer{(a-\delta,a)}$ then $|f(x)-L|<\varepsilon$.
+
+We say $\lim_{x \rightarrow a^{+}} f(x)=L$ (the \dfn{right-hand limit}) if for every $\varepsilon>0$ there exists a $\delta>0$ such that if
+$x\in\answer{(a,a+\delta)}$ then $|f(x)-L|<\varepsilon$.
+\end{definition}
+
+We use the exact same format to prove things in this case.
+
+% AUTHOR CHOICE: example chosen during conversion, change freely
+\begin{example}
+\label{example:3-2}
+Prove that $\lim_{x \rightarrow 0^{+}} \sqrt{x}=0$.
+
+\begin{enumerate}
+  \item Analysis:
+  \begin{enumerate}
+    \item We start with $|f(x)-L|<\varepsilon$. In our case, $L=\answer{0}$ and $f(x)=\answer{\sqrt{x}}$. Therefore
+    % work: |sqrt(x) - 0| < eps  <=>  sqrt(x) < eps  <=>  x < eps^2
+    \[
+    |\sqrt{x}-0|<\varepsilon \quad\Longleftrightarrow\quad x<\answer{\varepsilon^{2}}.
+    \]
+    \item We want to end with something like $0<x<\delta$.
+  \end{enumerate}
+  \item Proof:
+  \begin{enumerate}
+    \item Suppose $\varepsilon>0$.
+    \item Let $\delta=\answer{\varepsilon^{2}}$.
+    \item If $0<x<\delta$, then
+    \[
+    |\sqrt{x}-0|=\sqrt{x}<\sqrt{\delta}=\answer{\varepsilon}.
+    \]
+  \end{enumerate}
+  \item Therefore, by the definition of the right-hand limit, $\lim_{x \rightarrow 0^{+}} \sqrt{x}=\answer{0}$.
+\end{enumerate}
+\end{example}
+
+One last precise limit definition!
+
+\begin{definition}[Infinite limits]
+\label{definition:3-3}
+Let $f$ be a function defined on some open interval that contains the number $a$, except potentially not defined at $a$ itself.
+Then
+\[
+\lim_{x \rightarrow a} f(x)=\infty
+\]
+means that for every number $M>0$ there is a $\delta>0$ such that if $0<|x-a|<\delta$ then $f(x)>\answer{M}$.
+
+Similarly,
+\[
+\lim_{x \rightarrow a} f(x)=-\infty
+\]
+means that for every number $N<0$ there is a $\delta>0$ such that if $0<|x-a|<\delta$ then $f(x)<\answer{N}$.
+\end{definition}
+
+% AUTHOR CHOICE: example chosen during conversion, change freely
+\begin{example}
+\label{example:3-4}
+Prove $\lim_{x \rightarrow 0} \frac{1}{x^{2}}=\infty$.
+
+\begin{enumerate}
+  \item Analysis:
+  \begin{enumerate}
+    \item We start with $f(x)>M$. In our case $f(x)=\answer{\frac{1}{x^{2}}}$. Therefore
+    % work: 1/x^2 > M  <=>  x^2 < 1/M  <=>  |x| < 1/sqrt(M)
+    \[
+    \frac{1}{x^{2}}>M \quad\Longleftrightarrow\quad x^{2}<\frac{1}{M} \quad\Longleftrightarrow\quad |x|<\answer{\frac{1}{\sqrt{M}}}.
+    \]
+    \item We want to end with something like $0<|x-0|<\delta$.
+  \end{enumerate}
+  \item Proof:
+  \begin{enumerate}
+    \item Suppose $M>0$.
+    \item Let $\delta=\answer{\frac{1}{\sqrt{M}}}$.
+    \item If $0<|x-0|<\delta$, then
+    \[
+    x^{2}<\delta^{2}=\answer{\frac{1}{M}} \quad\text{so}\quad \frac{1}{x^{2}}>M.
+    \]
+  \end{enumerate}
+  \item Therefore, by definition of the infinite limit:
+  \[
+  \lim_{x \rightarrow 0} \frac{1}{x^{2}}=\infty.
+  \]
+\end{enumerate}
+\end{example}
+
+\end{document}

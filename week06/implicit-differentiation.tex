@@ -1,0 +1,80 @@
+\documentclass{ximera}
+\title{Implicit differentiation}
+\begin{document}
+\begin{abstract}
+We differentiate curves that are defined implicitly by an equation in $x$ and $y$, including finding second derivatives. Textbook §3.5.
+\end{abstract}
+\maketitle
+
+So far, we've been looking at functions that have been explicitely defined: $f(x)=\cdots$. But what happens if our function is implicitly defined:
+
+\[
+y^{3}+6 x^{2}-2 x y=37 x+y
+\]
+
+\begin{image}
+\includegraphics[width=0.8\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-075_610_995_722_565}
+\end{image}
+
+Are there ways to find the tangent to the curve? (aka the derivative) \wordChoice{\choice[correct]{Yes}\choice{No}\choice{Only if we can solve for $y$}}
+
+What we do is we break down our differentiation by small sections. This is best done with an example.
+
+\begin{example}
+\label{example:6-6}
+Let $x^{3}+y^{3}=37$.
+
+% work: 3x^2 + 3y^2 y' = 0  =>  y' = -x^2/y^2
+Differentiating both sides with respect to $x$:
+\[
+3x^{2}+\answer{3y^{2}}\,y^{\prime}=0
+\qquad\text{so}\qquad
+y^{\prime}=\answer{-\frac{x^{2}}{y^{2}}}.
+\]
+\end{example}
+
+Let's try a little more complicated example.
+
+\begin{example}
+\label{example:6-7}
+Let $y^{3}+6 x^{2}-2 x y=37 x+y$.
+
+% work: 3y^2 y' + 12x - 2y - 2x y' = 37 + y'  =>  y'(3y^2 - 2x - 1) = 37 - 12x + 2y
+Differentiating both sides with respect to $x$:
+\[
+\answer{3y^{2}}\,y^{\prime}+12x-2y-2x\,y^{\prime}=37+y^{\prime}
+\qquad\text{so}\qquad
+y^{\prime}=\answer{\frac{37-12x+2y}{3y^{2}-2x-1}}.
+\]
+\end{example}
+
+\begin{exercise}
+\label{exercise:6-8}
+Let $\sin (x y)=\sin (x)+\sin (y)$.
+
+\begin{image}
+\includegraphics[width=0.4\textwidth]{b48a5324-93dc-45ee-b7c2-dc0b5706bda6-076_412_448_1380_837}
+\end{image}
+
+With a partner, find $y^{\prime}$.
+
+% work: cos(xy)(y + x y') = cos x + cos y * y'  =>  y'(x cos(xy) - cos y) = cos x - y cos(xy)
+\[
+y^{\prime}=\answer{\frac{\cos(x)-y\cos(xy)}{x\cos(xy)-\cos(y)}}.
+\]
+\end{exercise}
+
+\begin{example}
+\label{example:6-9}
+Let $x^{3}+y^{3}=37$. Find $y^{\prime \prime}$.
+
+% work: y' = -x^2/y^2; y'' = -(2x y^2 - x^2 * 2y y')/y^4 = -(2x y^2 + 2x^4/y)/y^4
+%       = -2x(y^3 + x^3)/y^5 = -2x(37)/y^5 = -74x/y^5
+\[
+y^{\prime}=\answer{-\frac{x^{2}}{y^{2}}}
+\qquad\text{and}\qquad
+y^{\prime\prime}=\answer{-\frac{74x}{y^{5}}}.
+\]
+\end{example}
+
+\end{document}

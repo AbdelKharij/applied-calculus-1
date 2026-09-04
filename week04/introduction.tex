@@ -1,0 +1,106 @@
+\documentclass{ximera}
+\title{More limits at infinity}
+\begin{document}
+\begin{abstract}
+A theorem about limits of $1/x^r$ at infinity, several worked limits at infinity, and the precise ($\varepsilon$--$N$) definition of a limit at infinity.
+\end{abstract}
+\maketitle
+
+Based off last week, what do you think the following theorem should say?
+
+\begin{theorem}\label{theorem:4-1}
+If $r>0$ is a rational number such that $x^{r}$ is defined for all $x$, then
+\[
+\lim _{x \rightarrow \infty} \frac{1}{x^{r}}=\lim _{x \rightarrow-\infty} \frac{1}{x^{r}}=\answer{0}
+\]
+\end{theorem}
+
+This theorem is ridiculously strong! Let's look at an example.
+
+\begin{example}\label{example:4-2}
+% AUTHOR CHOICE: example chosen during conversion, change freely
+Let $f(x)=\dfrac{2x^{2}+3}{x^{2}+1}$. What is
+% work: divide top and bottom by x^2: (2+3/x^2)/(1+1/x^2) -> 2/1 = 2
+\[
+\lim _{x \rightarrow \infty} f(x)= \answer{2} ?
+\]
+\end{example}
+
+\begin{example}\label{example:4-3}
+Evaluate
+\[
+\lim _{x \rightarrow \infty} 2 x-\sqrt{4 x^{2}+1} .
+\]
+% work: multiply by conjugate: (4x^2-(4x^2+1))/(2x+sqrt(4x^2+1)) = -1/(2x+sqrt(4x^2+1)) -> 0
+\[
+\lim _{x \rightarrow \infty} 2 x-\sqrt{4 x^{2}+1} = \answer{0}
+\]
+\end{example}
+
+\begin{example}\label{example:4-4}
+Evaluate
+\[
+\lim _{x \rightarrow \infty} \cos (x)
+\]
+The limit \wordChoice{\choice[correct]{does not exist}\choice{equals $0$}\choice{equals $1$}\choice{equals $\infty$}}, since $\cos(x)$ keeps oscillating between $-1$ and $1$.
+\end{example}
+
+\begin{example}\label{example:4-5}
+Evaluate
+\[
+\lim _{x \rightarrow \infty} x = \answer{\infty}
+\]
+\end{example}
+
+\begin{example}\label{example:4-6}
+Evaluate
+\[
+\lim _{x \rightarrow \infty} x^{3}-x^{2}
+\]
+% work: x^3-x^2 = x^2(x-1), both factors -> infinity
+\[
+\lim _{x \rightarrow \infty} x^{3}-x^{2} = \answer{\infty}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:4-7}
+With a partner try and evaluate
+\[
+\lim _{x \rightarrow \infty} \frac{x^{2}-x}{2 x-5}
+\]
+% work: divide top and bottom by x: (x-1)/(2-5/x); numerator -> infinity, denominator -> 2
+\[
+\lim _{x \rightarrow \infty} \frac{x^{2}-x}{2 x-5} = \answer{\infty}
+\]
+\end{exercise}
+
+\begin{definition}[Precise definition of limit at infinity]\label{definition:4-8}
+Let $f$ be a function defined on the interval $(a, \infty)$ for some number $a$. Then
+\[
+\lim _{x \rightarrow \infty} f(x)=L
+\]
+means that for every $\varepsilon>0$ there is a corresponding number $N$ such that
+\[
+\text{if } x>\answer{N} \quad\text{then}\quad |f(x)-L|<\answer{\varepsilon}.
+\]
+
+Let $f$ be a function defined on the interval $(-\infty, a)$ for some number $a$. Then
+\[
+\lim _{x \rightarrow-\infty} f(x)=L
+\]
+means that for every $\varepsilon>0$ there is a corresponding number $N$ such that
+\[
+\text{if } x<\answer{N} \quad\text{then}\quad |f(x)-L|<\answer{\varepsilon}.
+\]
+
+Let $f$ be a function defined on the interval $(a, \infty)$ for some number $a$. Then
+\[
+\lim _{x \rightarrow \infty} f(x)=\infty
+\]
+means that for every positive number $M$ there is a corresponding positive number $N$ such that
+\[
+\text{if } x>\answer{N} \quad\text{then}\quad f(x)>\answer{M}.
+\]
+\end{definition}
+
+\end{document}

@@ -1,0 +1,125 @@
+\documentclass{ximera}
+\title{Derivatives of logarithm functions}
+\begin{document}
+\begin{abstract}
+We find the derivative of $\log_b(x)$ by implicit differentiation, differentiate functions involving $\ln$, and use logarithmic differentiation to handle complicated products and quotients. Textbook §3.6.
+\end{abstract}
+\maketitle
+
+What is the derivative of the function $f(x)=\log _{b}(x)$ ?
+
+Recall that $y=\log _{b}(x)$ means that $b^{y}=x$. So let's implicit differentiate!
+
+% work: b^y ln(b) dy/dx = 1; since b^y = x: x ln(b) dy/dx = 1; dy/dx = 1/(x ln b)
+% conversion note: dy/dx is kept outside the \answer boxes so they hold evaluable expressions.
+\[
+\begin{aligned}
+\frac{d}{d x} b^{y} & =\frac{d}{d x} x \\
+\answer{b^{y}\ln(b)}\,\frac{dy}{dx} & = \answer{1} \\
+\answer{x\ln(b)}\,\frac{dy}{dx} & = \answer{1} \\
+\frac{d y}{d x} & = \answer{\frac{1}{x\ln(b)}}
+\end{aligned}
+\]
+
+% cross-ref to original Exercise 6.2 (in week06/derivatives-of-trig-functions.tex)
+The derivative comes from Exercise 6.2
+
+What this means is that if $b=e$ then
+\[
+\frac{d}{dx}\ln(x)=\answer{\frac{1}{x}}.
+\]
+
+\begin{example}
+\label{example:6-10}
+Let $f(x)=\ln (\cos (x))$, what is $f^{\prime}(x)$ ?
+
+% work: (1/cos x)(-sin x) = -tan x
+\[
+f^{\prime}(x)=\answer{-\tan(x)}.
+\]
+\end{example}
+
+\begin{example}
+\label{example:6-11}
+Let $f(x)=\left(\ln \left(\frac{x^{3}}{x^{2}+1}\right)\right)^{2}$, what is $f^{\prime}(x)$ ?
+
+% work: ln(x^3/(x^2+1)) = 3 ln x - ln(x^2+1), derivative 3/x - 2x/(x^2+1);
+%       f' = 2 ln(x^3/(x^2+1)) * (3/x - 2x/(x^2+1))
+\[
+f^{\prime}(x)=\answer{2\ln\left(\frac{x^{3}}{x^{2}+1}\right)\left(\frac{3}{x}-\frac{2x}{x^{2}+1}\right)}.
+\]
+\end{example}
+
+\begin{exercise}
+\label{exercise:6-12}
+Let $f(x)=x^{2} \ln \left(\frac{x+3}{x^{2}}\right)$, with a partner, find $f^{\prime}(x)$.
+
+% work: ln((x+3)/x^2) = ln(x+3) - 2 ln x, derivative 1/(x+3) - 2/x;
+%       f' = 2x ln((x+3)/x^2) + x^2 (1/(x+3) - 2/x) = 2x ln((x+3)/x^2) + x^2/(x+3) - 2x
+\[
+f^{\prime}(x)=\answer{2x\ln\left(\frac{x+3}{x^{2}}\right)+\frac{x^{2}}{x+3}-2x}.
+\]
+\end{exercise}
+
+The logarithm can actually help us differentiate more complicated rational functions. This is best demonstrated with an example.
+
+\begin{example}
+\label{example:6-13}
+Let
+
+\[
+f(x)=\frac{x^{\frac{9}{4}}\left(x^{3}-1\right)^{\frac{4}{3}}}{\left(7 x^{2}-1\right)^{4}}
+\]
+
+and find $f^{\prime}(x)$. This equation is super complicated and we can use the chain rule, the product rule and the quotient rule to solve it, but that's going to get very complicated very fast. Instead, we can use logarithms to simplify everything. We do this in 3 steps.
+
+% work: ln f = (9/4) ln x + (4/3) ln(x^3-1) - 4 ln(7x^2-1)
+%       f'/f = 9/(4x) + (4/3)(3x^2)/(x^3-1) - 4(14x)/(7x^2-1) = 9/(4x) + 4x^2/(x^3-1) - 56x/(7x^2-1)
+%       f' = f(x) * (f'/f)
+\begin{enumerate}
+\item \wordChoice{\choice[correct]{Take the natural logarithm of both sides}\choice{Differentiate both sides implicitly}\choice{Solve for the derivative}}
+\[
+\ln(f(x))=\answer{\frac{9}{4}\ln(x)+\frac{4}{3}\ln\left(x^{3}-1\right)-4\ln\left(7x^{2}-1\right)}
+\]
+\item \wordChoice{\choice{Take the natural logarithm of both sides}\choice[correct]{Differentiate both sides implicitly}\choice{Solve for the derivative}}
+\[
+\frac{f^{\prime}(x)}{f(x)}=\answer{\frac{9}{4x}+\frac{4x^{2}}{x^{3}-1}-\frac{56x}{7x^{2}-1}}
+\]
+\item \wordChoice{\choice{Take the natural logarithm of both sides}\choice{Differentiate both sides implicitly}\choice[correct]{Solve for the derivative}}.
+\[
+f^{\prime}(x)=\answer{\frac{x^{\frac{9}{4}}\left(x^{3}-1\right)^{\frac{4}{3}}}{\left(7 x^{2}-1\right)^{4}}\left(\frac{9}{4x}+\frac{4x^{2}}{x^{3}-1}-\frac{56x}{7x^{2}-1}\right)}
+\]
+\end{enumerate}
+\end{example}
+
+\begin{example}
+\label{example:6-14}
+Let's try it again with a super simple example. Let $f(x)=x^{x}$.
+
+% work: ln f = x ln x; f'/f = ln x + 1; f' = x^x (ln x + 1)
+\begin{enumerate}
+\item $\ln(f(x))=\answer{x\ln(x)}$
+\item $\frac{f^{\prime}(x)}{f(x)}=\answer{\ln(x)+1}$
+\item $f^{\prime}(x)=\answer{x^{x}\left(\ln(x)+1\right)}$
+\end{enumerate}
+\end{example}
+
+\begin{exercise}
+\label{exercise:6-15}
+Let
+
+\[
+f(x)=\frac{x^{\frac{4}{3}}\left(x^{3}-3 x^{2}\right)^{\frac{7}{3}}}{\sqrt{x^{2}+1}}
+\]
+
+with a partner, find $f^{\prime}(x)$.
+
+% work: ln f = (4/3) ln x + (7/3) ln(x^3-3x^2) - (1/2) ln(x^2+1)
+%       f'/f = 4/(3x) + (7/3)(3x^2-6x)/(x^3-3x^2) - x/(x^2+1) = 4/(3x) + (7x^2-14x)/(x^3-3x^2) - x/(x^2+1)
+%       f' = f(x) * (f'/f)
+\[
+f^{\prime}(x)=\answer{\frac{x^{\frac{4}{3}}\left(x^{3}-3 x^{2}\right)^{\frac{7}{3}}}{\sqrt{x^{2}+1}}\left(\frac{4}{3x}+\frac{7x^{2}-14x}{x^{3}-3x^{2}}-\frac{x}{x^{2}+1}\right)}.
+\]
+\end{exercise}
+
+\end{document}
