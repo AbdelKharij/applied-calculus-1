@@ -50,7 +50,12 @@ YOUR_EMAIL="noproblem@dummy.org"
 #
 # For use in Actions, and perhaps to adapt the functionality of the PDF/HTML/SERVE buttons
 #
-# export XM_COMPILE_SEQUENCE=html            # which output to generate, eg "pdf,handout.pdf,html"
+# Which output to generate, eg "pdf,handout.pdf,html".
+# NOTE: this must be set HERE and not as a workflow `env:` -- xmlatex re-runs itself
+# inside Docker and forwards only LOCAL_IP/XIMERA_URL/XIMERA_NAME/GPG_KEY/GPG_KEY_ID/DEBUG,
+# so an XM_COMPILE_SEQUENCE from the environment never reaches the build. This file is
+# sourced by xmlatex inside the container, so it does take effect.
+export XM_COMPILE_SEQUENCE=html
 # export XM_TO_PROCESS=aFirstXourse.tex      # only build/frost/serve these files/courses
 # export XM_CONFIGFILE=more.cfg              # exotic: if you want to use a different TeX4ht config file
 # export XM_SETTINGSFILE=config.lua          # yet another way to set some options/Settings

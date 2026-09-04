@@ -50,7 +50,10 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           XIMERA_URL: "https://xerxes.ximera.org/"
           XIMERA_NAME: ${{ github.repository_owner }}-${{ github.event.repository.name }}
-          XM_COMPILE_SEQUENCE: "html"
+          # Only these six variables reach the build: xmlatex re-runs itself inside Docker
+          # and forwards exactly LOCAL_IP, XIMERA_URL, XIMERA_NAME, GPG_KEY, GPG_KEY_ID and
+          # DEBUG. Anything else (XM_COMPILE_SEQUENCE, ...) belongs in xmScripts/config.txt,
+          # which xmlatex sources inside the container.
         run: |
           chmod +x xmScripts/xmlatex
           rm -rf ximera-downloads/with-answers
