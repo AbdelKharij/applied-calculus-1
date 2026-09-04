@@ -4,21 +4,29 @@ Ximera conversion of Aram Dermenjian's fill-in-the-blank lecture notes for Appli
 (York University, Winter 2020). Source: `MATH1013M_student_notes.pdf`, OCR'd with Mathpix and then
 corrected by hand.
 
-**The course is published at <https://xerxes.ximera.org/AbdelKharij-applied-calculus-1>.**
+**The course is published at
+<https://xerxes.ximera.org/abdelkharij-applied-calculus-1/appliedCalculus1>.**
 Every push to `main` rebuilds and republishes it; see [Publishing](#publishing) below.
+(The server lowercases the repository name, and a trailing slash 404s.)
 
 Built from the [ximeraNewProject](https://github.com/XimeraProject/ximeraNewProject) template.
 
 ## Layout
 
 ```
-appliedCalculus1.tex   the xourse file: one \section per week, one \activity per section
+appliedCalculus1.tex   the xourse file: one \part per week, one \activity per section
 xmPreamble.tex         shared preamble; ximera.cls loads it automatically for every document
 xmPictures/            every figure from the original notes (mostly blank grids for sketching)
 week00/ … week14/      one folder per week; one activity .tex per numbered section
 .github/workflows/     publish.yml — builds and publishes on every push to main
 xmScripts/, .vscode/, .devcontainer/, global.css, .gitignore   from the Ximera project template
 ```
+
+The xourse groups activities with `\part`, not `\section`. The Ximera server builds the course
+index from parts; a xourse with none gets a single synthetic "Main Part" holding every activity in
+one flat list, and the week structure disappears from the published index. Keep part titles free of
+fragile accent macros too — `L'H\^opital` leaks `\let \prOteCt ...` into the rendered title,
+where a literal `ô` is fine.
 
 Each activity is a standalone Ximera document, and does **not** input the preamble itself:
 
@@ -67,7 +75,7 @@ xmlatex name        # derive the course name
 xmlatex serve -f    # upload to the Ximera server
 ```
 
-— publishing to `https://xerxes.ximera.org/` under `AbdelKharij-applied-calculus-1`.
+— publishing to `https://xerxes.ximera.org/` under `abdelkharij-applied-calculus-1`.
 
 Two repository secrets drive it, both set already:
 
