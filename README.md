@@ -1,8 +1,12 @@
-# Applied Calculus 1 (MATH 1013 M) — Ximera edition
+# Applied Calculus 1 — Ximera edition
 
-Ximera conversion of Aram Dermenjian's fill-in-the-blank lecture notes for Applied Calculus 1
-(York University, Winter 2020). Source: `MATH1013M_student_notes.pdf`, OCR'd with Mathpix and then
-corrected by hand.
+A one-semester single-variable calculus course: an interactive Ximera edition of Aram Dermenjian's
+fill-in-the-blank lecture notes, OCR'd with Mathpix and then corrected by hand.
+
+The course text is institution-neutral. It carries no course code, term, instructor, contact
+details, office hours, grading scheme, or exam logistics, and its exercises no longer assume a
+live classroom, so it can be used as-is at any institution or worked through on your own. The
+fourteen weeks are a pacing suggestion, nothing more.
 
 **The course is published at
 <https://xerxes.ximera.org/abdelkharij-applied-calculus-1/appliedCalculus1>.**
@@ -47,7 +51,7 @@ preamble compiles standalone but silently loses those macros in the xourse build
 
 ## How the fill-in blanks were converted
 
-The original notes leave gaps for students to fill in during lecture. In this edition every gap is one of:
+The original notes leave gaps for students to fill in as they work through them. In this edition every gap is one of:
 
 | In the original | Here |
 |---|---|
@@ -55,13 +59,13 @@ The original notes leave gaps for students to fill in during lecture. In this ed
 | a blank word (even / odd, …) | `\wordChoice{\choice[correct]{…}\choice{…}}` |
 | an example the lecturer invents live | a concrete example, marked `% AUTHOR CHOICE` in the source |
 | open work space for a proof or sketch | `\begin{freeResponse}\end{freeResponse}` |
-| admin details (office hours, exam room) | "(to be announced)" |
+| admin details (office hours, exam room) | removed |
 
 Search the source for `AUTHOR CHOICE` to find every example chosen during conversion, and for `TODO`
 to find the handful of blanks whose intended content could not be determined.
 
 Compiling an activity with `\documentclass[handout]{ximera}` prints the answers as blanks again, which
-reproduces the original lecture handout.
+reproduces the original handout.
 
 ## Publishing
 
